@@ -43,7 +43,7 @@ public class Preferences extends PreferenceActivity {
         checkPreferences();
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+            Utils.setupActionBar(this);
         }
 
     }

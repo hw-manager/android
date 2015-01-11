@@ -23,6 +23,7 @@ import java.util.Arrays;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Subject;
+import de.nico.ha_manager.helper.Utils;
 
 public class SubjectOffers extends Activity {
 
@@ -34,7 +35,7 @@ public class SubjectOffers extends Activity {
         update();
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+            Utils.setupActionBar(this);
         }
 
     }

@@ -6,8 +6,8 @@ package de.nico.ha_manager.activities;
  */
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.text.Html;
 import android.view.MenuItem;
@@ -16,7 +16,7 @@ import android.widget.TextView;
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Utils;
 
-public class About extends Activity {
+public class About extends FragmentActivity {
 
     @SuppressLint("NewApi")
     @Override
@@ -26,9 +26,8 @@ public class About extends Activity {
         update();
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+            Utils.setupActionBar(this);
         }
-
     }
 
     @Override
