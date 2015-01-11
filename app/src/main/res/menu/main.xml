@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        Author: Nico Alt and Devin
+        See the file "LICENSE.txt" for the full license governing this code.
+    -->
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings" />
+    <item
+        android:id="@+id/action_delete"
+        android:orderInCategory="50"
+        android:title="@string/action_delete" />
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="10"
+        android:title="@string/action_add" />
+
+</menu>

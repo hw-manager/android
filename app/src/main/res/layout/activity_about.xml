@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+	Author: Nico Alt
+	See the file "LICENSE.txt" for the full license governing this code.
+	
+	Ported from Flym (31.12.2014):
+	https://raw.githubusercontent.com/FredJul/Flym/master/app/src/main/res/layout/activity_about.xml	
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/entry_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/about_icon"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="20dip"
+        android:contentDescription="@string/about_us_image_description"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/about_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="5dip" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="5dip"
+        android:gravity="center"
+        android:text="@string/about_us_copyright" />
+
+    <TextView
+        android:id="@+id/about_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="15dip"
+        android:autoLink="web"
+        android:lineSpacingMultiplier="1.3" />
+
+</LinearLayout>
