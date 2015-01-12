@@ -41,7 +41,7 @@ public class Preferences extends PreferenceActivity {
         setBuildInfo();
         setLanguage();
         checkPreferences();
-        Utils.setupActionBar(this);
+        Utils.setupActionBarPrefs(this);
 
     }
 

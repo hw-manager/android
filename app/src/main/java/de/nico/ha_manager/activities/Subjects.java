@@ -6,7 +6,7 @@ package de.nico.ha_manager.activities;
  */
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -22,8 +22,9 @@ import android.widget.TextView;
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
+import android.os.Build;
 
-public class Subjects extends Activity {
+public class Subjects extends FragmentActivity {
 
     @SuppressLint("NewApi")
     @Override
@@ -31,8 +32,9 @@ public class Subjects extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         update();
-        Utils.setupActionBar(this);
-
+		if (Build.VERSION.SDK_INT >= 11) {
+        	Utils.setupActionBar(this);
+		}
     }
 
     @Override
