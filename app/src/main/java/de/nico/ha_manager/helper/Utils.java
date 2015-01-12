@@ -77,26 +77,13 @@ public class Utils {
         }
     }
 
-    public static void setupActionBar(Context context) {
+    public static void setupActionBar(Context context, boolean isPreferenceActivity) {
 
         if (Build.VERSION.SDK_INT >= 11 && isActionBarAvailable) {
-            ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context, false);
+            ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context, isPreferenceActivity);
             actionBarWrapper.setDisplayHomeAsUpEnabled(true);
         }
     }
-	
-	/**
-	 * Until we can get a PreferenceFragment working, we have to use a 
-	 * PreferenceActivity. We need to use this because the wrapper
-	 * is class-dependent.
-	 */
-	public static void setupActionBarPrefs(Context context) {
-
-		if (Build.VERSION.SDK_INT >= 11 && isActionBarAvailable) {
-			ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context, true);
-			actionBarWrapper.setDisplayHomeAsUpEnabled(true);
-		}
-	}
 
     public static SimpleAdapter entryAdapter(Context c,
                                              ArrayList<HashMap<String, String>> a) {

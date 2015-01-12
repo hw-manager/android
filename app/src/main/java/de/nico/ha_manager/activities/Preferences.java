@@ -5,7 +5,6 @@ package de.nico.ha_manager.activities;
  * See the file "LICENSE.txt" for the full license governing this code.
  */
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -30,7 +29,6 @@ public class Preferences extends PreferenceActivity {
 
     private static Context c;
 
-    @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +39,7 @@ public class Preferences extends PreferenceActivity {
         setBuildInfo();
         setLanguage();
         checkPreferences();
-        Utils.setupActionBarPrefs(this);
-
+        Utils.setupActionBar(this, true);
     }
 
     @Override

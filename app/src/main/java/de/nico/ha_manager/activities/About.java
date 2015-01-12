@@ -5,7 +5,6 @@ package de.nico.ha_manager.activities;
  * See the file "LICENSE.txt" for the full license governing this code.
  */
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
@@ -18,13 +17,12 @@ import de.nico.ha_manager.helper.Utils;
 
 public class About extends FragmentActivity {
 
-    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         update();
-        Utils.setupActionBar(this);
+        Utils.setupActionBar(this, false);
     }
 
     @Override
