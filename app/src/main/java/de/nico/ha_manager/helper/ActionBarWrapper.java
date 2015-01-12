@@ -57,18 +57,22 @@ public class ActionBarWrapper {
 	 */
 
     public void setBackgroundDrawable(Drawable background) {
-        actionBar.setBackgroundDrawable(background);
+		if (actionBar != null)
+        	actionBar.setBackgroundDrawable(background);
     }
 
     public void setDisplayShowTitleEnabled(boolean showTitle) {
-        actionBar.setDisplayShowTitleEnabled(showTitle);
+		if (actionBar != null)
+        	actionBar.setDisplayShowTitleEnabled(showTitle);
     }
 
     public void setDisplayUseLogoEnabled(boolean useLogo) {
-        actionBar.setDisplayUseLogoEnabled(useLogo);
+		if (actionBar != null)
+        	actionBar.setDisplayUseLogoEnabled(useLogo);
     }
 
     public void setDisplayHomeAsUpEnabled(boolean homeAsUpEnabled) {
-        actionBar.setDisplayHomeAsUpEnabled(homeAsUpEnabled);
+		if (actionBar != null)
+        	actionBar.setDisplayHomeAsUpEnabled(homeAsUpEnabled);
     }
 }
