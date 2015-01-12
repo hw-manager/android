@@ -2,15 +2,16 @@
 	Author: Nico Alt and Devin
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
     style="?android:attr/buttonBarStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <View
         android:layout_width="wrap_content"
-        android:layout_height="1dp" />
+        android:layout_height="1dp"/>
 
     <Button
         android:id="@+id/button_add"
@@ -18,6 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="addHomework"
-        android:text="@string/hw_add" />
+        android:text="@string/hw_add"/>
 
 </LinearLayout>

@@ -42,9 +42,9 @@ public class Preferences extends PreferenceActivity {
         setLanguage();
         checkPreferences();
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+        // Don't work with "Utils.setupActionBar(this);" because isn't FragmentActivity
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB)
             getActionBar().setDisplayHomeAsUpEnabled(true);
-        }
 
     }
 

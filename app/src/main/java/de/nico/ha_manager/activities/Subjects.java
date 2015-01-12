@@ -6,10 +6,10 @@ package de.nico.ha_manager.activities;
  */
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,8 +21,9 @@ import android.widget.TextView;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Subject;
+import de.nico.ha_manager.helper.Utils;
 
-public class Subjects extends Activity {
+public class Subjects extends FragmentActivity {
 
     @SuppressLint("NewApi")
     @Override
@@ -30,10 +31,7 @@ public class Subjects extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         update();
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+        Utils.setupActionBar(this);
 
     }
 

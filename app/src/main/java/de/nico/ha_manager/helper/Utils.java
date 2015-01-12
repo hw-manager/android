@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.SimpleAdapter;
@@ -31,6 +32,8 @@ import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Source;
 
 public class Utils {
+
+    private static boolean isActionBarAvailable = false;
 
     public static void makeShortToast(Context c, String msg) {
         Toast.makeText(c, msg, Toast.LENGTH_SHORT).show();
@@ -58,6 +61,23 @@ public class Utils {
         tempArHa.add(tempHashMap);
         return tempArHa;
 
+    }
+
+    static {
+        try {
+            ActionBarWrapper.isAvailable();
+            isActionBarAvailable = true;
+        } catch (Throwable t) {
+            isActionBarAvailable = false;
+        }
+    }
+
+    public static void setupActionBar(Context context) {
+
+        if (Build.VERSION.SDK_INT >= 11 && isActionBarAvailable) {
+            ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context);
+            actionBarWrapper.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     public static SimpleAdapter entryAdapter(Context c,
@@ -157,3 +177,6 @@ public class Utils {
     }
 
 }
+
+
+

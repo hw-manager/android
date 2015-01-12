@@ -5,11 +5,11 @@ package de.nico.ha_manager.activities;
  * See the file "LICENSE.txt" for the full license governing this code.
  */
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -29,7 +29,7 @@ import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
 
-public class Main extends Activity {
+public class Main extends FragmentActivity {
 
     private static ArrayList<HashMap<String, String>> hwArray = new ArrayList<>();
 
