@@ -43,6 +43,20 @@ public class Utils {
         Toast.makeText(c, msg, Toast.LENGTH_LONG).show();
     }
 
+    private static boolean getLarge(Context c) {
+        int screenLayout = c.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK;
+
+        // If Small or Normal
+        if (screenLayout == 1 || screenLayout == 2)
+            return false;
+
+        // If Large or XLarge
+        if (screenLayout == 3 || screenLayout == 4)
+            return true;
+        return true;
+    }
+
     public static ArrayList<HashMap<String, String>> tempArray(
             ArrayList<HashMap<String, String>> ArHa, int pos) {
 
@@ -176,3 +190,5 @@ public class Utils {
     }
 
 }
+
+

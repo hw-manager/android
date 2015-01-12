@@ -50,20 +50,6 @@ public class AddHomework extends FragmentActivity {
 
     private static String ID = null;
 
-    private static boolean getLarge(Context c) {
-        int screenLayout = c.getResources().getConfiguration().screenLayout
-                & Configuration.SCREENLAYOUT_SIZE_MASK;
-
-        // If Small or Normal
-        if (screenLayout == 1 || screenLayout == 2)
-            return false;
-
-        // If Large or XLarge
-        if (screenLayout == 3 || screenLayout == 4)
-            return true;
-        return true;
-    }
-
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,11 +62,7 @@ public class AddHomework extends FragmentActivity {
         setTextViewUntil(date);
         setSpinner();
         handleIntent(getIntent());
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            if (!(getLarge(this)))
-                Utils.setupActionBar(this);
-        }
+        Utils.setupActionBar(this);
 
     }
 
@@ -239,3 +221,5 @@ public class AddHomework extends FragmentActivity {
     }
 
 }
+
+

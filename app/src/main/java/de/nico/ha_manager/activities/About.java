@@ -24,10 +24,7 @@ public class About extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         update();
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            Utils.setupActionBar(this);
-        }
+        Utils.setupActionBar(this);
     }
 
     @Override
