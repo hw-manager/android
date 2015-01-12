@@ -2,10 +2,11 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<manifest package="de.nico.ha_manager"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          android:versionCode="20"
-          android:versionName="0.91">
+<manifest
+    package="de.nico.ha_manager"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="20"
+    android:versionName="0.91">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>

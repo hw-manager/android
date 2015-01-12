@@ -6,10 +6,10 @@ package de.nico.ha_manager.activities;
  */
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +25,7 @@ import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
 
-public class SubjectOffers extends Activity {
+public class SubjectOffers extends FragmentActivity {
 
     @SuppressLint("NewApi")
     @Override

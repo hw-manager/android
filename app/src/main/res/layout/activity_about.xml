@@ -5,11 +5,12 @@
 	Ported from Flym (31.12.2014):
 	https://raw.githubusercontent.com/FredJul/Flym/master/app/src/main/res/layout/activity_about.xml	
 -->
-<LinearLayout android:id="@+id/entry_fragment"
-              xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<LinearLayout
+    android:id="@+id/entry_fragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/about_icon"
