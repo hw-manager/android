@@ -23,12 +23,13 @@ public class ActionBarWrapper {
         }
     }
 
+    public ActionBarWrapper(Context context) {
+        actionBar = ((FragmentActivity) context).getActionBar();
+    }
+
     // A static function that can be called to force the static
     // initialization of this class
-    public static void isAvailable() {}
-
-    public ActionBarWrapper(Context context) {
-        actionBar = ((FragmentActivity)context).getActionBar();
+    public static void isAvailable() {
     }
 
     // Wrapper functions

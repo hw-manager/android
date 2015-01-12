@@ -23,6 +23,6 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="AddTheme" parent="AppBaseTheme" />
+    <style name="AddTheme" parent="AppBaseTheme"/>
 
 </resources>

@@ -79,6 +79,7 @@ public class Utils {
             actionBarWrapper.setDisplayHomeAsUpEnabled(true);
         }
     }
+
     public static SimpleAdapter entryAdapter(Context c,
                                              ArrayList<HashMap<String, String>> a) {
 
