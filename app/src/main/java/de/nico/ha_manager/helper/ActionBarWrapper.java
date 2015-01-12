@@ -27,7 +27,6 @@ public class ActionBarWrapper {
             throw new RuntimeException(e);
         }
     }
-
     /**
 	 * A static function that can be called to force the static
      * initialization of this class
@@ -51,9 +50,8 @@ public class ActionBarWrapper {
 		else {
 			// FragmentActivity
         	actionBar = ((FragmentActivity)context).getActionBar();
-		}
+	    }
     }
-
     /**
 	 * Basic core ActionBar functions
 	 */
