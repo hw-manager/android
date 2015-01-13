@@ -63,6 +63,11 @@ public class Utils {
 
     }
 
+    /**
+     * A fix for a VerifyError crash on old versions
+     * of Android
+     */
+
     static {
         try {
             ActionBarWrapper.isAvailable();
@@ -72,10 +77,10 @@ public class Utils {
         }
     }
 
-    public static void setupActionBar(Context context) {
+    public static void setupActionBar(Context context, boolean isPreferenceActivity) {
 
         if (Build.VERSION.SDK_INT >= 11 && isActionBarAvailable) {
-            ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context);
+            ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context, isPreferenceActivity);
             actionBarWrapper.setDisplayHomeAsUpEnabled(true);
         }
     }

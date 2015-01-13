@@ -49,7 +49,6 @@ public class AddHomework extends FragmentActivity {
 
     private static String ID = null;
 
-    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +60,7 @@ public class AddHomework extends FragmentActivity {
         setTextViewUntil(date);
         setSpinner();
         handleIntent(getIntent());
-        Utils.setupActionBar(this);
+        Utils.setupActionBar(this, false);
 
     }
 
