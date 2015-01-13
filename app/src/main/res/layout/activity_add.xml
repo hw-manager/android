@@ -3,9 +3,9 @@
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
 
     <ScrollView
         android:id="@+id/scrollView_add"
@@ -24,20 +24,20 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hw_subject"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <Spinner
                 android:id="@+id/spinner_subject"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/textView_until"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hw_until"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <Button
                 android:id="@+id/button_until"
@@ -47,7 +47,7 @@
                 android:layout_marginBottom="8dp"
                 android:onClick="setUntil"
                 android:paddingLeft="12dp"
-                android:paddingRight="12dp" />
+                android:paddingRight="12dp"/>
 
             <EditText
                 android:id="@+id/editText_homework"
@@ -55,17 +55,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:hint="@string/hw_homework"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"/>
 
             <CheckBox
                 android:id="@+id/checkBox_urgent"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="@string/hw_urgent" />
+                android:text="@string/hw_urgent"/>
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/button_bar" />
+    <include layout="@layout/button_bar"/>
 
 </LinearLayout>

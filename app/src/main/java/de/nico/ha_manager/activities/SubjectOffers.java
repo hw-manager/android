@@ -5,7 +5,6 @@ package de.nico.ha_manager.activities;
  * See the file "LICENSE.txt" for the full license governing this code.
  */
 
-import android.support.v4.app.FragmentActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;

@@ -4,8 +4,8 @@ import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.v4.app.FragmentActivity;
 import android.preference.PreferenceActivity;
+import android.support.v4.app.FragmentActivity;
 
 /**
  * From @link{http://bit.ly/1AFDKgt}
@@ -18,8 +18,8 @@ public class ActionBarWrapper {
     private ActionBar actionBar;
 
     /**
-	 * Check if android.app.ActionBar exists and throw an error if not
-	 */
+     * Check if android.app.ActionBar exists and throw an error if not
+     */
     static {
         try {
             Class.forName("android.app.ActionBar");
@@ -27,52 +27,54 @@ public class ActionBarWrapper {
             throw new RuntimeException(e);
         }
     }
-    /**
-	 * A static function that can be called to force the static
-     * initialization of this class
-	 */
-    public static void isAvailable() {}
 
-	/**
-	 * Since the method uses the FragmentActivity class in a cast, we need
-	 * to manually switch for our PreferenceActivity until we can get
-	 * a PreferenceFragment working.
-	 * 
-	 * @param context
-	 * @param prefActivity
-	 */
-	 
-    public ActionBarWrapper(Context context, boolean prefActivity) {
-		if (prefActivity) {
-			// PreferenceActivity
-			actionBar = ((PreferenceActivity)context).getActionBar();
-		}
-		else {
-			// FragmentActivity
-        	actionBar = ((FragmentActivity)context).getActionBar();
-	    }
-    }
     /**
-	 * Basic core ActionBar functions
-	 */
+     * Since the method uses the FragmentActivity class in a cast, we need
+     * to manually switch for our PreferenceActivity until we can get
+     * a PreferenceFragment working.
+     *
+     * @param context
+     * @param prefActivity
+     */
+
+    public ActionBarWrapper(Context context, boolean prefActivity) {
+        if (prefActivity) {
+            // PreferenceActivity
+            actionBar = ((PreferenceActivity) context).getActionBar();
+        } else {
+            // FragmentActivity
+            actionBar = ((FragmentActivity) context).getActionBar();
+        }
+    }
+
+    /**
+     * A static function that can be called to force the static
+     * initialization of this class
+     */
+    public static void isAvailable() {
+    }
+
+    /**
+     * Basic core ActionBar functions
+     */
 
     public void setBackgroundDrawable(Drawable background) {
-		if (actionBar != null)
-        	actionBar.setBackgroundDrawable(background);
+        if (actionBar != null)
+            actionBar.setBackgroundDrawable(background);
     }
 
     public void setDisplayShowTitleEnabled(boolean showTitle) {
-		if (actionBar != null)
-        	actionBar.setDisplayShowTitleEnabled(showTitle);
+        if (actionBar != null)
+            actionBar.setDisplayShowTitleEnabled(showTitle);
     }
 
     public void setDisplayUseLogoEnabled(boolean useLogo) {
-		if (actionBar != null)
-        	actionBar.setDisplayUseLogoEnabled(useLogo);
+        if (actionBar != null)
+            actionBar.setDisplayUseLogoEnabled(useLogo);
     }
 
     public void setDisplayHomeAsUpEnabled(boolean homeAsUpEnabled) {
-		if (actionBar != null)
-        	actionBar.setDisplayHomeAsUpEnabled(homeAsUpEnabled);
+        if (actionBar != null)
+            actionBar.setDisplayHomeAsUpEnabled(homeAsUpEnabled);
     }
 }

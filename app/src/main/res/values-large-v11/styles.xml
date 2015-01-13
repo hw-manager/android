@@ -4,6 +4,6 @@
 -->
 <resources>
 
-    <style name="AddTheme" parent="android:Theme.Holo.Light.DialogWhenLarge" />
+    <style name="AddTheme" parent="android:Theme.Holo.Light.DialogWhenLarge"/>
 
 </resources>

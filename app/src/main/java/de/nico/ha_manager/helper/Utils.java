@@ -62,11 +62,11 @@ public class Utils {
         return tempArHa;
 
     }
-	
-	/**
-	 * A fix for a VerifyError crash on old versions
-	 * of Android
-	 */
+
+    /**
+     * A fix for a VerifyError crash on old versions
+     * of Android
+     */
 
     static {
         try {

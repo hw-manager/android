@@ -5,7 +5,6 @@ package de.nico.ha_manager.activities;
  * See the file "LICENSE.txt" for the full license governing this code.
  */
 
-import android.support.v4.app.FragmentActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -22,7 +21,6 @@ import android.widget.TextView;
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
-import android.os.Build;
 
 public class Subjects extends FragmentActivity {
 
@@ -31,7 +29,7 @@ public class Subjects extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         update();
-		Utils.setupActionBar(this, false);
+        Utils.setupActionBar(this, false);
     }
 
     @Override
