@@ -32,6 +32,7 @@ import de.nico.ha_manager.helper.Utils;
 public class Main extends FragmentActivity {
 
     private static ArrayList<HashMap<String, String>> hwArray = new ArrayList<>();
+    private static int pos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,11 +93,11 @@ public class Main extends FragmentActivity {
         final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
                 .getMenuInfo();
         if (item.getTitle() == getString(R.string.dialog_edit)) {
-            editOne(hwArray, info.position);
+            editOne(hwArray, pos);
             return true;
         }
         if (item.getTitle() == getString(R.string.dialog_delete)) {
-            deleteOne(hwArray, info.position);
+            deleteOne(hwArray, pos);
             update();
             return true;
         }
@@ -117,11 +118,22 @@ public class Main extends FragmentActivity {
         } catch (Exception ex) {
             Log.e("Update Homework List:", ex.toString());
         }
+        setOnClick();
+    }
 
+    private void setOnClick() {
         ListView hwList = (ListView) findViewById(R.id.listView_main);
         hwList.setAdapter(Utils.entryAdapter(this, hwArray));
         registerForContextMenu(hwList);
-
+        hwList.setLongClickable(false);
+        hwList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                pos = position;
+                openContextMenu(view);
+                setOnClick();
+            }
+        });
     }
 
     private void editOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
