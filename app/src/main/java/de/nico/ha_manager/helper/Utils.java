@@ -21,6 +21,12 @@ import android.util.Log;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -179,6 +185,29 @@ public class Utils {
         });
 
         b.show();
+    }
+
+    public static boolean transfer(final File src, final File dst) {
+        try {
+            // Import Database
+            FileInputStream inStream = new FileInputStream(src);
+            FileOutputStream outStream = new FileOutputStream(dst);
+            FileChannel inChannel = inStream.getChannel();
+            FileChannel outChannel = outStream.getChannel();
+            inChannel.transferTo(0, inChannel.size(), outChannel);
+            inStream.close();
+            outStream.close();
+            return true;
+
+        } catch (FileNotFoundException e) {
+            Log.e("FileNotFoundException", e.toString());
+            return false;
+
+        } catch (IOException e) {
+            Log.e("IOException", e.toString());
+            return false;
+
+        }
     }
 
 }

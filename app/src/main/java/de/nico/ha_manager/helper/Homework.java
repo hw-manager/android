@@ -10,11 +10,6 @@ import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.channels.FileChannel;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Source;
@@ -72,28 +67,10 @@ public class Homework {
 
         }
 
-        try {
-            // Import Database
-            FileInputStream inStream = new FileInputStream(srcDB);
-            FileOutputStream outStream = new FileOutputStream(dstDB);
-            FileChannel inChannel = inStream.getChannel();
-            FileChannel outChannel = outStream.getChannel();
-            inChannel.transferTo(0, inChannel.size(), outChannel);
-            inStream.close();
-            outStream.close();
-
-        } catch (FileNotFoundException e) {
-            Log.e("FileNotFoundException", e.toString());
+        if (Utils.transfer(srcDB, dstDB))
+            Utils.makeShortToast(c, c.getString(R.string.toast_import_success));
+        else
             Utils.makeShortToast(c, c.getString(R.string.toast_import_fail));
-            return;
-
-        } catch (IOException e) {
-            Log.e("IOException", e.toString());
-            Utils.makeShortToast(c, c.getString(R.string.toast_import_fail));
-            return;
-
-        }
-        Utils.makeShortToast(c, c.getString(R.string.toast_import_success));
     }
 
     public static void exportIt(Context c) {
@@ -109,28 +86,10 @@ public class Homework {
         File dstDB = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name) + "/Homework.db");
 
-        try {
-            // Export Database
-            FileInputStream inStream = new FileInputStream(srcDB);
-            FileOutputStream outStream = new FileOutputStream(dstDB);
-            FileChannel inChannel = inStream.getChannel();
-            FileChannel outChannel = outStream.getChannel();
-            inChannel.transferTo(0, inChannel.size(), outChannel);
-            inStream.close();
-            outStream.close();
-
-        } catch (FileNotFoundException e) {
-            Log.e("FileNotFoundException", e.toString());
+        if (Utils.transfer(srcDB, dstDB))
+            Utils.makeShortToast(c, c.getString(R.string.toast_export_success));
+        else
             Utils.makeShortToast(c, c.getString(R.string.toast_export_fail));
-            return;
-
-        } catch (IOException e) {
-            Log.e("IOException", e.toString());
-            Utils.makeShortToast(c, c.getString(R.string.toast_export_fail));
-            return;
-
-        }
-        Utils.makeShortToast(c, c.getString(R.string.toast_export_success));
     }
 
 }
