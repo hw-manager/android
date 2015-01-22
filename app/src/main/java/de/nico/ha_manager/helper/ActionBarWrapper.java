@@ -1,5 +1,10 @@
 package de.nico.ha_manager.helper;
 
+/*
+ * Author: Nico Alt and Devin
+ * See the file "LICENSE.txt" for the full license governing this code.
+ */
+
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.content.Context;
