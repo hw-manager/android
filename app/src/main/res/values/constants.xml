@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+	Author: Nico Alt
+	See the file "LICENSE.txt" for the full license governing this code.
+-->
+<resources>
+
+    <!-- About page -->
+    <string name="about_us_copyright" translatable="false">Copyright 2013–2015 Nico Alt\nLicensed under GPLv3</string>
+    <string name="about_us_image_description" translatable="false">Launcher Icon</string>
+
+</resources>

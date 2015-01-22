@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import de.nico.ha_manager.R;
+import de.nico.ha_manager.helper.Constants;
 import de.nico.ha_manager.helper.Utils;
 
 public class About extends FragmentActivity {
@@ -46,7 +47,7 @@ public class About extends FragmentActivity {
 
         TextView contentView = (TextView) findViewById(R.id.about_content);
         contentView
-                .setText(Html.fromHtml(getString(R.string.about_us_content)));
+                .setText(Html.fromHtml(Constants.about_us_content));
     }
 
 }
