@@ -3,6 +3,8 @@ package de.nico.ha_manager.helper;
 /*
  * Author: Nico Alt and Devin
  * See the file "LICENSE.txt" for the full license governing this code.
+ *
+ * Original code by Shane Tully located at: http://bit.ly/1AFDKgt
  */
 
 import android.annotation.TargetApi;
@@ -13,7 +15,6 @@ import android.preference.PreferenceActivity;
 import android.support.v4.app.FragmentActivity;
 
 /**
- * From @link{http://bit.ly/1AFDKgt}
  * Fixes a nasty VerifyError crash with getActionBar()
  * on Android versions lower than 3.0.
  */
