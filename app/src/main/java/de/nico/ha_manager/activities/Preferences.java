@@ -13,21 +13,23 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
-import android.support.v4.app.NavUtils;
 import android.text.InputType;
 import android.view.MenuItem;
 import android.widget.EditText;
-
-import java.util.Locale;
-
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
-
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Locale;
+import android.os.Environment;
+import android.support.v4.app.NavUtils;
+import de.nico.ha_manager.helper.FilenameUtils;
 public class Preferences extends PreferenceActivity {
 
     private static Context c;
+	private String[] list;
 
     @SuppressWarnings("deprecation")
     @Override
@@ -35,6 +37,10 @@ public class Preferences extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         c = this;
+			ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
+												+ getString(R.string.app_name));
+			list = mArray.toArray(new String[mArray.size()]);
+			
 
         setBuildInfo();
         setLanguage();
@@ -161,6 +167,29 @@ public class Preferences extends PreferenceActivity {
                         return Utils.shareApp(c);
                     }
                 });
+			
+		Preference importexport_import = findPreference("pref_importexport_import");
+		importexport_import.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+					AlertDialog.Builder alertDialog = new AlertDialog.Builder(c);
+						alertDialog.setTitle(getString(R.string.pref_homework_import))
+						.setNegativeButton(getString(android.R.string.cancel),
+						new DialogInterface.OnClickListener() {
+								@Override
+								public void onClick(
+									DialogInterface d, int i) {
+										d.dismiss();
+									}
+							})
+						.setItems(list, new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog, int item) {
+										Homework.importIt(c, list[item]);
+									}
+							}).show();
+					return true;
+			}
+		});
 
         Preference importexport_export = findPreference("pref_importexport_export");
         importexport_export
@@ -193,37 +222,22 @@ public class Preferences extends PreferenceActivity {
                     }
 
                 });
-
-        Preference importexport_import = findPreference("pref_importexport_import");
-        importexport_import
-                .setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(
-                                c);
-                        alertDialog
-                                .setTitle(
-                                        getString(R.string.pref_homework_import))
-                                .setMessage(
-                                        getString(R.string.dialog_import_message))
-                                .setPositiveButton(
-                                        (getString(android.R.string.yes)),
-                                        new DialogInterface.OnClickListener() {
-
-                                            @Override
-                                            public void onClick(
-                                                    DialogInterface d, int i) {
-                                                Homework.importIt(c);
-                                            }
-
-                                        })
-                                .setNegativeButton(
-                                        (getString(android.R.string.no)), null)
-                                .show();
-                        return true;
-
-                    }
-
-                });
     }
+		public ArrayList<String> getFiles(String DirectoryPath) {
+				ArrayList<String> MyFiles = new ArrayList<String>();
+				File f = new File(DirectoryPath);
+
+				f.mkdirs();
+				File[] files = f.listFiles();
+				if (files.length == 0)
+					return null;
+				else {
+						for (int i=0; i<files.length; i++) {
+								String mTrimmedFile = FilenameUtils.removeExtension(files[i].getName());
+							MyFiles.add(mTrimmedFile);
+						}
+					}
+
+				return MyFiles;
+			}
 }
