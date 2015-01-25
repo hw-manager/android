@@ -4,7 +4,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">HW-Manager</string>
     <string name="title_subjects">Předměty</string>
     <string name="title_subject_offers">Další předměty</string>
@@ -72,7 +72,7 @@
         <item>Fyzika</item>
         <item>Tělocvik</item>
     </string-array>
-    <string-array name="subject_offers">
+    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
         <item>Afrikánština</item>
         <item>Umění</item>
         <item>Drama</item>

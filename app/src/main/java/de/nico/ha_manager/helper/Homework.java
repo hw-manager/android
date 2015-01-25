@@ -10,6 +10,8 @@ import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Source;
@@ -39,7 +41,7 @@ public class Homework {
 
     }
 
-    public static void importIt(Context c) {
+    public static void importIt(Context c, String filename) {
         // Check if directory exists
         File dir = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name));
@@ -53,7 +55,7 @@ public class Homework {
 
         // Path for Database
         File srcDB = new File(Environment.getExternalStorageDirectory() + "/"
-                + c.getString(R.string.app_name) + "/Homework.db");
+                + c.getString(R.string.app_name) + "/" + filename + ".db");
         File dstDB = new File(c.getApplicationInfo().dataDir
                 + "/databases/Homework.db");
 
@@ -80,11 +82,13 @@ public class Homework {
         if (!(dir.exists()))
             dir.mkdir();
 
+        String dateStamp = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
+
         // Path for Database
         File srcDB = new File(c.getApplicationInfo().dataDir
                 + "/databases/Homework.db");
         File dstDB = new File(Environment.getExternalStorageDirectory() + "/"
-                + c.getString(R.string.app_name) + "/Homework.db");
+                + c.getString(R.string.app_name) + "/Homework-" + dateStamp + ".db");
 
         if (Utils.transfer(srcDB, dstDB))
             Utils.makeShortToast(c, c.getString(R.string.toast_export_success));
