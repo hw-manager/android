@@ -1,3 +1,11 @@
+package de.nico.ha_manager.helper;
+
+/*
+ * @author Nico Alt
+ * @author Devin
+ * See the file "LICENSE.txt" for the full license governing this code.
+ */
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -14,8 +22,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package de.nico.ha_manager.helper;
 
 public class FilenameUtils {
     /**

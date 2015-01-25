@@ -1,10 +1,12 @@
 package de.nico.ha_manager.helper;
 
 /*
- * Author: Nico Alt and Devin
+ * @author Nico Alt
+ * @author Devin
  * See the file "LICENSE.txt" for the full license governing this code.
  *
- * Original code by Shane Tully located at: http://bit.ly/1AFDKgt
+ * Original code by Shane Tully located at:
+ * https://shanetully.com/2011/10/android-3-0-actionbar-class-maintaining-compatibility-with-pre-android-3-0-apps/
  */
 
 import android.annotation.TargetApi;

@@ -1,7 +1,7 @@
 package de.nico.ha_manager.database;
 
 /* 
- * Author: Nico Alt
+ * @author Nico Alt
  * See the file "LICENSE.txt" for the full license governing this code.
  */
 

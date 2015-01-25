@@ -1,7 +1,8 @@
 package de.nico.ha_manager.activities;
 
 /* 
- * Author: Nico Alt
+ * @author Nico Alt
+ * @author Devin
  * See the file "LICENSE.txt" for the full license governing this code.
  */
 
