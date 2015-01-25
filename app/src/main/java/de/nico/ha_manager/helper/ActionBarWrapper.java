@@ -20,6 +20,7 @@ import android.support.v4.app.FragmentActivity;
  */
 
 @TargetApi(11)
+@SuppressWarnings("unused")
 public class ActionBarWrapper {
     private ActionBar actionBar;
 
@@ -35,12 +36,12 @@ public class ActionBarWrapper {
     }
 
     /**
-     * Since the method uses the FragmentActivity class in a cast, we need
-     * to manually switch for our PreferenceActivity until we can get
-     * a PreferenceFragment working.
+     * This method gets an instance on the Action Bar working.
      *
-     * @param context
-     * @param prefActivity
+     * @param context      Context from the Activity
+     * @param prefActivity Because of the app needing the cast, we need
+     *                     to change it to cast to PreferenceActivity instead
+     *                     of FragmentActivity
      */
 
     public ActionBarWrapper(Context context, boolean prefActivity) {
