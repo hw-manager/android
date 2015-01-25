@@ -38,7 +38,7 @@ public class ActionBarWrapper {
     /**
      * This method gets an instance on the Action Bar working.
      *
-     * @param context Context from the Activity
+     * @param context      Context from the Activity
      * @param prefActivity Because of the app needing the cast, we need
      *                     to change it to cast to PreferenceActivity instead
      *                     of FragmentActivity

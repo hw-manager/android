@@ -29,10 +29,11 @@ import de.nico.ha_manager.helper.FilenameUtils;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
+
 public class Preferences extends PreferenceActivity {
 
     private static Context c;
-	private String[] list;
+    private String[] list;
 
     @SuppressWarnings("deprecation")
     @Override
@@ -40,10 +41,10 @@ public class Preferences extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         c = this;
-			ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
-												+ getString(R.string.app_name));
-			list = mArray.toArray(new String[mArray.size()]);
-			
+        ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
+                + getString(R.string.app_name));
+        list = mArray.toArray(new String[mArray.size()]);
+
 
         setBuildInfo();
         setLanguage();
@@ -170,29 +171,29 @@ public class Preferences extends PreferenceActivity {
                         return Utils.shareApp(c);
                     }
                 });
-			
-		Preference importexport_import = findPreference("pref_importexport_import");
-		importexport_import.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-					AlertDialog.Builder alertDialog = new AlertDialog.Builder(c);
-						alertDialog.setTitle(getString(R.string.pref_homework_import))
-						.setNegativeButton(getString(android.R.string.cancel),
-						new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(
-									DialogInterface d, int i) {
-										d.dismiss();
-									}
-							})
-						.setItems(list, new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog, int item) {
-										Homework.importIt(c, list[item]);
-									}
-							}).show();
-					return true;
-			}
-		});
+
+        Preference importexport_import = findPreference("pref_importexport_import");
+        importexport_import.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(c);
+                alertDialog.setTitle(getString(R.string.pref_homework_import))
+                        .setNegativeButton(getString(android.R.string.cancel),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface d, int i) {
+                                        d.dismiss();
+                                    }
+                                })
+                        .setItems(list, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int item) {
+                                Homework.importIt(c, list[item]);
+                            }
+                        }).show();
+                return true;
+            }
+        });
 
         Preference importexport_export = findPreference("pref_importexport_export");
         importexport_export
@@ -226,24 +227,25 @@ public class Preferences extends PreferenceActivity {
 
                 });
     }
-		public ArrayList<String> getFiles(String DirectoryPath) {
-				ArrayList<String> MyFiles = new ArrayList<>();
-				File f = new File(DirectoryPath);
 
-				f.mkdirs();
-				File[] files = f.listFiles();
-				if (files.length == 0)
-					return null;
-				else {
-                    for (File file : files) {
-                        if (FilenameUtils.getExtension(file.getName()).equals("db")) {
-                            String mTrimmedFile = FilenameUtils.removeExtension(file.getName());
-                            MyFiles.add(mTrimmedFile);
-                        }
-                    }
-					}
+    public ArrayList<String> getFiles(String DirectoryPath) {
+        ArrayList<String> MyFiles = new ArrayList<>();
+        File f = new File(DirectoryPath);
 
-                Collections.sort(MyFiles);
-				return MyFiles;
-			}
+        f.mkdirs();
+        File[] files = f.listFiles();
+        if (files.length == 0)
+            return null;
+        else {
+            for (File file : files) {
+                if (FilenameUtils.getExtension(file.getName()).equals("db")) {
+                    String mTrimmedFile = FilenameUtils.removeExtension(file.getName());
+                    MyFiles.add(mTrimmedFile);
+                }
+            }
+        }
+
+        Collections.sort(MyFiles);
+        return MyFiles;
+    }
 }

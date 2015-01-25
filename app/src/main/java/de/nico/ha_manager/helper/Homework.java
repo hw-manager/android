@@ -82,7 +82,7 @@ public class Homework {
         if (!(dir.exists()))
             dir.mkdir();
 
-		String dateStamp = new SimpleDateFormat("yyyy-MM-dd-hh:mm").format(new Date());
+        String dateStamp = new SimpleDateFormat("yyyy-MM-dd-hh:mm").format(new Date());
 
         // Path for Database
         File srcDB = new File(c.getApplicationInfo().dataDir
