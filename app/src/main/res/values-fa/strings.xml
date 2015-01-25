@@ -2,7 +2,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ایچ دبلیو-منیجر</string>
     <string name="title_subjects">عناوین</string>
     <string name="title_subject_offers">عناوین پیشنهادی</string>
@@ -69,7 +69,7 @@
         <item>فیزیک</item>
         <item>تربیت بدنی</item>
     </string-array>
-    <string-array name="subject_offers">
+    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
         <item>آفریقایی</item>
         <item>هنر</item>
         <item>نمایش</item>

@@ -2,7 +2,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">HA-Manager</string>
     <string name="title_subjects">Fächer</string>
     <string name="title_subject_offers">Fächer Vorschläge</string>
@@ -69,7 +69,7 @@
         <item>Physik</item>
         <item>Sport</item>
     </string-array>
-    <string-array name="subject_offers">
+    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
         <item>Afrikanisch</item>
         <item>Kunst</item>
         <item>Drama</item>

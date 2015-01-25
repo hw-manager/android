@@ -8,11 +8,13 @@ package de.nico.ha_manager.helper;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
-import de.nico.ha_manager.R;
-import de.nico.ha_manager.database.Source;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import de.nico.ha_manager.R;
+import de.nico.ha_manager.database.Source;
 
 public class Homework {
 
@@ -53,7 +55,7 @@ public class Homework {
 
         // Path for Database
         File srcDB = new File(Environment.getExternalStorageDirectory() + "/"
-                + c.getString(R.string.app_name) + "/" + filename);
+                + c.getString(R.string.app_name) + "/" + filename + ".db");
         File dstDB = new File(c.getApplicationInfo().dataDir
                 + "/databases/Homework.db");
 
@@ -79,7 +81,7 @@ public class Homework {
                 + c.getString(R.string.app_name));
         if (!(dir.exists()))
             dir.mkdir();
-			
+
 		String dateStamp = new SimpleDateFormat("yyyy-MM-dd-hh:mm").format(new Date());
 
         // Path for Database

@@ -9,23 +9,26 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.support.v4.app.NavUtils;
 import android.text.InputType;
 import android.view.MenuItem;
 import android.widget.EditText;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Locale;
+
 import de.nico.ha_manager.R;
+import de.nico.ha_manager.helper.FilenameUtils;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Locale;
-import android.os.Environment;
-import android.support.v4.app.NavUtils;
-import de.nico.ha_manager.helper.FilenameUtils;
 public class Preferences extends PreferenceActivity {
 
     private static Context c;
@@ -224,7 +227,7 @@ public class Preferences extends PreferenceActivity {
                 });
     }
 		public ArrayList<String> getFiles(String DirectoryPath) {
-				ArrayList<String> MyFiles = new ArrayList<String>();
+				ArrayList<String> MyFiles = new ArrayList<>();
 				File f = new File(DirectoryPath);
 
 				f.mkdirs();
@@ -232,12 +235,15 @@ public class Preferences extends PreferenceActivity {
 				if (files.length == 0)
 					return null;
 				else {
-						for (int i=0; i<files.length; i++) {
-								String mTrimmedFile = FilenameUtils.removeExtension(files[i].getName());
-							MyFiles.add(mTrimmedFile);
-						}
+                    for (File file : files) {
+                        if (FilenameUtils.getExtension(file.getName()).equals("db")) {
+                            String mTrimmedFile = FilenameUtils.removeExtension(file.getName());
+                            MyFiles.add(mTrimmedFile);
+                        }
+                    }
 					}
 
+                Collections.sort(MyFiles);
 				return MyFiles;
 			}
 }
