@@ -86,7 +86,7 @@
             android:title="@string/pref_about_current_version">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/AltNico/ha-manager/releases/latest"/>
+                android:data="https://github.com/hw-manager/android/releases/latest"/>
         </PreferenceScreen>
     </PreferenceCategory>
 
