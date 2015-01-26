@@ -44,7 +44,8 @@ public class Preferences extends PreferenceActivity {
         c = this;
         ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
                 + getString(R.string.app_name));
-        list = mArray.toArray(new String[mArray.size()]);
+        if (mArray != null)
+            list = mArray.toArray(new String[mArray.size()]);
 
 
         setBuildInfo();
