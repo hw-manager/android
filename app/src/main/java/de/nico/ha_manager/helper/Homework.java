@@ -76,24 +76,30 @@ public class Homework {
             Utils.makeShortToast(c, c.getString(R.string.toast_import_fail));
     }
 
-    public static void exportIt(Context c) {
+    public static void exportIt(Context c, boolean auto) {
         // Check if directory exists
         File dir = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name));
         if (!(dir.exists()))
             dir.mkdir();
 
-        String dateStamp = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
+        String stamp = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
+
+        if (auto)
+            stamp = "auto-backup";
 
         // Path for Database
         File srcDB = new File(c.getApplicationInfo().dataDir
                 + "/databases/Homework.db");
         File dstDB = new File(Environment.getExternalStorageDirectory() + "/"
-                + c.getString(R.string.app_name) + "/Homework-" + dateStamp + ".db");
+                + c.getString(R.string.app_name) + "/Homework-" + stamp + ".db");
 
-        if (Utils.transfer(srcDB, dstDB))
+        if (dstDB.exists())
+            dstDB.delete();
+
+        if (Utils.transfer(srcDB, dstDB) && !auto)
             Utils.makeShortToast(c, c.getString(R.string.toast_export_success));
-        else
+        else if (!auto)
             Utils.makeShortToast(c, c.getString(R.string.toast_export_fail));
     }
 

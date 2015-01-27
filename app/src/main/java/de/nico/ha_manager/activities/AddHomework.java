@@ -216,6 +216,9 @@ public class AddHomework extends FragmentActivity {
         // Entry in database
         Homework.add(this, ID, urgent, subject, homework, until);
 
+        // Auto-Backup
+        Homework.exportIt(this, true);
+
         finish();
     }
 

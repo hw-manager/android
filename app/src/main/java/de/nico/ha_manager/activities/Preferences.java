@@ -216,7 +216,7 @@ public class Preferences extends PreferenceActivity {
                                             @Override
                                             public void onClick(
                                                     DialogInterface d, int i) {
-                                                Homework.exportIt(c);
+                                                Homework.exportIt(c, false);
                                             }
 
                                         })
