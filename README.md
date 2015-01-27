@@ -19,7 +19,7 @@ Take a look at [Github Issues](https://github.com/hw-manager/android/issues).
 
 ## LICENSE ##
 
-See [LICENSE.txt](https://github.com/hw-manager/android/blob/develop/LICENSE.txt)
+See [LICENSE.txt](https://github.com/hw-manager/android/blob/master/LICENSE).
 
 ## Git ##
 
