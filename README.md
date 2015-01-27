@@ -23,7 +23,7 @@ Take a look at
 ## LICENSE
 
 See
-[LICENSE.txt](https://github.com/hw-manager/android/blob/master/LICENSE).
+[LICENSE](https://github.com/hw-manager/android/blob/master/LICENSE).
 
 ## Git
 
