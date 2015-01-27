@@ -5,8 +5,8 @@
 <manifest
     package="de.nico.ha_manager"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="20"
-    android:versionName="0.91">
+    android:versionCode="21"
+    android:versionName="0.92">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
