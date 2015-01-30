@@ -78,20 +78,17 @@ public class Utils {
         final boolean black = prefs.getBoolean("black", false);
 
         if (dark) {
-            if (isAddTheme) {
+            if (isAddTheme)
                 c.setTheme(R.style.DarkAddTheme);
-            } else {
+            else
                 c.setTheme(R.style.DarkAppTheme);
-            }
-            if (black) {
+            if (black)
                 c.getWindow().setBackgroundDrawableResource(android.R.color.black);
-            }
         } else {
-            if (isAddTheme) {
+            if (isAddTheme)
                 c.setTheme(R.style.AddTheme);
-            } else {
+            else
                 c.setTheme(R.style.AppTheme);
-            }
         }
 
     }
