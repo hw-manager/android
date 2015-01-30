@@ -29,7 +29,7 @@ public class SubjectOffers extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-		Utils.setTheme(this, false);
+        Utils.setTheme(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         update();

@@ -13,6 +13,6 @@
         <!-- API 11 theme customizations can go here. -->
     </style>
 
-	<style name="DarkAppBaseTheme" parent="android:Theme.Holo"/>
+    <style name="DarkAppBaseTheme" parent="android:Theme.Holo"/>
 
 </resources>

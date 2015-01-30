@@ -9,13 +9,14 @@ package de.nico.ha_manager.activities;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
-import android.support.v4.app.NavUtils;
 import android.text.InputType;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -30,9 +31,6 @@ import de.nico.ha_manager.helper.FilenameUtils;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
-import android.preference.CheckBoxPreference;
-import de.nico.ha_manager.HWManager;
-import android.content.Intent;
 
 public class Preferences extends PreferenceActivity {
 
@@ -42,7 +40,7 @@ public class Preferences extends PreferenceActivity {
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-		Utils.setTheme(this, false);
+        Utils.setTheme(this, false);
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         c = this;
@@ -56,13 +54,13 @@ public class Preferences extends PreferenceActivity {
         setLanguage();
         checkPreferences();
         Utils.setupActionBar(this, true);
-		}
+    }
 
-	@Override
-	public void onBackPressed() {
-		startActivity(new Intent(Preferences.this, Main.class));
-		finish();
-	}
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Preferences.this, Main.class));
+        finish();
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -114,25 +112,25 @@ public class Preferences extends PreferenceActivity {
             }
         });
 
-		CheckBoxPreference theme = (CheckBoxPreference) findPreference("theme");
-		theme
-			.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-				@Override
-				public boolean onPreferenceClick(Preference preference) {
-					recreate();
-					return true;
-				}
-			});
+        CheckBoxPreference theme = (CheckBoxPreference) findPreference("theme");
+        theme
+                .setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        recreate();
+                        return true;
+                    }
+                });
 
-		CheckBoxPreference black = (CheckBoxPreference) findPreference("black");
-		black
-			.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-				@Override
-				public boolean onPreferenceClick(Preference preference) {
-					recreate();
-					return true;
-				}
-			});
+        CheckBoxPreference black = (CheckBoxPreference) findPreference("black");
+        black
+                .setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        recreate();
+                        return true;
+                    }
+                });
 
         Preference subjects_add = findPreference("subjects_add");
         subjects_add

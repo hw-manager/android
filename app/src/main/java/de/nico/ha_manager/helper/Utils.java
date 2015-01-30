@@ -6,6 +6,7 @@ package de.nico.ha_manager.helper;
  * See the file "LICENSE.txt" for the full license governing this code.
  */
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.ActivityNotFoundException;
@@ -37,7 +38,6 @@ import java.util.zip.ZipFile;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Source;
-import android.app.Activity;
 
 public class Utils {
 
@@ -70,31 +70,31 @@ public class Utils {
         return tempArHa;
 
     }
-	
-		public static void setTheme(Activity c, boolean isAddTheme) {
-				SharedPreferences prefs = PreferenceManager
-					.getDefaultSharedPreferences(c);
-				final boolean dark = prefs.getBoolean("theme", false);
-				final boolean black = prefs.getBoolean("black", false);
 
-				if (dark) {
-						if (isAddTheme) {
-								c.setTheme(R.style.DarkAddTheme);
-							} else {
-								c.setTheme(R.style.DarkAppTheme);
-							}
-						if (black) {
-								c.getWindow().setBackgroundDrawableResource(android.R.color.black);
-							}
-					} else {
-						if (isAddTheme) {
-								c.setTheme(R.style.AddTheme);
-							} else {
-								c.setTheme(R.style.AppTheme);
-							}
-					}
+    public static void setTheme(Activity c, boolean isAddTheme) {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(c);
+        final boolean dark = prefs.getBoolean("theme", false);
+        final boolean black = prefs.getBoolean("black", false);
 
-			}
+        if (dark) {
+            if (isAddTheme) {
+                c.setTheme(R.style.DarkAddTheme);
+            } else {
+                c.setTheme(R.style.DarkAppTheme);
+            }
+            if (black) {
+                c.getWindow().setBackgroundDrawableResource(android.R.color.black);
+            }
+        } else {
+            if (isAddTheme) {
+                c.setTheme(R.style.AddTheme);
+            } else {
+                c.setTheme(R.style.AppTheme);
+            }
+        }
+
+    }
 
     /**
      * A fix for a VerifyError crash on old versions

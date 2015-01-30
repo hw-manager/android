@@ -22,7 +22,7 @@ public class About extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		Utils.setTheme(this, false);
+        Utils.setTheme(this, false);
         setContentView(R.layout.activity_about);
         update();
         Utils.setupActionBar(this, false);

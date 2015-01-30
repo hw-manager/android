@@ -17,17 +17,18 @@
 
         -->
     </style>
-	<style name="DarkAppBaseTheme" parent="android:Theme"/>
+
+    <style name="DarkAppBaseTheme" parent="android:Theme"/>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-	
-	<style name="DarkAppTheme" parent="DarkAppBaseTheme"/>
+
+    <style name="DarkAppTheme" parent="DarkAppBaseTheme"/>
 
     <style name="AddTheme" parent="AppBaseTheme"/>
-		
-	<style name="DarkAddTheme" parent="DarkAppBaseTheme"/>
+
+    <style name="DarkAddTheme" parent="DarkAppBaseTheme"/>
 
 </resources>

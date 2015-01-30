@@ -37,7 +37,7 @@ public class Main extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-		Utils.setTheme(this, false);
+        Utils.setTheme(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         setTitle(getString(R.string.title_homework));
@@ -68,7 +68,7 @@ public class Main extends FragmentActivity {
         switch (item.getItemId()) {
             case R.id.action_settings:
                 startActivity(new Intent(this, Preferences.class));
-				finish();
+                finish();
                 return true;
 
             case R.id.action_delete:
