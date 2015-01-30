@@ -37,6 +37,11 @@
     <string name="pref_subjects_overview_summary">A list containing all subjects</string>
     <string name="pref_subjects_reset">Reset</string>
     <string name="pref_subjects_reset_summary">Reset the subjects list to the default value</string>
+	<string name="pref_appearance">Appearance</string>
+	<string name="pref_theme">Use Dark Theme</string>
+	<string name="pref_theme_summary">Use a dark theme.</string>
+	<string name="pref_black">Use All-Black Background</string>
+	<string name="pref_black_summary">Can save battery on some devices.</string>
     <string name="pref_about_credits">Credits</string>
     <string name="pref_about_current_version">Current Version</string>
     <string name="pref_feedback">Send feedback</string>

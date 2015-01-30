@@ -41,6 +41,19 @@
             android:summary="@string/pref_subjects_reset_summary"
             android:title="@string/pref_subjects_reset"/>
     </PreferenceCategory>
+	<PreferenceCategory android:title="@string/pref_appearance">
+		<CheckBoxPreference
+			android:title="@string/pref_theme"
+			android:key="theme"
+			android:summary="@string/pref_theme_summary"
+			android:defaultValue="false"/>
+		<CheckBoxPreference
+			android:title="@string/pref_black"
+			android:summary="@string/pref_black_summary"
+			android:key="black"
+			android:dependency="theme"
+			android:defaultValue="false"/>
+	</PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_feedback">
         <Preference
             android:key="feedback_share"

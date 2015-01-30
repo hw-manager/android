@@ -30,6 +30,9 @@ import de.nico.ha_manager.helper.FilenameUtils;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
+import android.preference.CheckBoxPreference;
+import de.nico.ha_manager.HWManager;
+import android.content.Intent;
 
 public class Preferences extends PreferenceActivity {
 
@@ -39,6 +42,7 @@ public class Preferences extends PreferenceActivity {
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+		Utils.setTheme(this, false);
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         c = this;
@@ -52,14 +56,20 @@ public class Preferences extends PreferenceActivity {
         setLanguage();
         checkPreferences();
         Utils.setupActionBar(this, true);
-    }
+		}
+
+	@Override
+	public void onBackPressed() {
+		startActivity(new Intent(Preferences.this, Main.class));
+		finish();
+	}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+                onBackPressed();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -103,6 +113,26 @@ public class Preferences extends PreferenceActivity {
                 return true;
             }
         });
+
+		CheckBoxPreference theme = (CheckBoxPreference) findPreference("theme");
+		theme
+			.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+				@Override
+				public boolean onPreferenceClick(Preference preference) {
+					recreate();
+					return true;
+				}
+			});
+
+		CheckBoxPreference black = (CheckBoxPreference) findPreference("black");
+		black
+			.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+				@Override
+				public boolean onPreferenceClick(Preference preference) {
+					recreate();
+					return true;
+				}
+			});
 
         Preference subjects_add = findPreference("subjects_add");
         subjects_add
