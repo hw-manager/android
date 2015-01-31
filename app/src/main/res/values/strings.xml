@@ -79,7 +79,6 @@
     <string name="toast_import_fail">Import failed</string>
     <string name="toast_export_success">Export successfully</string>
     <string name="toast_export_fail">Export failed</string>
-    <string name="restart">Please restart the app for the changes to take effect.</string>
 
     <!-- Homework String Items -->
     <string name="action_urgent">Important!</string>

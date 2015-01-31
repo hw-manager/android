@@ -15,7 +15,7 @@ import android.text.TextUtils;
 import java.util.Locale;
 
 public class HWManager extends Application {
-    private static void updateLanguage(Context c) {
+    public static void updateLanguage(Context c) {
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(c);
         String lang = prefs.getString("locale_override", "");
