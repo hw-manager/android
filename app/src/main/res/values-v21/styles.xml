@@ -4,4 +4,6 @@
     <style name="AppBaseTheme" parent="android:Theme.Material.Light.DarkActionBar">
         <!-- TODO: Needs to be colorful. -->
     </style>
+
+    <style name="DarkAppBaseTheme" parent="android:Theme.Material"/>
 </resources>

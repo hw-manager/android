@@ -52,6 +52,7 @@ public class AddHomework extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Utils.setTheme(this, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
