@@ -36,6 +36,7 @@ import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import de.nico.ha_manager.HWManager;
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Source;
 
@@ -212,7 +213,7 @@ public class Utils {
                     editor.putString("locale_override", langs[which - 1]);
                     editor.commit();
                 }
-                makeLongToast(c, c.getString(R.string.restart));
+                HWManager.updateLanguage(c);
             }
 
         });
