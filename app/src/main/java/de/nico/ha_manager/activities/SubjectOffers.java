@@ -8,7 +8,9 @@ package de.nico.ha_manager.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
@@ -18,14 +20,15 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import java.util.Arrays;
-
 import de.nico.ha_manager.R;
+import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
+import java.util.Arrays;
 
 public class SubjectOffers extends FragmentActivity {
+	
+	private static boolean wasChanged = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +38,25 @@ public class SubjectOffers extends FragmentActivity {
         update();
         Utils.setupActionBar(this, false);
     }
+	
+	@Override
+	public void onBackPressed() {
+		if (wasChanged) {
+				// Auto-export
+				SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+				boolean autoExport = prefs.getBoolean("pref_autoexport", false);
+				if (autoExport)
+					Homework.exportIt(this, true);
+		}
+		super.onBackPressed();
+	}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+                onBackPressed();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -76,6 +91,7 @@ public class SubjectOffers extends FragmentActivity {
                                     @Override
                                     public void onClick(DialogInterface d, int i) {
                                         Subject.add(SubjectOffers.this, item);
+										wasChanged = true;
                                     }
                                 })
                         .setNegativeButton((getString(android.R.string.no)),

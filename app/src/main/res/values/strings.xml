@@ -24,6 +24,8 @@
     <string name="hw_urgent">Important</string>
     <string name="hw_homework">Homework</string>
     <string name="hw_add">Add</string>
+		<!-- TODO: Translate me -->
+	<string name="hw_save">Save</string>
 
     <!-- Preferences Page -->
     <string name="pref_language">Language</string>
@@ -39,7 +41,7 @@
     <string name="pref_subjects_reset_summary">Reset the subjects list to the default value</string>
     <string name="pref_appearance">Appearance</string>
     <string name="pref_theme">Use Dark Theme</string>
-    <string name="pref_theme_summary">Use a dark theme.</string>
+    <string name="pref_theme_summary">Uses a dark theme.</string>
     <string name="pref_black">Use All-Black Background</string>
     <string name="pref_black_summary">Can save battery on some devices.</string>
     <string name="pref_about_credits">Credits</string>
@@ -55,6 +57,8 @@
     <string name="pref_homework_import_summary">Import the homework from the SD</string>
     <string name="pref_homework_export">Export</string>
     <string name="pref_homework_export_summary">Export the homework to the SD</string>
+	<string name="pref_autoexport">Auto-Backup</string>
+	<string name="pref_autoexport_summary">Automatically backup when a change is made.</string>
 
     <!-- Dialogs -->
     <string name="dialog_addSubject">Add Subject</string>

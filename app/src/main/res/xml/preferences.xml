@@ -9,6 +9,11 @@
             android:key="pref_importexport_export"
             android:summary="@string/pref_homework_export_summary"
             android:title="@string/pref_homework_export"/>
+		<CheckBoxPreference
+			android:defaultValue="false"
+			android:key="pref_autoexport"
+			android:summary="@string/pref_autoexport_summary"
+			android:title="@string/pref_autoexport_summary"/>
         <PreferenceScreen
             android:key="pref_importexport_import"
             android:summary="@string/pref_homework_import_summary"

@@ -10,7 +10,9 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
@@ -22,19 +24,17 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-
+import de.nico.ha_manager.R;
+import de.nico.ha_manager.database.Source;
+import de.nico.ha_manager.helper.Homework;
+import de.nico.ha_manager.helper.Subject;
+import de.nico.ha_manager.helper.Utils;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
-
-import de.nico.ha_manager.R;
-import de.nico.ha_manager.database.Source;
-import de.nico.ha_manager.helper.Homework;
-import de.nico.ha_manager.helper.Subject;
-import de.nico.ha_manager.helper.Utils;
 
 @SuppressLint("SimpleDateFormat")
 public class AddHomework extends FragmentActivity {
@@ -47,6 +47,9 @@ public class AddHomework extends FragmentActivity {
 
     // 0 is year, 1 is month and 2 is day
     private static int[] date;
+	
+	// Date in milliseconds
+	private static long mills;
 
     private static String ID = null;
 
@@ -105,6 +108,9 @@ public class AddHomework extends FragmentActivity {
                 CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox_urgent);
                 checkBox.setChecked(true);
             }
+			// Change the "Add" button to "Save"
+			Button mAdd = (Button) findViewById(R.id.button_add);
+			mAdd.setText(R.string.hw_save);
 
             // Set Subject
             String subject = extras.getString(Source.allColumns[2]);
@@ -217,8 +223,11 @@ public class AddHomework extends FragmentActivity {
         // Entry in database
         Homework.add(this, ID, urgent, subject, homework, until);
 
-        // Auto-Backup
-        Homework.exportIt(this, true);
+		// Auto-export
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		boolean autoExport = prefs.getBoolean("pref_autoexport", false);
+		if (autoExport)
+        	Homework.exportIt(this, true);
 
         finish();
     }
