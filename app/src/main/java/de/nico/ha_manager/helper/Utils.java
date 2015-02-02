@@ -72,15 +72,15 @@ public class Utils {
 
     }
 
-	/**
-	 * Sets the theme.
-	 * @param c {@link android.app.Activity} - It would be Context, but we need to 
-	 * set the window background of the Activity, so Activity extends Context, so it 
-	 * works out.
-	 * 
-	 * @param isAddTheme Since we use the DialogWhenLarge theme on tablets in the add
-	 * activity, we need to incorporate that.
-	 */
+    /**
+     * Sets the theme.
+     *
+     * @param c          {@link android.app.Activity} - It would be Context, but we need to
+     *                   set the window background of the Activity, so Activity extends Context, so it
+     *                   works out.
+     * @param isAddTheme Since we use the DialogWhenLarge theme on tablets in the add
+     *                   activity, we need to incorporate that.
+     */
     public static void setTheme(Activity c, boolean isAddTheme) {
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(c);

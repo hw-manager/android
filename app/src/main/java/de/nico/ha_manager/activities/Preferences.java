@@ -22,15 +22,17 @@ import android.preference.PreferenceScreen;
 import android.text.InputType;
 import android.view.MenuItem;
 import android.widget.EditText;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Locale;
+
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.FilenameUtils;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Utils;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Locale;
 
 public class Preferences extends PreferenceActivity {
 
@@ -44,8 +46,8 @@ public class Preferences extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         c = this;
-		
-		setImportDialog();
+
+        setImportDialog();
         setBuildInfo();
         setLanguage();
         checkPreferences();
@@ -68,36 +70,36 @@ public class Preferences extends PreferenceActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-	
-	@SuppressWarnings("deprecation")
-	private void setImportDialog() {
-		ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
-											+ getString(R.string.app_name));
-		if (mArray != null)
-			list = mArray.toArray(new String[mArray.size()]);
-			Preference importexport_import = findPreference("pref_importexport_import");
-			importexport_import.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-					@Override
-					public boolean onPreferenceClick(Preference preference) {
-							AlertDialog.Builder alertDialog = new AlertDialog.Builder(c);
-							alertDialog.setTitle(getString(R.string.pref_homework_import))
-								.setNegativeButton(getString(android.R.string.cancel),
-								new DialogInterface.OnClickListener() {
-										@Override
-										public void onClick(
-											DialogInterface d, int i) {
-												d.dismiss();
-											}
-									})
-								.setItems(list, new DialogInterface.OnClickListener() {
-										public void onClick(DialogInterface dialog, int item) {
-												Homework.importIt(c, list[item]);
-											}
-									}).show();
-							return true;
-						}
-					});
-	}
+
+    @SuppressWarnings("deprecation")
+    private void setImportDialog() {
+        ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
+                + getString(R.string.app_name));
+        if (mArray != null)
+            list = mArray.toArray(new String[mArray.size()]);
+        Preference importexport_import = findPreference("pref_importexport_import");
+        importexport_import.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(c);
+                alertDialog.setTitle(getString(R.string.pref_homework_import))
+                        .setNegativeButton(getString(android.R.string.cancel),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface d, int i) {
+                                        d.dismiss();
+                                    }
+                                })
+                        .setItems(list, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int item) {
+                                Homework.importIt(c, list[item]);
+                            }
+                        }).show();
+                return true;
+            }
+        });
+    }
 
     @SuppressWarnings("deprecation")
     private void setBuildInfo() {
@@ -140,21 +142,21 @@ public class Preferences extends PreferenceActivity {
 
         CheckBoxPreference pref_theme = (CheckBoxPreference) findPreference("theme");
         pref_theme.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        recreate();
-                        return true;
-                    }
-                });
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                recreate();
+                return true;
+            }
+        });
 
         CheckBoxPreference pref_black = (CheckBoxPreference) findPreference("black");
         pref_black.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        recreate();
-                        return true;
-                    }
-                });
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                recreate();
+                return true;
+            }
+        });
 
         Preference subjects_add = findPreference("subjects_add");
         subjects_add
@@ -179,11 +181,11 @@ public class Preferences extends PreferenceActivity {
                                                     DialogInterface d, int i) {
                                                 Subject.add(c, input.getText()
                                                         .toString());
-													// Auto-export
-													SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Preferences.this);
-													boolean autoExport = prefs.getBoolean("pref_autoexport", false);
-													if (autoExport)
-														Homework.exportIt(Preferences.this, true);
+                                                // Auto-export
+                                                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Preferences.this);
+                                                boolean autoExport = prefs.getBoolean("pref_autoexport", false);
+                                                if (autoExport)
+                                                    Homework.exportIt(Preferences.this, true);
                                             }
                                         })
                                 .setNegativeButton(
@@ -251,8 +253,8 @@ public class Preferences extends PreferenceActivity {
                                             public void onClick(
                                                     DialogInterface d, int i) {
                                                 Homework.exportIt(c, false);
-												// Reload the Import dialog.
-												setImportDialog();
+                                                // Reload the Import dialog.
+                                                setImportDialog();
                                             }
 
                                         })
@@ -266,10 +268,10 @@ public class Preferences extends PreferenceActivity {
                 });
     }
 
-	/**
-	 * Gets a list of the *.db files in /sdcard/HW-Manager/
-	 * for the import dialog.
-	 */
+    /**
+     * Gets a list of the *.db files in /sdcard/HW-Manager/
+     * for the import dialog.
+     */
     public ArrayList<String> getFiles(String DirectoryPath) {
         ArrayList<String> myFiles = new ArrayList<>();
         File f = new File(DirectoryPath);
@@ -280,19 +282,19 @@ public class Preferences extends PreferenceActivity {
             return null;
         else {
             for (File file : files) {
-				// We only want .db files here.
+                // We only want .db files here.
                 if (FilenameUtils.getExtension(file.getName()).equals("db")) {
-					// Since the file extensions are all the same, we can just remove them.
+                    // Since the file extensions are all the same, we can just remove them.
                     String mTrimmedFile = FilenameUtils.removeExtension(file.getName());
                     myFiles.add(mTrimmedFile);
                 }
             }
         }
 
-		// Make sure the list is in alphabetical order. It already will.
+        // Make sure the list is in alphabetical order. It already will.
         Collections.sort(myFiles);
-		// Reverse the order so newest is on top.
-		Collections.reverse(myFiles);
+        // Reverse the order so newest is on top.
+        Collections.reverse(myFiles);
         return myFiles;
     }
 }
