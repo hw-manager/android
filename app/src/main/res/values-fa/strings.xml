@@ -30,6 +30,11 @@
     <string name="pref_subjects_overview_summary">فهرست دربردارنده‌ی همه‌ی عناوین</string>
     <string name="pref_subjects_reset">ریست</string>
     <string name="pref_subjects_reset_summary">ریست کردن فهرست عناوین به مقادیر پیش‌فرض</string>
+    <string name="pref_appearance">ظاهر</string>
+    <string name="pref_theme">استفاده از تم تیره</string>
+    <string name="pref_theme_summary">از تم تیره استفاده کنید.</string>
+    <string name="pref_black">استفاده از پس‌زمینه‌ی سیاه</string>
+    <string name="pref_black_summary">در برخی دستگاه‌ها سبب حفظ باتری می‌شود.</string>
     <string name="pref_about_credits">پدیدآورندگان</string>
     <string name="pref_about_current_version">نسخه‌ی جاری</string>
     <string name="pref_feedback">ارسال بازخورد</string>
@@ -61,7 +66,6 @@
     <string name="toast_import_fail">فراخوانی ناموفق</string>
     <string name="toast_export_success">با موفقیت صادر شد</string>
     <string name="toast_export_fail">صدور ناموفق</string>
-    <string name="restart">لطفاْ به منظور اعمال تغییرات، برنامه را از نو راه‌اندازی کنید.</string>
     <string name="action_urgent">مهم!</string>
     <string-array name="subjects">
         <item>زیست‌شناسی</item>
