@@ -4,7 +4,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">HW-Manager</string>
     <string name="title_subjects">Subjects</string>
     <string name="title_subject_offers">Subject Suggestions</string>
@@ -30,6 +30,11 @@
     <string name="pref_subjects_overview_summary">A list containing all subjects</string>
     <string name="pref_subjects_reset">Reset</string>
     <string name="pref_subjects_reset_summary">Reset the subjects list to the default value</string>
+    <string name="pref_appearance">Appearance</string>
+    <string name="pref_theme">Use Dark Theme</string>
+    <string name="pref_theme_summary">Use a dark theme.</string>
+    <string name="pref_black">Use All-Black Background</string>
+    <string name="pref_black_summary">Can save battery on some devices.</string>
     <string name="pref_about_credits">Credits</string>
     <string name="pref_about_current_version">Current Version</string>
     <string name="pref_feedback">Send feedback</string>
@@ -61,7 +66,6 @@
     <string name="toast_import_fail">Import failed</string>
     <string name="toast_export_success">Export successfully</string>
     <string name="toast_export_fail">Export failed</string>
-    <string name="restart">Please restart the app for the changes to take effect.</string>
     <string name="action_urgent">Important!</string>
     <string-array name="subjects">
         <item>Biology</item>
@@ -72,7 +76,7 @@
         <item>Physics</item>
         <item>Sports</item>
     </string-array>
-    <string-array name="subject_offers">
+    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
         <item>Afrikaans</item>
         <item>Art</item>
         <item>Drama</item>

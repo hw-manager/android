@@ -16,7 +16,7 @@
     <string name="action_settings">Einstellungen</string>
     <string name="hw_subject">Fach</string>
     <string name="hw_until">Bis</string>
-    <string name="hw_urgent">Dringend?</string>
+    <string name="hw_urgent">Wichtig</string>
     <string name="hw_homework">Hausaufgabe</string>
     <string name="hw_add">Hinzufügen</string>
     <string name="pref_language">Sprache</string>
@@ -30,6 +30,11 @@
     <string name="pref_subjects_overview_summary">Eine Liste mit allen Fächern</string>
     <string name="pref_subjects_reset">Zurücksetzen</string>
     <string name="pref_subjects_reset_summary">Setze die Fächerliste auf den Ursprungszustand zurück</string>
+    <string name="pref_appearance">Aussehen</string>
+    <string name="pref_theme">Dunkles Thema</string>
+    <string name="pref_theme_summary">Ein dunkles Thema benutzen.</string>
+    <string name="pref_black">Schwarzes Thema</string>
+    <string name="pref_black_summary">Kann auf einigen Geräten Energie sparen.</string>
     <string name="pref_about_credits">Credits</string>
     <string name="pref_about_current_version">Aktuelle Version</string>
     <string name="pref_feedback">Feedback</string>
@@ -61,8 +66,7 @@
     <string name="toast_import_fail">Importieren fehlgeschlagen</string>
     <string name="toast_export_success">Exportieren erfolgreich</string>
     <string name="toast_export_fail">Exportieren fehlgeschlagen</string>
-    <string name="restart">Damit die Änderungen wirksam werden, muss die App neugestartet werden.</string>
-    <string name="action_urgent">Dringend!</string>
+    <string name="action_urgent">Wichtig!</string>
     <string-array name="subjects">
         <item>Biologie</item>
         <item>Chemie</item>
