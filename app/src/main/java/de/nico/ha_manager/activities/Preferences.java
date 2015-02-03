@@ -10,14 +10,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
-import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.text.InputType;
 import android.view.MenuItem;
@@ -181,11 +179,6 @@ public class Preferences extends PreferenceActivity {
                                                     DialogInterface d, int i) {
                                                 Subject.add(c, input.getText()
                                                         .toString());
-                                                // Auto-export
-                                                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Preferences.this);
-                                                boolean autoExport = prefs.getBoolean("pref_autoexport", false);
-                                                if (autoExport)
-                                                    Homework.exportIt(Preferences.this, true);
                                             }
                                         })
                                 .setNegativeButton(
