@@ -169,11 +169,6 @@ public class Main extends FragmentActivity {
                             @Override
                             public void onClick(DialogInterface d, int i) {
                                 Homework.deleteOne(Main.this, currentID);
-                                // Auto-export
-                                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Main.this);
-                                boolean autoExport = prefs.getBoolean("pref_autoexport", false);
-                                if (autoExport)
-                                    Homework.exportIt(Main.this, true);
                                 update();
 
                             }
@@ -194,11 +189,6 @@ public class Main extends FragmentActivity {
                             @Override
                             public void onClick(DialogInterface d, int i) {
                                 Homework.deleteAll(Main.this);
-                                // Auto-export
-                                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Main.this);
-                                boolean autoExport = prefs.getBoolean("pref_autoexport", false);
-                                if (autoExport)
-                                    Homework.exportIt(Main.this, true);
                                 update();
                             }
                         })
