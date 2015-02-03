@@ -50,9 +50,6 @@ public class AddHomework extends FragmentActivity {
     // 0 is year, 1 is month and 2 is day
     private static int[] date;
 
-    // Date in milliseconds
-    private static long mills;
-
     private static String ID = null;
 
     @Override
