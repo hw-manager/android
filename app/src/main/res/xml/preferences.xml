@@ -17,7 +17,12 @@
             android:defaultValue="true"
             android:key="pref_autoexport"
             android:summary="@string/pref_autoexport_summary"
-            android:title="@string/pref_autoexport_summary"/>
+            android:title="@string/pref_autoexport"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_sortbytime"
+            android:summary="@string/pref_sortbytime_summary"
+            android:title="@string/pref_sortbytime"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_subjects">
         <Preference

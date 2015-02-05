@@ -114,7 +114,7 @@ public class Main extends FragmentActivity {
         // Get content from SQLite Database
         try {
             s.open();
-            hwArray = s.get();
+            hwArray = s.get(this);
             s.close();
         } catch (Exception ex) {
             Log.e("Update Homework List:", ex.toString());

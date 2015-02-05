@@ -59,6 +59,8 @@
     <string name="pref_homework_export_summary">Export the homework to the SD</string>
     <string name="pref_autoexport">Auto-Backup</string>
     <string name="pref_autoexport_summary">Automatically backup when a change is made.</string>
+    <string name="pref_sortbytime">Sort by time</string>
+    <string name="pref_sortbytime_summary">Sort the homework list by the time until the homework has to be finished.</string>
 
     <!-- Dialogs -->
     <string name="dialog_addSubject">Add Subject</string>

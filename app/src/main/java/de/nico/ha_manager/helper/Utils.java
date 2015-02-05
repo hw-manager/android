@@ -247,7 +247,7 @@ public class Utils {
     }
 
     // Milliseconds
-    public static String convertToDate (long time) {
+    public static String convertToDate(long time) {
         String until;
         // Format to 31.12.14 or local version of that
         DateFormat f = DateFormat.getDateInstance(DateFormat.SHORT,
@@ -265,7 +265,7 @@ public class Utils {
     }
 
     // Milliseconds
-    public static String convertToDate (int[] time) {
+    public static String convertToDate(int[] time) {
         String until;
         // Format to 31.12.14 or local version of that
         DateFormat f = DateFormat.getDateInstance(DateFormat.SHORT,
@@ -281,7 +281,7 @@ public class Utils {
         return until;
     }
 
-    public static long convertToMilliseconds (int[] time) {
+    public static long convertToMilliseconds(int[] time) {
         GregorianCalendar gc = new GregorianCalendar(time[0], time[1], time[2]);
         return gc.getTimeInMillis();
     }

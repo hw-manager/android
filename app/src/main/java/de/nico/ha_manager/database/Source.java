@@ -7,11 +7,15 @@ package de.nico.ha_manager.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.preference.PreferenceManager;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 import de.nico.ha_manager.helper.Homework;
@@ -64,7 +68,7 @@ public class Source {
         close();
     }
 
-    public ArrayList<HashMap<String, String>> get() {
+    public ArrayList<HashMap<String, String>> get(Context c) {
         ArrayList<HashMap<String, String>> entriesList = new ArrayList<>();
 
         Cursor cursor = database.query("HOMEWORK", allColumns, null, null,
@@ -80,14 +84,10 @@ public class Source {
             for (int i = 1; i < 5; i++) {
                 if (i == 4) {
                     if (cursor.getString(i).equals("")) {
-                        long time = Long.valueOf(cursor.getString(i + 1)).longValue();
-                        String date = Utils.convertToDate(time);
-                        temp.put(allColumns[i], date);
-                    }
-                    else
-                        temp.put(allColumns[i], cursor.getString(i));
-                }
-                else
+                        temp.put(allColumns[i], cursor.getString(i + 1));
+                    } else
+                        temp.put(allColumns[i], "0");
+                } else
                     temp.put(allColumns[i], cursor.getString(i));
             }
             entriesList.add(temp);
@@ -95,6 +95,28 @@ public class Source {
         }
 
         cursor.close();
+
+        // Sort
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+        if (prefs.getBoolean("pref_sortbytime", false))
+            Collections.sort(entriesList, new Comparator<HashMap<String, String>>() {
+
+                @Override
+                public int compare(HashMap<String, String> lhs, HashMap<String, String> rhs) {
+                    long a = Long.valueOf(lhs.get(allColumns[4])).longValue();
+                    long b = Long.valueOf(rhs.get(allColumns[4])).longValue();
+                    return Long.valueOf(a).compareTo(Long.valueOf(b));
+                }
+            });
+
+        // Convert milliseconds to date
+        for (int i = 0; i < entriesList.size(); i++) {
+            HashMap<String, String> temp = entriesList.get(i);
+            long time = Long.valueOf(temp.get(allColumns[4])).longValue();
+            String date = Utils.convertToDate(time);
+            temp.remove(allColumns[4]);
+            temp.put(allColumns[4], date);
+        }
 
         return entriesList;
     }
