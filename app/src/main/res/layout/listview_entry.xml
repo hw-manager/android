@@ -75,7 +75,7 @@
                 android:layout_weight="2"
                 android:ellipsize="end"
                 android:gravity="start"
-                android:singleLine="true"
+                android:singleLine="false"
                 android:textSize="13sp"
                 tools:text="Homework"/>
 
