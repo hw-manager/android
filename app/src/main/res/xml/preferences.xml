@@ -23,6 +23,11 @@
             android:key="pref_sortbytime"
             android:summary="@string/pref_sortbytime_summary"
             android:title="@string/pref_sortbytime"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_sortbyimportance"
+            android:summary="@string/pref_sortbyimportance_summary"
+            android:title="@string/pref_sortbyimportance"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_subjects">
         <Preference

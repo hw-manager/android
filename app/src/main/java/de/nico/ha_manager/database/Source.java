@@ -96,7 +96,7 @@ public class Source {
 
         cursor.close();
 
-        // Sort
+        // Sort by time
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
         if (prefs.getBoolean("pref_sortbytime", false))
             Collections.sort(entriesList, new Comparator<HashMap<String, String>>() {
@@ -106,6 +106,18 @@ public class Source {
                     long a = Long.valueOf(lhs.get(allColumns[4])).longValue();
                     long b = Long.valueOf(rhs.get(allColumns[4])).longValue();
                     return Long.valueOf(a).compareTo(Long.valueOf(b));
+                }
+            });
+
+        // Sort by importance
+        if (prefs.getBoolean("pref_sortbyimportance", false))
+            Collections.sort(entriesList, new Comparator<HashMap<String, String>>() {
+
+                @Override
+                public int compare(HashMap<String, String> lhs, HashMap<String, String> rhs) {
+                    String a = rhs.get(allColumns[1]);
+                    String b = lhs.get(allColumns[1]);
+                    return a.compareTo(b);
                 }
             });
 

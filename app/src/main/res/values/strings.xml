@@ -61,6 +61,8 @@
     <string name="pref_autoexport_summary">Automatically backup when a change is made.</string>
     <string name="pref_sortbytime">Sort by time</string>
     <string name="pref_sortbytime_summary">Sort the homework list by the time until the homework has to be finished.</string>
+    <string name="pref_sortbyimportance">Sort by importance</string>
+    <string name="pref_sortbyimportance_summary">Important homework will be shown at the top.</string>
 
     <!-- Dialogs -->
     <string name="dialog_addSubject">Add Subject</string>
