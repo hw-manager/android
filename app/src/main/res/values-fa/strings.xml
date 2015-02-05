@@ -4,7 +4,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">ایچ دبلیو-منیجر</string>
     <string name="title_subjects">عناوین</string>
     <string name="title_subject_offers">عناوین پیشنهادی</string>
@@ -19,6 +19,7 @@
     <string name="hw_urgent">مهم</string>
     <string name="hw_homework">تکلیف درسی</string>
     <string name="hw_add">افزودن</string>
+    <string name="hw_save">ذخيره</string>
     <string name="pref_language">زبان</string>
     <string name="pref_language_default">پیش‌فرضِ سیستم</string>
     <string name="pref_subjects">عناوین</string>
@@ -48,6 +49,8 @@
     <string name="pref_homework_import_summary">فراخوانی تکلیف درسی از اس دی</string>
     <string name="pref_homework_export">صدور</string>
     <string name="pref_homework_export_summary">صادر کردن تکلیف درسی به اس دی</string>
+    <string name="pref_autoexport">پشتیبان‌گیریِ خودکار</string>
+    <string name="pref_autoexport_summary">وقتی تغییری ایجاد شد خودکار پشتیبان بگیر.</string>
     <string name="dialog_addSubject">افزودن عنوان</string>
     <string name="dialog_addSubject_message">کدام عنوان را می‌خواهید بیفزایید؟</string>
     <string name="dialog_edit">ویرایش</string>
@@ -76,7 +79,7 @@
         <item>فیزیک</item>
         <item>تربیت بدنی</item>
     </string-array>
-    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
+    <string-array name="subject_offers">
         <item>آفریقایی</item>
         <item>هنر</item>
         <item>نمایش</item>

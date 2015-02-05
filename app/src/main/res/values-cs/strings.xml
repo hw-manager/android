@@ -4,7 +4,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">HW-Manager</string>
     <string name="title_subjects">Předměty</string>
     <string name="title_subject_offers">Další předměty</string>
@@ -19,6 +19,7 @@
     <string name="hw_urgent">Naléhavý?</string>
     <string name="hw_homework">Domácí úkol</string>
     <string name="hw_add">Přidat</string>
+    <string name="hw_save">Save</string>
     <string name="pref_language">Jazyk</string>
     <string name="pref_language_default">Výchozí</string>
     <string name="pref_subjects">Předměty</string>
@@ -48,6 +49,8 @@
     <string name="pref_homework_import_summary">Importovat domácí úkoly z SD karty</string>
     <string name="pref_homework_export">Export</string>
     <string name="pref_homework_export_summary">Exportovat domácí úkoly na SD kartu</string>
+    <string name="pref_autoexport">Auto-Backup</string>
+    <string name="pref_autoexport_summary">Automatically backup when a change is made.</string>
     <string name="dialog_addSubject">Přidat předmět</string>
     <string name="dialog_addSubject_message">Jaký předmět chcete přidat?</string>
     <string name="dialog_edit">Upravit</string>
@@ -76,7 +79,7 @@
         <item>Fyzika</item>
         <item>Tělocvik</item>
     </string-array>
-    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
+    <string-array name="subject_offers">
         <item>Afrikánština</item>
         <item>Umění</item>
         <item>Drama</item>

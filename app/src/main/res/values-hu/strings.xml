@@ -4,7 +4,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">HW-Manager</string>
     <string name="title_subjects">Tantárgyak</string>
     <string name="title_subject_offers">Tantárgy javaslatok</string>
@@ -19,6 +19,7 @@
     <string name="hw_urgent">Fontos</string>
     <string name="hw_homework">Házi feladat</string>
     <string name="hw_add">Hozzáadás</string>
+    <string name="hw_save">Mentés</string>
     <string name="pref_language">Nyelv</string>
     <string name="pref_language_default">Rendszer alapértelmezett</string>
     <string name="pref_subjects">Tantárgyak</string>
@@ -48,6 +49,8 @@
     <string name="pref_homework_import_summary">Házi feladat importálása SD kártyáról</string>
     <string name="pref_homework_export">Exportálás</string>
     <string name="pref_homework_export_summary">Házi feladat exportálása SD kártyára</string>
+    <string name="pref_autoexport">Automatikus biztonsági másolat</string>
+    <string name="pref_autoexport_summary">Automatikus biztonsági másolat készül minden változásnál.</string>
     <string name="dialog_addSubject">Tantárgy hozzáadása</string>
     <string name="dialog_addSubject_message">Melyik tantárgyat akarod felvenni?</string>
     <string name="dialog_edit">Szerkesztés</string>
@@ -76,7 +79,7 @@
         <item>Fizika</item>
         <item>Testnevelés</item>
     </string-array>
-    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
+    <string-array name="subject_offers">
         <item>Búr</item>
         <item>Művészet</item>
         <item>Dráma</item>

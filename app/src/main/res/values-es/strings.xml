@@ -4,7 +4,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">HW-Manager</string>
     <string name="title_subjects">Asignaturas</string>
     <string name="title_subject_offers">Sugerencias de Asignaturas</string>
@@ -19,6 +19,7 @@
     <string name="hw_urgent">Importante</string>
     <string name="hw_homework">Deberes</string>
     <string name="hw_add">Añadir</string>
+    <string name="hw_save">Guardar</string>
     <string name="pref_language">Idioma</string>
     <string name="pref_language_default">Configurado en el sistema</string>
     <string name="pref_subjects">Asignaturas</string>
@@ -48,6 +49,8 @@
     <string name="pref_homework_import_summary">Importar la tarea de la SD</string>
     <string name="pref_homework_export">Exportar</string>
     <string name="pref_homework_export_summary">Exportar la tarea a la SD</string>
+    <string name="pref_autoexport">Copia de seguridad automática</string>
+    <string name="pref_autoexport_summary">Copia de seguridad automáticamente cuando se realiza un cambio.</string>
     <string name="dialog_addSubject">Añadir una asignatura</string>
     <string name="dialog_addSubject_message">¿Qué asignatura quieres añadir?</string>
     <string name="dialog_edit">Editar</string>
@@ -76,7 +79,7 @@
         <item>Física</item>
         <item>Deportes</item>
     </string-array>
-    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
+    <string-array name="subject_offers">
         <item>Africano</item>
         <item>Arte</item>
         <item>Drama</item>

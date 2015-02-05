@@ -4,7 +4,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">HA-Manager</string>
     <string name="title_subjects">Fächer</string>
     <string name="title_subject_offers">Fächer Vorschläge</string>
@@ -19,6 +19,7 @@
     <string name="hw_urgent">Wichtig</string>
     <string name="hw_homework">Hausaufgabe</string>
     <string name="hw_add">Hinzufügen</string>
+    <string name="hw_save">Speichern</string>
     <string name="pref_language">Sprache</string>
     <string name="pref_language_default">Systemvorgabe</string>
     <string name="pref_subjects">Fächer</string>
@@ -48,6 +49,8 @@
     <string name="pref_homework_import_summary">Hausaufgaben von der SD-Karte importieren</string>
     <string name="pref_homework_export">Exportieren</string>
     <string name="pref_homework_export_summary">Hausaufgaben auf die SD-Karte exportieren</string>
+    <string name="pref_autoexport">Automatisches Backup</string>
+    <string name="pref_autoexport_summary">Exportiert automatisch die Hausaufgaben, wenn eine Änderung vorgenommen wird.</string>
     <string name="dialog_addSubject">Fach hinzufügen</string>
     <string name="dialog_addSubject_message">Welches Fach möchtest du hinzufügen?</string>
     <string name="dialog_edit">Bearbeiten</string>
@@ -76,7 +79,7 @@
         <item>Physik</item>
         <item>Sport</item>
     </string-array>
-    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
+    <string-array name="subject_offers">
         <item>Afrikanisch</item>
         <item>Kunst</item>
         <item>Drama</item>

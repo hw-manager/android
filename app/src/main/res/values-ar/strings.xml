@@ -4,7 +4,7 @@
 	Author: Nico Alt
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">اتش دبلیو-منیجر</string>
     <string name="title_subjects">المواضيع</string>
     <string name="title_subject_offers">مواضیع المقترحة</string>
@@ -19,6 +19,7 @@
     <string name="hw_urgent">هام</string>
     <string name="hw_homework">الواجبات المنزلية</string>
     <string name="hw_add">اضافة</string>
+    <string name="hw_save">حفظ</string>
     <string name="pref_language">اللُّغة</string>
     <string name="pref_language_default">الوضع الافتراضي للنظام</string>
     <string name="pref_subjects">المواضيع</string>
@@ -48,6 +49,8 @@
     <string name="pref_homework_import_summary">استيراد الواجبات المنزلية من SD</string>
     <string name="pref_homework_export">تصدير</string>
     <string name="pref_homework_export_summary">تصدير الواجبات المنزلية إلى SD</string>
+    <string name="pref_autoexport">النسخ الاحتياطي التلقائي</string>
+    <string name="pref_autoexport_summary">النسخ الاحتياطي تلقائياً عندما يتم إجراء تغيير.</string>
     <string name="dialog_addSubject">إضافة موضوع</string>
     <string name="dialog_addSubject_message">تريد إضافة أي موضوع؟</string>
     <string name="dialog_edit">تعديل</string>
@@ -76,7 +79,7 @@
         <item>الفيزياء</item>
         <item>الألعاب الرياضية</item>
     </string-array>
-    <string-array name="subject_offers" tools:ignore="InconsistentArrays">
+    <string-array name="subject_offers">
         <item>الأفريقية</item>
         <item>فن</item>
         <item>دراما</item>
