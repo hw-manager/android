@@ -50,6 +50,9 @@ public class AddHomework extends FragmentActivity {
     // 0 is year, 1 is month and 2 is day
     private static int[] date;
 
+    // Time in milliseconds
+    private static long time;
+
     private static String ID = null;
 
     @Override
@@ -117,9 +120,9 @@ public class AddHomework extends FragmentActivity {
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                     android.R.layout.simple_spinner_item, subjects);
             // Get position in subject list
-            int spinnerPostion = adapter.getPosition(subject);
+            int spinnerPosition = adapter.getPosition(subject);
             // If subject is not in subject list
-            if (spinnerPostion == -1) {
+            if (spinnerPosition == -1) {
                 int size = subjects.length;
                 String[] tmp = new String[size + 1];
                 System.arraycopy(subjects, 0, tmp, 0, size);
@@ -130,10 +133,10 @@ public class AddHomework extends FragmentActivity {
                 setSpinner();
                 adapter = new ArrayAdapter<>(this,
                         android.R.layout.simple_spinner_item, subjects);
-                spinnerPostion = adapter.getPosition(subject);
+                spinnerPosition = adapter.getPosition(subject);
             }
 
-            subSpin.setSelection(spinnerPostion);
+            subSpin.setSelection(spinnerPosition);
 
             // Set Homework
             EditText hwEdit = (EditText) findViewById(R.id.editText_homework);
@@ -147,21 +150,10 @@ public class AddHomework extends FragmentActivity {
     }
 
     private void setTextViewUntil(int[] date) {
-        // Format to 31.12.14 or local version of that
-        DateFormat f = DateFormat.getDateInstance(DateFormat.SHORT,
-                Locale.getDefault());
-        GregorianCalendar gc = new GregorianCalendar(date[0], date[1], date[2]);
-        until = f.format(gc.getTime());
-
-        // Format to Week of Day, for example Mo. or local version of that
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE",
-                Locale.getDefault());
-        String asWeek = dateFormat.format(gc.getTime());
-
-        // Tab space because else the date is too far to the left
-        until = (asWeek + ", " + until);
+        until = Utils.convertToDate(date);
         Button untilButton = (Button) findViewById(R.id.button_until);
         untilButton.setText(until);
+        time = Utils.convertToMilliseconds(date);
 
     }
 
@@ -220,7 +212,7 @@ public class AddHomework extends FragmentActivity {
         String homework = hwEdit.getText().toString();
 
         // Entry in database
-        Homework.add(this, ID, urgent, subject, homework, until);
+        Homework.add(this, ID, urgent, subject, homework, time);
 
         // Auto-export
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

@@ -93,8 +93,6 @@ public class Main extends FragmentActivity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
-                .getMenuInfo();
         if (item.getTitle() == getString(R.string.dialog_edit)) {
             editOne(hwArray, pos);
             return true;

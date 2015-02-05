@@ -15,13 +15,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import de.nico.ha_manager.helper.Homework;
+import de.nico.ha_manager.helper.Utils;
 
 public class Source {
 
     public static final String[] allColumns = {"ID", "URGENT", "SUBJECT",
-            "HOMEWORK", "UNTIL"};
+            "HOMEWORK", "UNTIL", "TIME"};
     public static final String[] mostColumns = {"URGENT", "SUBJECT",
-            "HOMEWORK", "UNTIL"};
+            "HOMEWORK", "UNTIL", "TIME"};
     private final Helper dbHelper;
     private SQLiteDatabase database;
 
@@ -38,12 +39,13 @@ public class Source {
     }
 
     public void createEntry(Context c, String ID, String urgent,
-                            String subject, String homework, String until) {
+                            String subject, String homework, long time) {
         ContentValues values = new ContentValues();
-        values.put("URGENT", urgent);
-        values.put("SUBJECT", subject);
-        values.put("HOMEWORK", homework);
-        values.put("UNTIL", until);
+        values.put(mostColumns[0], urgent);
+        values.put(mostColumns[1], subject);
+        values.put(mostColumns[2], homework);
+        values.put(mostColumns[3], "");
+        values.put(mostColumns[4], String.valueOf(time));
 
         String insertId = "ID = " + database.insert("HOMEWORK", null, values);
         if (ID != null) {
@@ -75,8 +77,19 @@ public class Source {
         while (!cursor.isAfterLast()) {
             HashMap<String, String> temp = new HashMap<>();
             temp.put(allColumns[0], String.valueOf(cursor.getLong(0)));
-            for (int i = 1; i < 5; i++)
-                temp.put(allColumns[i], cursor.getString(i));
+            for (int i = 1; i < 5; i++) {
+                if (i == 4) {
+                    if (cursor.getString(i).equals("")) {
+                        long time = Long.valueOf(cursor.getString(i + 1)).longValue();
+                        String date = Utils.convertToDate(time);
+                        temp.put(allColumns[i], date);
+                    }
+                    else
+                        temp.put(allColumns[i], cursor.getString(i));
+                }
+                else
+                    temp.put(allColumns[i], cursor.getString(i));
+            }
             entriesList.add(temp);
             cursor.moveToNext();
         }

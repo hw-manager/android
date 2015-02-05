@@ -30,11 +30,11 @@ public class Homework {
     }
 
     public static void add(Context c, String ID, String urgent, String subject,
-                           String homework, String until) {
+                           String homework, long time) {
         try {
             Source s = new Source(c);
             s.open();
-            s.createEntry(c, ID, urgent, subject, homework, until);
+            s.createEntry(c, ID, urgent, subject, homework, time);
             s.close();
         } catch (Exception ex) {
             Log.e("Database:", ex.toString());

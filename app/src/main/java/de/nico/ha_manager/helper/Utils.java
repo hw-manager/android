@@ -30,7 +30,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.zip.ZipEntry;
@@ -242,6 +244,46 @@ public class Utils {
             return false;
 
         }
+    }
+
+    // Milliseconds
+    public static String convertToDate (long time) {
+        String until;
+        // Format to 31.12.14 or local version of that
+        DateFormat f = DateFormat.getDateInstance(DateFormat.SHORT,
+                Locale.getDefault());
+        GregorianCalendar gc = new GregorianCalendar();
+        gc.setTimeInMillis(time);
+
+        // Format to Week of Day, for example Mo. or local version of that
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE",
+                Locale.getDefault());
+
+        // Tab space because else the date is too far to the left
+        until = (dateFormat.format(gc.getTime()) + ", " + f.format(gc.getTime()));
+        return until;
+    }
+
+    // Milliseconds
+    public static String convertToDate (int[] time) {
+        String until;
+        // Format to 31.12.14 or local version of that
+        DateFormat f = DateFormat.getDateInstance(DateFormat.SHORT,
+                Locale.getDefault());
+        GregorianCalendar gc = new GregorianCalendar(time[0], time[1], time[2]);
+
+        // Format to Week of Day, for example Mo. or local version of that
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE",
+                Locale.getDefault());
+
+        // Tab space because else the date is too far to the left
+        until = (dateFormat.format(gc.getTime()) + ", " + f.format(gc.getTime()));
+        return until;
+    }
+
+    public static long convertToMilliseconds (int[] time) {
+        GregorianCalendar gc = new GregorianCalendar(time[0], time[1], time[2]);
+        return gc.getTimeInMillis();
     }
 
 }

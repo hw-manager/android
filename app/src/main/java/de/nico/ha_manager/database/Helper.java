@@ -18,7 +18,7 @@ class Helper extends SQLiteOpenHelper {
     private static final String TABLE_CREATE_HOMEWORK = ""
             + "create table HOMEWORK("
             + "  ID integer primary key autoincrement, " + "URGENT text,"
-            + "SUBJECT text," + "HOMEWORK text," + "UNTIL text)";
+            + "SUBJECT text," + "HOMEWORK text," + "UNTIL text," + "TIME text)";
 
     public Helper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
