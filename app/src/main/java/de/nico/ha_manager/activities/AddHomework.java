@@ -134,9 +134,13 @@ public class AddHomework extends FragmentActivity {
 
             subSpin.setSelection(spinnerPosition);
 
-            // Set Homework
+            // Set Title
             EditText hwEdit = (EditText) findViewById(R.id.editText_homework);
             hwEdit.setText(extras.getString(Source.allColumns[3]));
+
+            // Set Info
+            EditText infoEdit = (EditText) findViewById(R.id.editText_info);
+            infoEdit.setText(extras.getString(Source.allColumns[6]));
 
             // Set Until
             Button untilButton = (Button) findViewById(R.id.button_until);
@@ -184,6 +188,7 @@ public class AddHomework extends FragmentActivity {
     public void addHomework(View v) {
         Spinner subSpin = (Spinner) findViewById(R.id.spinner_subject);
         EditText hwEdit = (EditText) findViewById(R.id.editText_homework);
+        EditText infoEdit = (EditText) findViewById(R.id.editText_info);
 
         // Close keyboard
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -206,9 +211,10 @@ public class AddHomework extends FragmentActivity {
         // Get filled in data
         String subject = subSpin.getSelectedItem().toString();
         String homework = hwEdit.getText().toString();
+        String info = infoEdit.getText().toString();
 
         // Entry in database
-        Homework.add(this, ID, urgent, subject, homework, time);
+        Homework.add(this, ID, urgent, subject, homework, time, info);
 
         // Auto-export
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

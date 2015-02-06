@@ -19,12 +19,12 @@
     <string name="action_settings">Settings</string>
 
     <!-- Homework Page -->
+    <string name="hw_title">Title</string>
     <string name="hw_subject">Subject</string>
     <string name="hw_until">Until</string>
     <string name="hw_urgent">Important</string>
-    <string name="hw_homework">Homework</string>
+    <string name="hw_info">Additional Information</string>
     <string name="hw_add">Add</string>
-    <!-- TODO: Translate me -->
     <string name="hw_save">Save</string>
 
     <!-- Preferences Page -->

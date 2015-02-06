@@ -24,9 +24,9 @@ import de.nico.ha_manager.helper.Utils;
 public class Source {
 
     public static final String[] allColumns = {"ID", "URGENT", "SUBJECT",
-            "HOMEWORK", "UNTIL", "TIME"};
+            "HOMEWORK", "UNTIL", "TIME", "INFO"};
     public static final String[] mostColumns = {"URGENT", "SUBJECT",
-            "HOMEWORK", "UNTIL", "TIME"};
+            "HOMEWORK", "UNTIL", "TIME", "INFO"};
     private final Helper dbHelper;
     private SQLiteDatabase database;
 
@@ -43,13 +43,14 @@ public class Source {
     }
 
     public void createEntry(Context c, String ID, String urgent,
-                            String subject, String homework, long time) {
+                            String subject, String homework, long time, String info) {
         ContentValues values = new ContentValues();
         values.put(mostColumns[0], urgent);
         values.put(mostColumns[1], subject);
         values.put(mostColumns[2], homework);
         values.put(mostColumns[3], "");
         values.put(mostColumns[4], String.valueOf(time));
+        values.put(mostColumns[5], info);
 
         String insertId = "ID = " + database.insert("HOMEWORK", null, values);
         if (ID != null) {
@@ -81,13 +82,18 @@ public class Source {
         while (!cursor.isAfterLast()) {
             HashMap<String, String> temp = new HashMap<>();
             temp.put(allColumns[0], String.valueOf(cursor.getLong(0)));
-            for (int i = 1; i < 5; i++) {
+            for (int i = 1; i < 6; i++) {
+                // Until/Time
                 if (i == 4) {
-                    if (cursor.getString(i).equals("")) {
+                    if (cursor.getString(i).equals(""))
                         temp.put(allColumns[i], cursor.getString(i + 1));
-                    } else
+                    else
                         temp.put(allColumns[i], "0");
-                } else
+                }
+                // Info
+                else if (i == 5)
+                    temp.put(allColumns[i + 1], cursor.getString(i + 1));
+                else
                     temp.put(allColumns[i], cursor.getString(i));
             }
             entriesList.add(temp);

@@ -3,6 +3,7 @@
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:orientation="vertical">
@@ -18,6 +19,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textView_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hw_title"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <EditText
+                android:id="@+id/editText_homework"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/textView_subject"
@@ -47,14 +61,15 @@
                 android:layout_marginBottom="8dp"
                 android:onClick="setUntil"
                 android:paddingLeft="12dp"
-                android:paddingRight="12dp"/>
+                android:paddingRight="12dp"
+                tools:text="Monday, 01/01/2015"/>
 
             <EditText
-                android:id="@+id/editText_homework"
+                android:id="@+id/editText_info"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:hint="@string/hw_homework"
+                android:hint="@string/hw_info"
                 android:inputType="textMultiLine"/>
 
             <CheckBox
