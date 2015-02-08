@@ -112,7 +112,7 @@ public class Source {
                 }
             });
 
-        // Convert milliseconds to date
+        // Add date, based on time in milliseconds
         for (int i = 0; i < entriesList.size(); i++) {
             HashMap<String, String> temp = entriesList.get(i);
             long time = Long.valueOf(temp.get(allColumns[5])).longValue();

@@ -82,7 +82,7 @@ public class AddHomework extends FragmentActivity {
         if (time != 0)
             c.setTimeInMillis(time);
 
-        int [] tmpDate = new int[3];
+        int[] tmpDate = new int[3];
 
         // E.g "1970"
         tmpDate[0] = c.get(Calendar.YEAR);

@@ -17,8 +17,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.ExpandableListView;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -33,13 +32,12 @@ import de.nico.ha_manager.helper.Utils;
 public class Main extends FragmentActivity {
 
     private static ArrayList<HashMap<String, String>> hwArray = new ArrayList<>();
-    private static int pos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Utils.setTheme(this, false);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_expandable_list);
         setTitle(getString(R.string.title_homework));
         update();
 
@@ -93,12 +91,14 @@ public class Main extends FragmentActivity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
+        final ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) item
+                .getMenuInfo();
         if (item.getTitle() == getString(R.string.dialog_edit)) {
-            editOne(hwArray, pos);
+            editOne(hwArray, ExpandableListView.getPackedPositionGroup(info.packedPosition));
             return true;
         }
         if (item.getTitle() == getString(R.string.dialog_delete)) {
-            deleteOne(hwArray, pos);
+            deleteOne(hwArray, ExpandableListView.getPackedPositionGroup(info.packedPosition));
             update();
             return true;
         }
@@ -123,18 +123,9 @@ public class Main extends FragmentActivity {
     }
 
     private void setOnClick() {
-        ListView hwList = (ListView) findViewById(R.id.listView_main);
-        hwList.setAdapter(Utils.entryAdapter(this, hwArray));
+        ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
+        hwList.setAdapter(Utils.expandableEntryAdapter(this, hwArray));
         registerForContextMenu(hwList);
-        hwList.setLongClickable(false);
-        hwList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                pos = position;
-                openContextMenu(view);
-                setOnClick();
-            }
-        });
     }
 
     private void editOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
@@ -144,7 +135,7 @@ public class Main extends FragmentActivity {
         mBundle.putString(Source.allColumns[0], currentID);
         for (int i = 1; i < Source.allColumns.length; i++)
             mBundle.putString(Source.allColumns[i],
-                        ArHa.get(pos).get(Source.allColumns[i]));
+                    ArHa.get(pos).get(Source.allColumns[i]));
         intent.putExtras(mBundle);
         startActivity(intent);
     }
@@ -152,7 +143,7 @@ public class Main extends FragmentActivity {
     private void deleteOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
         ArrayList<HashMap<String, String>> tempArray = Utils.tempArray(ArHa,
                 pos);
-        final String currentID = "ID = " + ArHa.get(pos).get("ID");
+        final String currentID = "ID = " + ArHa.get(pos).get(Source.allColumns[0]);
         SimpleAdapter alertAdapter = Utils.entryAdapter(this, tempArray);
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);

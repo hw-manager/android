@@ -21,6 +21,7 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.SimpleAdapter;
+import android.widget.SimpleExpandableListAdapter;
 import android.widget.Toast;
 
 import java.io.File;
@@ -34,7 +35,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -67,6 +70,9 @@ public class Utils {
         for (int i = 0; i < Source.allColumns.length; i++)
             tempHashMap.put(Source.allColumns[i],
                     ArHa.get(pos).get(Source.allColumns[i]));
+
+        String date = Utils.convertToDate(Long.valueOf(ArHa.get(pos).get(Source.allColumns[5])).longValue());
+        tempHashMap.put("UNTIL", date);
 
         // Add temporary HashMap to temporary ArrayList containing a HashMap
         tempArHa.add(tempHashMap);
@@ -129,10 +135,40 @@ public class Utils {
         // All TextViews in Layout "listview_entry"
         int[] i = {R.id.textView_urgent, R.id.textView_subject,
                 R.id.textView_homework, R.id.textView_until};
-        String[] columns =  {"URGENT", "SUBJECT", "HOMEWORK", "UNTIL"};
+        String[] columns = {"URGENT", "SUBJECT", "HOMEWORK", "UNTIL"};
 
         // Make a SimpleAdapter which is like a row in the homework list
         return new SimpleAdapter(c, a, R.layout.listview_entry, columns, i);
+    }
+
+    public static SimpleExpandableListAdapter expandableEntryAdapter(Context c,
+                                                                     ArrayList<HashMap<String, String>> a) {
+        // All TextViews in Layout "listview_expanded_entry1"
+        int[] groupTexts = {R.id.textView_urgent, R.id.textView_subject,
+                R.id.textView_homework, R.id.textView_until};
+        String[] groupColumns = {"URGENT", "SUBJECT", "HOMEWORK", "UNTIL"};
+
+        // All TextViews in Layout "listview_expanded_entry2"
+        int[] childTexts = {R.id.textView_info};
+        String[] childColumns = {"INFO"};
+        List<List<Map<String, String>>> childData = covertToListListMap(a, childColumns[0]);
+
+        // Make a SimpleAdapter which is like a row in the homework list
+        return new SimpleExpandableListAdapter(c, a, R.layout.listview_expanded_entry1, groupColumns, groupTexts, childData, R.layout.listview_expanded_entry2, childColumns, childTexts);
+    }
+
+    public static List<List<Map<String, String>>> covertToListListMap(ArrayList<HashMap<String, String>> a, String row) {
+        List<List<Map<String, String>>> ll = new ArrayList<>();
+        for (int i = 0; i < a.size(); i++) {
+            Map<String, String> tmpL = new HashMap<>();
+            tmpL.put(row, a.get(i).get(row));
+
+            List<Map<String, String>> l = new ArrayList<>();
+            l.add(tmpL);
+            
+            ll.add(l);
+        }
+        return ll;
     }
 
     @SuppressWarnings("deprecation")
