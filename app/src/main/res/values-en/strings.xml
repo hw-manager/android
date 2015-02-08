@@ -14,10 +14,11 @@
     <string name="action_add">Add</string>
     <string name="action_delete">Delete everything</string>
     <string name="action_settings">Settings</string>
+    <string name="hw_title">Title</string>
     <string name="hw_subject">Subject</string>
     <string name="hw_until">Until</string>
     <string name="hw_urgent">Important</string>
-    <string name="hw_homework">Homework</string>
+    <string name="hw_info">Additional Information</string>
     <string name="hw_add">Add</string>
     <string name="hw_save">Save</string>
     <string name="pref_language">Language</string>
@@ -51,6 +52,10 @@
     <string name="pref_homework_export_summary">Export the homework to the SD</string>
     <string name="pref_autoexport">Auto-Backup</string>
     <string name="pref_autoexport_summary">Automatically backup when a change is made.</string>
+    <string name="pref_sortbytime">Sort by time</string>
+    <string name="pref_sortbytime_summary">Sort the homework list by the time until the homework has to be finished.</string>
+    <string name="pref_sortbyimportance">Sort by importance</string>
+    <string name="pref_sortbyimportance_summary">Important homework will be shown at the top.</string>
     <string name="dialog_addSubject">Add Subject</string>
     <string name="dialog_addSubject_message">Which subject do you want to add?</string>
     <string name="dialog_edit">Edit</string>

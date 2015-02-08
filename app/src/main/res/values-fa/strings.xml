@@ -14,10 +14,11 @@
     <string name="action_add">افزودن</string>
     <string name="action_delete">حذف همه‌چیز</string>
     <string name="action_settings">تنظیمات</string>
+    <string name="hw_title">عنوان</string>
     <string name="hw_subject">عنوان</string>
     <string name="hw_until">تا</string>
     <string name="hw_urgent">مهم</string>
-    <string name="hw_homework">تکلیف درسی</string>
+    <string name="hw_info">اطلاعاتِ بیشتر</string>
     <string name="hw_add">افزودن</string>
     <string name="hw_save">ذخيره</string>
     <string name="pref_language">زبان</string>
@@ -51,6 +52,10 @@
     <string name="pref_homework_export_summary">صادر کردن تکلیف درسی به اس دی</string>
     <string name="pref_autoexport">پشتیبان‌گیریِ خودکار</string>
     <string name="pref_autoexport_summary">وقتی تغییری ایجاد شد خودکار پشتیبان بگیر.</string>
+    <string name="pref_sortbytime">مرتب‌سازی بر مبنای زمان</string>
+    <string name="pref_sortbytime_summary">تکالیف درسی را بر مبنای زمانی مرتب کن که باید تمام شوند.</string>
+    <string name="pref_sortbyimportance">مرتب‌سازی بر مبنای اهمیت</string>
+    <string name="pref_sortbyimportance_summary">تکالیف درسیِ مهم در بالا نمایش داده می‌شوند.</string>
     <string name="dialog_addSubject">افزودن عنوان</string>
     <string name="dialog_addSubject_message">کدام عنوان را می‌خواهید بیفزایید؟</string>
     <string name="dialog_edit">ویرایش</string>

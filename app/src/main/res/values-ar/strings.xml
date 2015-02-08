@@ -14,10 +14,11 @@
     <string name="action_add">اضافة</string>
     <string name="action_delete">حذف كل شيء</string>
     <string name="action_settings">إعدادات</string>
+    <string name="hw_title">العنوان</string>
     <string name="hw_subject">الموضوع</string>
     <string name="hw_until">حتى</string>
     <string name="hw_urgent">هام</string>
-    <string name="hw_homework">الواجبات المنزلية</string>
+    <string name="hw_info">معلومات إضافية</string>
     <string name="hw_add">اضافة</string>
     <string name="hw_save">حفظ</string>
     <string name="pref_language">اللُّغة</string>
@@ -51,6 +52,10 @@
     <string name="pref_homework_export_summary">تصدير الواجبات المنزلية إلى SD</string>
     <string name="pref_autoexport">النسخ الاحتياطي التلقائي</string>
     <string name="pref_autoexport_summary">النسخ الاحتياطي تلقائياً عندما يتم إجراء تغيير.</string>
+    <string name="pref_sortbytime">فرز حسب الوقت</string>
+    <string name="pref_sortbytime_summary">فرز قائمة الواجبات المنزلية بالوقت حتى الواجبات المنزلية أن يتم الانتهاء.</string>
+    <string name="pref_sortbyimportance">فرز حسب الأهمية</string>
+    <string name="pref_sortbyimportance_summary">سيظهر الواجبات الهامة في الجزء العلوي.</string>
     <string name="dialog_addSubject">إضافة موضوع</string>
     <string name="dialog_addSubject_message">تريد إضافة أي موضوع؟</string>
     <string name="dialog_edit">تعديل</string>

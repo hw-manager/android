@@ -14,10 +14,11 @@
     <string name="action_add">Hozzáadás</string>
     <string name="action_delete">Minden törlése</string>
     <string name="action_settings">Beállítások</string>
+    <string name="hw_title">Cím</string>
     <string name="hw_subject">Tantárgy</string>
     <string name="hw_until">-ig</string>
     <string name="hw_urgent">Fontos</string>
-    <string name="hw_homework">Házi feladat</string>
+    <string name="hw_info">További információ</string>
     <string name="hw_add">Hozzáadás</string>
     <string name="hw_save">Mentés</string>
     <string name="pref_language">Nyelv</string>
@@ -51,6 +52,10 @@
     <string name="pref_homework_export_summary">Házi feladat exportálása SD kártyára</string>
     <string name="pref_autoexport">Automatikus biztonsági másolat</string>
     <string name="pref_autoexport_summary">Automatikus biztonsági másolat készül minden változásnál.</string>
+    <string name="pref_sortbytime">Rendezés idő szerint</string>
+    <string name="pref_sortbytime_summary">Rendezheted a listát az idő szerint amíg a házifeladatot be kell fejezni.</string>
+    <string name="pref_sortbyimportance">Rendezés fontosság szerint</string>
+    <string name="pref_sortbyimportance_summary">A fontos feladat a lista tetején jelenik meg.</string>
     <string name="dialog_addSubject">Tantárgy hozzáadása</string>
     <string name="dialog_addSubject_message">Melyik tantárgyat akarod felvenni?</string>
     <string name="dialog_edit">Szerkesztés</string>

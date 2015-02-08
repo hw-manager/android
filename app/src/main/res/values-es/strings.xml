@@ -14,10 +14,11 @@
     <string name="action_add">Añadir</string>
     <string name="action_delete">Borrar todo</string>
     <string name="action_settings">Configuración</string>
+    <string name="hw_title">Titulo</string>
     <string name="hw_subject">Asignatura</string>
     <string name="hw_until">Hasta</string>
     <string name="hw_urgent">Importante</string>
-    <string name="hw_homework">Deberes</string>
+    <string name="hw_info">Información Adicional</string>
     <string name="hw_add">Añadir</string>
     <string name="hw_save">Guardar</string>
     <string name="pref_language">Idioma</string>
@@ -51,6 +52,10 @@
     <string name="pref_homework_export_summary">Exportar la tarea a la SD</string>
     <string name="pref_autoexport">Copia de seguridad automática</string>
     <string name="pref_autoexport_summary">Copia de seguridad automáticamente cuando se realiza un cambio.</string>
+    <string name="pref_sortbytime">Ordenar por tiempo</string>
+    <string name="pref_sortbytime_summary">Ordenar la lista de tareas por el tiempo hasta que la tarea tiene que estar terminado.</string>
+    <string name="pref_sortbyimportance">Ordenar por importancia</string>
+    <string name="pref_sortbyimportance_summary">Importante tarea aparecerá en la parte superior.</string>
     <string name="dialog_addSubject">Añadir una asignatura</string>
     <string name="dialog_addSubject_message">¿Qué asignatura quieres añadir?</string>
     <string name="dialog_edit">Editar</string>

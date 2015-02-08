@@ -14,10 +14,11 @@
     <string name="action_add">Hinzufügen</string>
     <string name="action_delete">Alles löschen</string>
     <string name="action_settings">Einstellungen</string>
+    <string name="hw_title">Titel</string>
     <string name="hw_subject">Fach</string>
     <string name="hw_until">Bis</string>
     <string name="hw_urgent">Wichtig</string>
-    <string name="hw_homework">Hausaufgabe</string>
+    <string name="hw_info">Zusatzinformationen</string>
     <string name="hw_add">Hinzufügen</string>
     <string name="hw_save">Speichern</string>
     <string name="pref_language">Sprache</string>
@@ -51,6 +52,10 @@
     <string name="pref_homework_export_summary">Hausaufgaben auf die SD-Karte exportieren</string>
     <string name="pref_autoexport">Automatisches Backup</string>
     <string name="pref_autoexport_summary">Exportiert automatisch die Hausaufgaben, wenn eine Änderung vorgenommen wird.</string>
+    <string name="pref_sortbytime">Nach Zeit sortieren</string>
+    <string name="pref_sortbytime_summary">Die Hausaufgaben-Liste nach der Zeit, bis wann die Hausaufgaben gemacht sein müssen, sortieren.</string>
+    <string name="pref_sortbyimportance">Nach Bedeutung sortieren</string>
+    <string name="pref_sortbyimportance_summary">Wichtige Hausaufgaben werden am Anfang der Liste angezeigt.</string>
     <string name="dialog_addSubject">Fach hinzufügen</string>
     <string name="dialog_addSubject_message">Welches Fach möchtest du hinzufügen?</string>
     <string name="dialog_edit">Bearbeiten</string>
