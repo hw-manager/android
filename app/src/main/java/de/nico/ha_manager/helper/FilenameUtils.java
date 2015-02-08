@@ -60,15 +60,13 @@ public class FilenameUtils {
      * if the filename is {@code null}.
      */
     public static String getExtension(String filename) {
-        if (filename == null) {
+        if (filename == null)
             return null;
-        }
         int index = indexOfExtension(filename);
-        if (index == -1) {
+        if (index == -1)
             return "";
-        } else {
+        else
             return filename.substring(index + 1);
-        }
     }
 
 
@@ -85,9 +83,8 @@ public class FilenameUtils {
      * is no such character
      */
     public static int indexOfLastSeparator(String filename) {
-        if (filename == null) {
+        if (filename == null)
             return -1;
-        }
         int lastUnixPos = filename.lastIndexOf(UNIX_SEPARATOR);
         int lastWindowsPos = filename.lastIndexOf(WINDOWS_SEPARATOR);
         return Math.max(lastUnixPos, lastWindowsPos);
@@ -107,9 +104,8 @@ public class FilenameUtils {
      * is no such character
      */
     public static int indexOfExtension(String filename) {
-        if (filename == null) {
+        if (filename == null)
             return -1;
-        }
         int extensionPos = filename.lastIndexOf(EXTENSION_SEPARATOR);
         int lastSeparator = indexOfLastSeparator(filename);
         return (lastSeparator > extensionPos ? -1 : extensionPos);
@@ -134,14 +130,12 @@ public class FilenameUtils {
      * @return the filename minus the extension
      */
     public static String removeExtension(String filename) {
-        if (filename == null) {
+        if (filename == null)
             return null;
-        }
         int index = indexOfExtension(filename);
-        if (index == -1) {
+        if (index == -1)
             return filename;
-        } else {
+        else
             return filename.substring(0, index);
-        }
     }
 }

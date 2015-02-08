@@ -23,10 +23,7 @@ import de.nico.ha_manager.helper.Utils;
 
 public class Source {
 
-    public static final String[] allColumns = {"ID", "URGENT", "SUBJECT",
-            "HOMEWORK", "UNTIL", "TIME", "INFO"};
-    public static final String[] mostColumns = {"URGENT", "SUBJECT",
-            "HOMEWORK", "UNTIL", "TIME", "INFO"};
+    public static final String[] allColumns = {"ID", "HOMEWORK", "SUBJECT", "INFO", "URGENT", "TIME"};
     private final Helper dbHelper;
     private SQLiteDatabase database;
 
@@ -45,12 +42,11 @@ public class Source {
     public void createEntry(Context c, String ID, String urgent,
                             String subject, String homework, long time, String info) {
         ContentValues values = new ContentValues();
-        values.put(mostColumns[0], urgent);
-        values.put(mostColumns[1], subject);
-        values.put(mostColumns[2], homework);
-        values.put(mostColumns[3], "");
-        values.put(mostColumns[4], String.valueOf(time));
-        values.put(mostColumns[5], info);
+        values.put(allColumns[1], homework);
+        values.put(allColumns[2], subject);
+        values.put(allColumns[3], info);
+        values.put(allColumns[4], urgent);
+        values.put(allColumns[5], String.valueOf(time));
 
         String insertId = "ID = " + database.insert("HOMEWORK", null, values);
         if (ID != null) {
@@ -63,9 +59,9 @@ public class Source {
         cursor.moveToFirst();
     }
 
-    public void delete_item(String whereC) {
+    public void delete_item(String where) {
         open();
-        database.delete("HOMEWORK", whereC, null);
+        database.delete("HOMEWORK", where, null);
         close();
     }
 
@@ -82,20 +78,9 @@ public class Source {
         while (!cursor.isAfterLast()) {
             HashMap<String, String> temp = new HashMap<>();
             temp.put(allColumns[0], String.valueOf(cursor.getLong(0)));
-            for (int i = 1; i < 6; i++) {
-                // Until/Time
-                if (i == 4) {
-                    if (cursor.getString(i).equals(""))
-                        temp.put(allColumns[i], cursor.getString(i + 1));
-                    else
-                        temp.put(allColumns[i], "0");
-                }
-                // Info
-                else if (i == 5)
-                    temp.put(allColumns[i + 1], cursor.getString(i + 1));
-                else
-                    temp.put(allColumns[i], cursor.getString(i));
-            }
+            for (int i = 1; i < allColumns.length; i++)
+                temp.put(allColumns[i], cursor.getString(i));
+
             entriesList.add(temp);
             cursor.moveToNext();
         }
@@ -109,8 +94,8 @@ public class Source {
 
                 @Override
                 public int compare(HashMap<String, String> lhs, HashMap<String, String> rhs) {
-                    long a = Long.valueOf(lhs.get(allColumns[4])).longValue();
-                    long b = Long.valueOf(rhs.get(allColumns[4])).longValue();
+                    long a = Long.valueOf(lhs.get(allColumns[5])).longValue();
+                    long b = Long.valueOf(rhs.get(allColumns[5])).longValue();
                     return Long.valueOf(a).compareTo(Long.valueOf(b));
                 }
             });
@@ -121,8 +106,8 @@ public class Source {
 
                 @Override
                 public int compare(HashMap<String, String> lhs, HashMap<String, String> rhs) {
-                    String a = rhs.get(allColumns[1]);
-                    String b = lhs.get(allColumns[1]);
+                    String a = rhs.get(allColumns[4]);
+                    String b = lhs.get(allColumns[4]);
                     return a.compareTo(b);
                 }
             });
@@ -130,10 +115,9 @@ public class Source {
         // Convert milliseconds to date
         for (int i = 0; i < entriesList.size(); i++) {
             HashMap<String, String> temp = entriesList.get(i);
-            long time = Long.valueOf(temp.get(allColumns[4])).longValue();
+            long time = Long.valueOf(temp.get(allColumns[5])).longValue();
             String date = Utils.convertToDate(time);
-            temp.remove(allColumns[4]);
-            temp.put(allColumns[4], date);
+            temp.put("UNTIL", date);
         }
 
         return entriesList;

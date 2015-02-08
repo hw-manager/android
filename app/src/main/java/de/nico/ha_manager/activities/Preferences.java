@@ -120,11 +120,10 @@ public class Preferences extends PreferenceActivity {
         // Locale of device
         Locale devLoc = Locale.getDefault();
 
-        if (devLoc.equals(appLoc)) {
+        if (devLoc.equals(appLoc))
             language.setSummary(getString(R.string.pref_language_default));
-        } else {
+        else
             language.setSummary(appLoc.getDisplayLanguage(appLoc));
-        }
     }
 
     @SuppressWarnings("deprecation")

@@ -10,15 +10,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-class Helper extends SQLiteOpenHelper {
+public class Helper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "Homework.db";
-    private static final int DATABASE_VERSION = 3;
+    public static final String DATABASE_NAME = "Homework.db";
+    private static final int DATABASE_VERSION = 2;
 
-    private static final String TABLE_CREATE_HOMEWORK = ""
-            + "create table HOMEWORK("
-            + "  ID integer primary key autoincrement, " + "URGENT text,"
-            + "SUBJECT text," + "HOMEWORK text," + "UNTIL text," + "TIME text," + "INFO text)";
+    private static final String TABLE_CREATE_HOMEWORK = "create table HOMEWORK(ID integer primary key autoincrement,HOMEWORK text,SUBJECT text,TIME text,INFO text,URGENT text)";
 
     public Helper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -31,17 +28,10 @@ class Helper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Upgrade from first to third version
-        if (oldVersion == 1 && newVersion == 3) {
+        // Upgrade from first to second version
+        if (oldVersion == 1 && newVersion == 2) {
             db.execSQL("ALTER TABLE HOMEWORK ADD COLUMN INFO TEXT");
             db.execSQL("ALTER TABLE HOMEWORK ADD COLUMN TIME TEXT");
-            Log.w(Helper.class.getName(),
-                    "Upgrading database from version " + oldVersion + " to "
-                            + newVersion + ".");
-        }
-        // Upgrade from second to third version
-        if (oldVersion == 2 && newVersion == 3) {
-            db.execSQL("ALTER TABLE HOMEWORK ADD COLUMN INFO TEXT");
             Log.w(Helper.class.getName(),
                     "Upgrading database from version " + oldVersion + " to "
                             + newVersion + ".");

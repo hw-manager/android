@@ -64,14 +64,13 @@ public class Utils {
         HashMap<String, String> tempHashMap = new HashMap<>();
 
         // Fill temporary HashMap with one row of original HashMap
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < Source.allColumns.length; i++)
             tempHashMap.put(Source.allColumns[i],
                     ArHa.get(pos).get(Source.allColumns[i]));
 
         // Add temporary HashMap to temporary ArrayList containing a HashMap
         tempArHa.add(tempHashMap);
         return tempArHa;
-
     }
 
     /**
@@ -102,7 +101,6 @@ public class Utils {
             else
                 c.setTheme(R.style.AppTheme);
         }
-
     }
 
     /**
@@ -120,7 +118,6 @@ public class Utils {
     }
 
     public static void setupActionBar(Context context, boolean isPreferenceActivity) {
-
         if (Build.VERSION.SDK_INT >= 11 && isActionBarAvailable) {
             ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context, isPreferenceActivity);
             actionBarWrapper.setDisplayHomeAsUpEnabled(true);
@@ -129,14 +126,13 @@ public class Utils {
 
     public static SimpleAdapter entryAdapter(Context c,
                                              ArrayList<HashMap<String, String>> a) {
-
         // All TextViews in Layout "listview_entry"
         int[] i = {R.id.textView_urgent, R.id.textView_subject,
                 R.id.textView_homework, R.id.textView_until};
+        String[] columns =  {"URGENT", "SUBJECT", "HOMEWORK", "UNTIL"};
 
         // Make a SimpleAdapter which is like a row in the homework list
-        return new SimpleAdapter(c, a, R.layout.listview_entry,
-                Source.mostColumns, i);
+        return new SimpleAdapter(c, a, R.layout.listview_entry, columns, i);
     }
 
     @SuppressWarnings("deprecation")
@@ -190,12 +186,12 @@ public class Utils {
     public static void langSpinner(final Context c) {
         AlertDialog.Builder b = new Builder(c);
         // Current translations of HW-Manager
-        final String[] langs = {"cs", "de", "en", "es", "fr", "hu", "ar", "fa"};
+        final String[] languages = {"cs", "de", "en", "es", "fr", "hu", "ar", "fa"};
         // Items with translation's language
-        String[] items = new String[langs.length + 1];
+        String[] items = new String[languages.length + 1];
         items[0] = c.getString(R.string.pref_language_default);
-        for (int i = 1; i < langs.length + 1; i++) {
-            Locale appLoc = new Locale(langs[i - 1]);
+        for (int i = 1; i < languages.length + 1; i++) {
+            Locale appLoc = new Locale(languages[i - 1]);
             items[i] = appLoc.getDisplayLanguage(appLoc);
         }
         b.setTitle(c.getString(R.string.pref_language));
@@ -212,7 +208,7 @@ public class Utils {
                     editor.putString("locale_override", "");
                     editor.commit();
                 } else {
-                    editor.putString("locale_override", langs[which - 1]);
+                    editor.putString("locale_override", languages[which - 1]);
                     editor.commit();
                 }
                 HWManager.updateLanguage(c);
@@ -225,7 +221,6 @@ public class Utils {
 
     public static boolean transfer(final File src, final File dst) {
         try {
-            // Import Database
             FileInputStream inStream = new FileInputStream(src);
             FileOutputStream outStream = new FileOutputStream(dst);
             FileChannel inChannel = inStream.getChannel();
@@ -234,15 +229,12 @@ public class Utils {
             inStream.close();
             outStream.close();
             return true;
-
         } catch (FileNotFoundException e) {
             Log.e("FileNotFoundException", e.toString());
             return false;
-
         } catch (IOException e) {
             Log.e("IOException", e.toString());
             return false;
-
         }
     }
 
@@ -285,7 +277,6 @@ public class Utils {
         GregorianCalendar gc = new GregorianCalendar(time[0], time[1], time[2]);
         return gc.getTimeInMillis();
     }
-
 }
 
 

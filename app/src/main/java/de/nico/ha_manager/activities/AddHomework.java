@@ -58,13 +58,12 @@ public class AddHomework extends FragmentActivity {
         setContentView(R.layout.activity_add);
 
         subjects = Subject.get(this);
-        date = getCurrentDate();
+        date = getDate(0);
 
         setTextViewUntil(date);
         setSpinner();
         handleIntent(getIntent());
         Utils.setupActionBar(this, false);
-
     }
 
     @Override
@@ -78,21 +77,42 @@ public class AddHomework extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private int[] getCurrentDate() {
+    private int[] getDate(long time) {
         final Calendar c = Calendar.getInstance();
-        date = new int[3];
+        if (time != 0)
+            c.setTimeInMillis(time);
+
+        int [] tmpDate = new int[3];
 
         // E.g "1970"
-        date[0] = c.get(Calendar.YEAR);
+        tmpDate[0] = c.get(Calendar.YEAR);
 
         // E.g "01"
-        date[1] = c.get(Calendar.MONTH);
+        tmpDate[1] = c.get(Calendar.MONTH);
 
         // Get current day, e.g. "01", plus one day > e.g. "02"
-        date[2] = c.get(Calendar.DAY_OF_MONTH) + 1;
+        tmpDate[2] = c.get(Calendar.DAY_OF_MONTH) + 1;
 
-        return date;
+        if (time != 0)
+            tmpDate[2] = c.get(Calendar.DAY_OF_MONTH);
 
+        return tmpDate;
+    }
+
+    private void setTextViewUntil(int[] date) {
+        until = Utils.convertToDate(date);
+        Button untilButton = (Button) findViewById(R.id.button_until);
+        untilButton.setText(until);
+        time = Utils.convertToMilliseconds(date);
+    }
+
+    // Set spinner with subjects
+    private void setSpinner() {
+        Spinner subSpin = (Spinner) findViewById(R.id.spinner_subject);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, subjects);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        subSpin.setAdapter(adapter);
     }
 
     private void handleIntent(Intent intent) {
@@ -101,14 +121,9 @@ public class AddHomework extends FragmentActivity {
             // Set ID
             ID = extras.getString(Source.allColumns[0]);
 
-            // Set Urgent
-            if (!extras.getString(Source.allColumns[1]).equals("")) {
-                CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox_urgent);
-                checkBox.setChecked(true);
-            }
-            // Change the "Add" button to "Save"
-            Button mAdd = (Button) findViewById(R.id.button_add);
-            mAdd.setText(R.string.hw_save);
+            // Set Title
+            EditText hwEdit = (EditText) findViewById(R.id.editText_homework);
+            hwEdit.setText(extras.getString(Source.allColumns[1]));
 
             // Set Subject
             String subject = extras.getString(Source.allColumns[2]);
@@ -131,39 +146,28 @@ public class AddHomework extends FragmentActivity {
                         android.R.layout.simple_spinner_item, subjects);
                 spinnerPosition = adapter.getPosition(subject);
             }
-
             subSpin.setSelection(spinnerPosition);
-
-            // Set Title
-            EditText hwEdit = (EditText) findViewById(R.id.editText_homework);
-            hwEdit.setText(extras.getString(Source.allColumns[3]));
 
             // Set Info
             EditText infoEdit = (EditText) findViewById(R.id.editText_info);
-            infoEdit.setText(extras.getString(Source.allColumns[6]));
+            infoEdit.setText(extras.getString(Source.allColumns[3]));
+
+            // Set Urgent
+            if (!extras.getString(Source.allColumns[4]).equals("")) {
+                CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox_urgent);
+                checkBox.setChecked(true);
+            }
 
             // Set Until
             Button untilButton = (Button) findViewById(R.id.button_until);
-            untilButton.setText(extras.getString(Source.allColumns[4]));
-            until = extras.getString(Source.allColumns[4]);
+            time = Long.valueOf(extras.getString(Source.allColumns[5])).longValue();
+            date = getDate(time);
+            setTextViewUntil(date);
+
+            // Change the "Add" button to "Save"
+            Button mAdd = (Button) findViewById(R.id.button_add);
+            mAdd.setText(R.string.hw_save);
         }
-    }
-
-    private void setTextViewUntil(int[] date) {
-        until = Utils.convertToDate(date);
-        Button untilButton = (Button) findViewById(R.id.button_until);
-        untilButton.setText(until);
-        time = Utils.convertToMilliseconds(date);
-
-    }
-
-    private void setSpinner() {
-        // Set spinner with subjects
-        Spinner subSpin = (Spinner) findViewById(R.id.spinner_subject);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, subjects);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        subSpin.setAdapter(adapter);
     }
 
     public void setUntil(View v) {

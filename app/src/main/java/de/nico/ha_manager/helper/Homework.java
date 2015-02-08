@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import de.nico.ha_manager.R;
+import de.nico.ha_manager.database.Helper;
 import de.nico.ha_manager.database.Source;
 
 public class Homework {
@@ -58,7 +59,7 @@ public class Homework {
         File srcDB = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name) + "/" + filename + ".db");
         File dstDB = new File(c.getApplicationInfo().dataDir
-                + "/databases/Homework.db");
+                + "/databases/" + Helper.DATABASE_NAME);
 
         // Check if Database exists
         if (!(srcDB.exists())) {
@@ -90,7 +91,7 @@ public class Homework {
 
         // Path for Database
         File srcDB = new File(c.getApplicationInfo().dataDir
-                + "/databases/Homework.db");
+                + "/databases/" + Helper.DATABASE_NAME);
         File dstDB = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name) + "/Homework-" + stamp + ".db");
 

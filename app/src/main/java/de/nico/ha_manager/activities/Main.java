@@ -138,18 +138,13 @@ public class Main extends FragmentActivity {
     }
 
     private void editOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
-        final String currentID = "ID = " + ArHa.get(pos).get("ID");
+        final String currentID = "ID = " + ArHa.get(pos).get(Source.allColumns[0]);
         Intent intent = new Intent(this, AddHomework.class);
         Bundle mBundle = new Bundle();
         mBundle.putString(Source.allColumns[0], currentID);
-        for (int i = 1; i < 6; i++) {
-            if (i == 5)
-                mBundle.putString(Source.allColumns[i + 1],
-                        ArHa.get(pos).get(Source.allColumns[i + 1]));
-            else
-                mBundle.putString(Source.allColumns[i],
+        for (int i = 1; i < Source.allColumns.length; i++)
+            mBundle.putString(Source.allColumns[i],
                         ArHa.get(pos).get(Source.allColumns[i]));
-        }
         intent.putExtras(mBundle);
         startActivity(intent);
     }
