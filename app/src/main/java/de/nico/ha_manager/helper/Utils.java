@@ -259,7 +259,7 @@ public class Utils {
             buildInfo = versionName + " (" + buildDate + ")";
 
         } catch (Exception e) {
-            Log.e("Get Build Info:", e.toString());
+            Log.e("Get Build Info", e.toString());
         }
 
         return buildInfo;

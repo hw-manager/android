@@ -218,7 +218,7 @@ public class AddHomework extends FragmentActivity {
         String info = infoEdit.getText().toString();
 
         // Entry in database
-        Homework.add(this, ID, urgent, subject, homework, time, info);
+        Homework.add(this, ID, homework, subject, time, info, urgent);
 
         // Auto-export
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

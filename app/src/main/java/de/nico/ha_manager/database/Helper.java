@@ -12,9 +12,19 @@ import android.util.Log;
 
 public class Helper extends SQLiteOpenHelper {
 
+    /**
+     * The name of the database containing the homework.
+     */
     public static final String DATABASE_NAME = "Homework.db";
+
+    /**
+     * The current version of the database containing the homework.
+     */
     private static final int DATABASE_VERSION = 2;
 
+    /**
+     * The command when first creating the database.
+     */
     private static final String TABLE_CREATE_HOMEWORK = "create table HOMEWORK(ID integer primary key autoincrement,HOMEWORK text,SUBJECT text,TIME text,INFO text,URGENT text)";
 
     public Helper(Context context) {

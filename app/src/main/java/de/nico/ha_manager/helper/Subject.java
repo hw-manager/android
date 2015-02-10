@@ -15,12 +15,25 @@ import de.nico.ha_manager.R;
 
 public class Subject {
 
+    /**
+     * Default {@link android.content.SharedPreferences} used in this class.
+     */
     private static SharedPreferences prefs;
 
+    /**
+     * Initializes the default {@link android.content.SharedPreferences} used in this class.
+     *
+     * @param c Needed by {@link android.preference.PreferenceManager}.
+     */
     private static void initPrefs(Context c) {
         prefs = PreferenceManager.getDefaultSharedPreferences(c);
     }
 
+    /**
+     * Returns a list with all subjects used by the user.
+     *
+     * @param c Needed by {@link android.preference.PreferenceManager}.
+     */
     public static String[] get(Context c) {
         initPrefs(c);
 
@@ -35,6 +48,12 @@ public class Subject {
         return subjects;
     }
 
+    /**
+     * Adds a subject.
+     *
+     * @param c       Needed by {@link android.preference.PreferenceManager}.
+     * @param subject The subject to add.
+     */
     public static void add(Context c, String subject) {
         initPrefs(c);
         int size = prefs.getInt("subjects_size", 0);
@@ -58,6 +77,11 @@ public class Subject {
         Utils.makeShortToast(c, subject + " " + sAdded);
     }
 
+    /**
+     * Resets the list of subjects.
+     *
+     * @param c Needed by {@link android.preference.PreferenceManager}.
+     */
     public static void setDefault(Context c) {
         // Get subjects from strings.xml
         String[] subjects = c.getResources().getStringArray(R.array.subjects);
@@ -75,6 +99,12 @@ public class Subject {
         editor.commit();
     }
 
+    /**
+     * Deletes a subject.
+     *
+     * @param c   Needed by {@link android.preference.PreferenceManager}.
+     * @param pos The subject to delete.
+     */
     public static void delete(Context c, int pos) {
         initPrefs(c);
         int size = prefs.getInt("subjects_size", 0);

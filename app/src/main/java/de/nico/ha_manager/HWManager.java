@@ -15,6 +15,12 @@ import android.text.TextUtils;
 import java.util.Locale;
 
 public class HWManager extends Application {
+
+    /**
+     * Update the language used in the app.
+     *
+     * @param c Needed by {@link android.preference.PreferenceManager}.
+     */
     public static void updateLanguage(Context c) {
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(c);
@@ -22,6 +28,12 @@ public class HWManager extends Application {
         updateLanguage(c, lang);
     }
 
+    /**
+     * Update the language used in the app.
+     *
+     * @param c    Needed to get the resources.
+     * @param lang Language to be used in the app,
+     */
     private static void updateLanguage(Context c, String lang) {
         Configuration cfg = new Configuration();
         if (!TextUtils.isEmpty(lang))

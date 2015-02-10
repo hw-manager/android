@@ -23,26 +23,58 @@ import de.nico.ha_manager.helper.Utils;
 
 public class Source {
 
+    /**
+     * All columns used in the database.
+     */
     public static final String[] allColumns = {"ID", "HOMEWORK", "SUBJECT", "INFO", "URGENT", "TIME"};
+
+    /**
+     * The {@link de.nico.ha_manager.database.Helper} used in this class.
+     */
     private final Helper dbHelper;
+
+    /**
+     * The {@link android.database.sqlite.SQLiteDatabase} used in this class.
+     */
     private SQLiteDatabase database;
 
+    /**
+     * Initializes the {@link de.nico.ha_manager.database.Helper} used in this class.
+     *
+     * @param context Needed by {@link de.nico.ha_manager.database.Helper}.
+     */
     public Source(Context context) {
         dbHelper = new Helper(context);
     }
 
+    /**
+     * Opens the {@link de.nico.ha_manager.database.Helper} used in this class.
+     */
     public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
     }
 
+    /**
+     * Closes the {@link de.nico.ha_manager.database.Helper} used in this class.
+     */
     public void close() {
         dbHelper.close();
     }
 
-    public void createEntry(Context c, String ID, String urgent,
-                            String subject, String homework, long time, String info) {
+    /**
+     * Adds a homework.
+     *
+     * @param c       Needed by {@link de.nico.ha_manager.database.Source}.
+     * @param ID      The ID used in the database.
+     * @param title   The title of the homework.
+     * @param subject The subject of the homework.
+     * @param time    The time until the homework has to be done.
+     * @param info    Additional information to the homework.
+     * @param urgent  Is it urgent?
+     */
+    public void createEntry(Context c, String ID, String title, String subject, long time, String info, String urgent) {
         ContentValues values = new ContentValues();
-        values.put(allColumns[1], homework);
+        values.put(allColumns[1], title);
         values.put(allColumns[2], subject);
         values.put(allColumns[3], info);
         values.put(allColumns[4], urgent);
@@ -59,12 +91,22 @@ public class Source {
         cursor.moveToFirst();
     }
 
+    /**
+     * Deletes an item in the database.
+     *
+     * @param where Row to delete.
+     */
     public void delete_item(String where) {
         open();
         database.delete("HOMEWORK", where, null);
         close();
     }
 
+    /**
+     * Returns an ArrayList containing HashMaps containing the homework.
+     *
+     * @param c Needed by {@link android.preference.PreferenceManager}.
+     */
     public ArrayList<HashMap<String, String>> get(Context c) {
         ArrayList<HashMap<String, String>> entriesList = new ArrayList<>();
 
