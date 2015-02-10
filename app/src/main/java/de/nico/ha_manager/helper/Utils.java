@@ -49,14 +49,32 @@ public class Utils {
 
     private static boolean isActionBarAvailable = false;
 
+    /**
+     * Shows a short Toast.
+     *
+     * @param c   Needed for {@link android.widget.Toast}.
+     * @param msg Message to show.
+     */
     public static void makeShortToast(Context c, String msg) {
         Toast.makeText(c, msg, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Shows a long Toast.
+     *
+     * @param c   Needed for {@link android.widget.Toast}.
+     * @param msg Message to show.
+     */
     public static void makeLongToast(Context c, String msg) {
         Toast.makeText(c, msg, Toast.LENGTH_LONG).show();
     }
 
+    /**
+     * Converts an ArrayList with multiples HashMaps to an ArrayList with just one HashMap.
+     *
+     * @param ArHa An ArrayList with multiples HashMaps.
+     * @param pos  Indicates which HashMap has to be used.
+     */
     public static ArrayList<HashMap<String, String>> tempArray(
             ArrayList<HashMap<String, String>> ArHa, int pos) {
 
@@ -113,7 +131,6 @@ public class Utils {
      * A fix for a VerifyError crash on old versions
      * of Android
      */
-
     static {
         try {
             ActionBarWrapper.isAvailable();
@@ -130,6 +147,12 @@ public class Utils {
         }
     }
 
+    /**
+     * Returns a SimpleAdapter that uses the layout "listview_entry".
+     *
+     * @param c Needed for {@link android.widget.SimpleAdapter}.
+     * @param a ArrayList with HashMaps to show with the adapter.
+     */
     public static SimpleAdapter entryAdapter(Context c,
                                              ArrayList<HashMap<String, String>> a) {
         // All TextViews in Layout "listview_entry"
@@ -141,6 +164,12 @@ public class Utils {
         return new SimpleAdapter(c, a, R.layout.listview_entry, columns, i);
     }
 
+    /**
+     * Returns a SimpleExpandableListAdapter that uses the layout "listview_expanded_entry1".
+     *
+     * @param c Needed for {@link android.widget.SimpleExpandableListAdapter}.
+     * @param a ArrayList with HashMaps to show with the adapter.
+     */
     public static SimpleExpandableListAdapter expandableEntryAdapter(Context c,
                                                                      ArrayList<HashMap<String, String>> a) {
         // All TextViews in Layout "listview_expanded_entry1"
@@ -157,6 +186,12 @@ public class Utils {
         return new SimpleExpandableListAdapter(c, a, R.layout.listview_expanded_entry1, groupColumns, groupTexts, childData, R.layout.listview_expanded_entry2, childColumns, childTexts);
     }
 
+    /**
+     * Converts an ArrayList containing HashMaps to a List containing a List Containing a Map.
+     *
+     * @param a   ArrayList with HashMaps to convert.
+     * @param row Row to add to the Map.
+     */
     public static List<List<Map<String, String>>> covertToListListMap(ArrayList<HashMap<String, String>> a, String row) {
         List<List<Map<String, String>>> ll = new ArrayList<>();
         for (int i = 0; i < a.size(); i++) {
@@ -165,12 +200,17 @@ public class Utils {
 
             List<Map<String, String>> l = new ArrayList<>();
             l.add(tmpL);
-            
+
             ll.add(l);
         }
         return ll;
     }
 
+    /**
+     * Sends an Intent with a text to share the app.
+     *
+     * @param c Needed for {@link android.content.Intent}.
+     */
     @SuppressWarnings("deprecation")
     public static boolean shareApp(Context c) {
         String share_title = c.getString(R.string.intent_share_title);
@@ -191,6 +231,12 @@ public class Utils {
         }
     }
 
+    /**
+     * Returns some information to the build of the app.
+     *
+     * @param c Needed for {@link android.content.pm.PackageInfo} and
+     *          {@link android.content.pm.ApplicationInfo}.
+     */
     public static String getBuildInfo(Context c) {
         String buildInfo = "Built with love.";
         try {
@@ -219,6 +265,12 @@ public class Utils {
         return buildInfo;
     }
 
+    /**
+     * Shows a spinner with all available languages of HW-Manager.
+     *
+     * @param c Needed for {@link de.nico.ha_manager.HWManager} and
+     *          {@link android.content.SharedPreferences}.
+     */
     public static void langSpinner(final Context c) {
         AlertDialog.Builder b = new Builder(c);
         // Current translations of HW-Manager
@@ -255,6 +307,12 @@ public class Utils {
         b.show();
     }
 
+    /**
+     * Transfers a file.
+     *
+     * @param src Source from where the file has to be transferred.
+     * @param dst Source to where the file has to be transferred.
+     */
     public static boolean transfer(final File src, final File dst) {
         try {
             FileInputStream inStream = new FileInputStream(src);
@@ -274,7 +332,11 @@ public class Utils {
         }
     }
 
-    // Milliseconds
+    /**
+     * Converts a time in milliseconds to a date.
+     *
+     * @param time Time in milliseconds,
+     */
     public static String convertToDate(long time) {
         String until;
         // Format to 31.12.14 or local version of that
@@ -292,7 +354,11 @@ public class Utils {
         return until;
     }
 
-    // Milliseconds
+    /**
+     * Converts a time in an int array to a date.
+     *
+     * @param time Time in an int array,
+     */
     public static String convertToDate(int[] time) {
         String until;
         // Format to 31.12.14 or local version of that
@@ -309,6 +375,11 @@ public class Utils {
         return until;
     }
 
+    /**
+     * Converts a time in milliseconds to the time in milliseconds.
+     *
+     * @param time Time in an int array to a date.
+     */
     public static long convertToMilliseconds(int[] time) {
         GregorianCalendar gc = new GregorianCalendar(time[0], time[1], time[2]);
         return gc.getTimeInMillis();
