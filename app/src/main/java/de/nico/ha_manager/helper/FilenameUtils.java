@@ -3,7 +3,7 @@ package de.nico.ha_manager.helper;
 /*
  * @author Nico Alt
  * @author Devin
- * See the file "LICENSE.txt" for the full license governing this code.
+ * See the file "LICENSE" for the full license governing this code.
  */
 
 /*

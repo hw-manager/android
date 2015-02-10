@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+	Author: Nico Alt and Devin
+	See the file "LICENSE" for the full license governing this code.
+-->
 <resources>
 
     <style name="AppBaseTheme" parent="android:Theme.Material.Light.DarkActionBar">

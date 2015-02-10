@@ -2,7 +2,7 @@ package de.nico.ha_manager.helper;
 
 /* 
  * @author Nico Alt
- * See the file "LICENSE.txt" for the full license governing this code.
+ * See the file "LICENSE" for the full license governing this code.
  */
 
 import android.content.Context;
