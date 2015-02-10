@@ -78,8 +78,13 @@ public class Source {
         while (!cursor.isAfterLast()) {
             HashMap<String, String> temp = new HashMap<>();
             temp.put(allColumns[0], String.valueOf(cursor.getLong(0)));
-            for (int i = 1; i < allColumns.length; i++)
-                temp.put(allColumns[i], cursor.getString(i));
+            for (int i = 1; i < allColumns.length; i++) {
+                // Support upgrades from older versions
+                if (i == 5 && cursor.getString(i) == null)
+                    temp.put(allColumns[i], "1420066800000");
+                else
+                    temp.put(allColumns[i], cursor.getString(i));
+            }
 
             entriesList.add(temp);
             cursor.moveToNext();
