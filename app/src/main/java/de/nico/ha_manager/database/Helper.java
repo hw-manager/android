@@ -20,12 +20,12 @@ public class Helper extends SQLiteOpenHelper {
     /**
      * The current version of the database containing the homework.
      */
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     /**
      * The command when first creating the database.
      */
-    private static final String TABLE_CREATE_HOMEWORK = "create table HOMEWORK(ID integer primary key autoincrement,HOMEWORK text,SUBJECT text,TIME text,INFO text,URGENT text)";
+    private static final String TABLE_CREATE_HOMEWORK = "create table HOMEWORK(ID integer primary key autoincrement,HOMEWORK text,SUBJECT text,TIME text,INFO text,URGENT text,COMPLETED text)";
 
     public Helper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,10 +38,18 @@ public class Helper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Upgrade from first to second version
-        if (oldVersion == 1 && newVersion == 2) {
+        // Upgrade from first to third version
+        if (oldVersion == 1 && newVersion == 3) {
             db.execSQL("ALTER TABLE HOMEWORK ADD COLUMN INFO TEXT");
             db.execSQL("ALTER TABLE HOMEWORK ADD COLUMN TIME TEXT");
+            db.execSQL("ALTER TABLE HOMEWORK ADD COLUMN COMPLETED TEXT");
+            Log.w(Helper.class.getName(),
+                    "Upgrading database from version " + oldVersion + " to "
+                            + newVersion + ".");
+        }
+        // Upgrade from second to third version
+        if (oldVersion == 2 && newVersion == 3) {
+            db.execSQL("ALTER TABLE HOMEWORK ADD COLUMN COMPLETED TEXT");
             Log.w(Helper.class.getName(),
                     "Upgrading database from version " + oldVersion + " to "
                             + newVersion + ".");

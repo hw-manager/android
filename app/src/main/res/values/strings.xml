@@ -67,6 +67,7 @@
     <!-- Dialogs -->
     <string name="dialog_addSubject">Add Subject</string>
     <string name="dialog_addSubject_message">Which subject do you want to add?</string>
+    <string name="dialog_completed">Switch completion</string>
     <string name="dialog_edit">Edit</string>
     <string name="dialog_delete">Delete</string>
     <string name="dialog_really_delete_hw">Do you really want to delete all homework assignments?</string>

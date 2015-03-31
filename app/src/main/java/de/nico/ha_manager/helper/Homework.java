@@ -43,19 +43,20 @@ public class Homework {
     /**
      * Adds a homework.
      *
-     * @param c       Needed by {@link de.nico.ha_manager.database.Source}.
-     * @param ID      The ID used in the database.
-     * @param title   The title of the homework.
-     * @param subject The subject of the homework.
-     * @param time    The time until the homework has to be done.
-     * @param info    Additional information to the homework.
-     * @param urgent  Is it urgent?
+     * @param c         Needed by {@link de.nico.ha_manager.database.Source}.
+     * @param ID        The ID used in the database.
+     * @param title     The title of the homework.
+     * @param subject   The subject of the homework.
+     * @param time      The time until the homework has to be done.
+     * @param info      Additional information to the homework.
+     * @param urgent    Is it urgent?
+     * @param completed Is it completed?
      */
-    public static void add(Context c, String ID, String title, String subject, long time, String info, String urgent) {
+    public static void add(Context c, String ID, String title, String subject, long time, String info, String urgent, String completed) {
         try {
             Source s = new Source(c);
             s.open();
-            s.createEntry(c, ID, title, subject, time, info, urgent);
+            s.createEntry(c, ID, title, subject, time, info, urgent, completed);
             s.close();
         } catch (Exception ex) {
             Log.e("Database", ex.toString());

@@ -86,14 +86,21 @@ public class Main extends FragmentActivity {
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        menu.add(0, v.getId(), 0, getString(R.string.dialog_edit));
-        menu.add(0, v.getId(), 1, getString(R.string.dialog_delete));
+        menu.add(0, v.getId(), 0, getString(R.string.dialog_completed));
+        menu.add(0, v.getId(), 1, getString(R.string.dialog_edit));
+        menu.add(0, v.getId(), 2, getString(R.string.dialog_delete));
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         final ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) item
                 .getMenuInfo();
+        if (item.getTitle() == getString(R.string.dialog_completed)) {
+            ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
+            if (Utils.crossOneOut(this, hwList, hwArray, ExpandableListView.getPackedPositionGroup(info.packedPosition)))
+                update();
+            return true;
+        }
         if (item.getTitle() == getString(R.string.dialog_edit)) {
             editOne(hwArray, ExpandableListView.getPackedPositionGroup(info.packedPosition));
             return true;
@@ -132,12 +139,14 @@ public class Main extends FragmentActivity {
         ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
         hwList.setAdapter(Utils.expandableEntryAdapter(this, hwArray));
         registerForContextMenu(hwList);
+        Utils.crossOut(hwList, hwArray);
     }
 
     /**
      * Edits a homework.
+     *
      * @param ArHa {@link java.util.ArrayList} containing a {@link java.util.HashMap} with the homework.
-     * @param pos Position where the homework is.
+     * @param pos  Position where the homework is.
      */
     private void editOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
         final String currentID = "ID = " + ArHa.get(pos).get(Source.allColumns[0]);
@@ -153,8 +162,9 @@ public class Main extends FragmentActivity {
 
     /**
      * Deletes a homework.
+     *
      * @param ArHa {@link java.util.ArrayList} containing a {@link java.util.HashMap} with the homework.
-     * @param pos Position where the homework is.
+     * @param pos  Position where the homework is.
      */
     private void deleteOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
         ArrayList<HashMap<String, String>> tempArray = Utils.tempArray(ArHa,

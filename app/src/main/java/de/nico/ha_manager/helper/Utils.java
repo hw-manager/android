@@ -17,11 +17,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.graphics.Paint;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.ExpandableListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleExpandableListAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -226,7 +229,7 @@ public class Utils {
                     + app_name));
             return true;
         } catch (ActivityNotFoundException e) {
-            Log.e("ActivityNotFoundException", e.toString());
+            Log.e("ActivityNotFoundExcept", e.toString());
             return false;
         }
     }
@@ -305,6 +308,48 @@ public class Utils {
         });
 
         b.show();
+    }
+
+    /**
+     * Cross out solved homework.
+     *
+     * @param hwList  {@link android.widget.ExpandableListView} which contains the homework.
+     * @param hwArray {@link java.util.ArrayList} which contains the homework.
+     */
+    public static void crossOut(ExpandableListView hwList, ArrayList<HashMap<String, String>> hwArray) {
+        for (int i = 0; i < hwArray.size(); i++) {
+            /* TODO: DO NOT WORK
+            if (!hwArray.get(i).get(Source.allColumns[6]).equals("")) {
+                TextView tv1 = (TextView) hwList.getChildAt(i).findViewById(R.id.textView_subject);
+                TextView tv2 = (TextView) hwList.getChildAt(i).findViewById(R.id.textView_until);
+                TextView tv3 = (TextView) hwList.getChildAt(i).findViewById(R.id.textView_homework);
+                TextView tv4 = (TextView) hwList.getChildAt(i).findViewById(R.id.textView_urgent);
+                tv1.setPaintFlags(tv1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                tv2.setPaintFlags(tv2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                tv3.setPaintFlags(tv3.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                tv4.setPaintFlags(tv4.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            }*/
+        }
+        return;
+    }
+
+    /**
+     * Cross out one solved homework.
+     *
+     * @param hwList  {@link android.widget.ExpandableListView} which contains the homework.
+     * @param hwArray {@link java.util.ArrayList} which contains the homework.
+     * @param pos     Position of solved homework.
+     */
+    public static boolean crossOneOut(Context c, ExpandableListView hwList, ArrayList<HashMap<String, String>> hwArray, int pos) {
+        String ID = "ID = " + hwArray.get(pos).get(Source.allColumns[0]);
+        String title = hwArray.get(pos).get(Source.allColumns[1]);
+        String subject = hwArray.get(pos).get(Source.allColumns[2]);
+        long time = Long.valueOf(hwArray.get(pos).get(Source.allColumns[5])).longValue();
+        String info = hwArray.get(pos).get(Source.allColumns[3]);
+        String urgent = hwArray.get(pos).get(Source.allColumns[4]);
+        String completed = "completed";
+        Homework.add(c, ID, title, subject, time, info, urgent, completed);
+        return true;
     }
 
     /**

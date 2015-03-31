@@ -26,7 +26,7 @@ public class Source {
     /**
      * All columns used in the database.
      */
-    public static final String[] allColumns = {"ID", "HOMEWORK", "SUBJECT", "INFO", "URGENT", "TIME"};
+    public static final String[] allColumns = {"ID", "HOMEWORK", "SUBJECT", "INFO", "URGENT", "TIME", "COMPLETED"};
 
     /**
      * The {@link de.nico.ha_manager.database.Helper} used in this class.
@@ -64,21 +64,23 @@ public class Source {
     /**
      * Adds a homework.
      *
-     * @param c       Needed by {@link de.nico.ha_manager.database.Source}.
-     * @param ID      The ID used in the database.
-     * @param title   The title of the homework.
-     * @param subject The subject of the homework.
-     * @param time    The time until the homework has to be done.
-     * @param info    Additional information to the homework.
-     * @param urgent  Is it urgent?
+     * @param c         Needed by {@link de.nico.ha_manager.database.Source}.
+     * @param ID        The ID used in the database.
+     * @param title     The title of the homework.
+     * @param subject   The subject of the homework.
+     * @param time      The time until the homework has to be done.
+     * @param info      Additional information to the homework.
+     * @param urgent    Is it urgent?
+     * @param completed Is it completed?
      */
-    public void createEntry(Context c, String ID, String title, String subject, long time, String info, String urgent) {
+    public void createEntry(Context c, String ID, String title, String subject, long time, String info, String urgent, String completed) {
         ContentValues values = new ContentValues();
         values.put(allColumns[1], title);
         values.put(allColumns[2], subject);
         values.put(allColumns[3], info);
         values.put(allColumns[4], urgent);
         values.put(allColumns[5], String.valueOf(time));
+        values.put(allColumns[6], completed);
 
         String insertId = "ID = " + database.insert("HOMEWORK", null, values);
         if (ID != null) {
@@ -126,12 +128,14 @@ public class Source {
                     temp.put(allColumns[i], "1420066800000");
                 else
                     temp.put(allColumns[i], cursor.getString(i));
+                if (i == 6 && cursor.getString(i) == null)
+                    temp.put(allColumns[i], "");
+                else
+                    temp.put(allColumns[i], cursor.getString(i));
             }
-
             entriesList.add(temp);
             cursor.moveToNext();
         }
-
         cursor.close();
 
         // Sort by time

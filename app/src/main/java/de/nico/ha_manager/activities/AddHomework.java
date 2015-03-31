@@ -57,6 +57,11 @@ public class AddHomework extends FragmentActivity {
      */
     private static String ID = null;
 
+    /**
+     * Does the homework is completed?
+     */
+    private static String completed = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Utils.setTheme(this, true);
@@ -111,6 +116,7 @@ public class AddHomework extends FragmentActivity {
 
     /**
      * Sets the button with the date until the homework has to be done.
+     *
      * @param date If it's 0, current time will be used.
      */
     private void setUntilButton(int[] date) {
@@ -133,6 +139,7 @@ public class AddHomework extends FragmentActivity {
 
     /**
      * Handles information from an intent.
+     *
      * @param intent Intent with information
      */
     private void handleIntent(Intent intent) {
@@ -191,6 +198,7 @@ public class AddHomework extends FragmentActivity {
 
     /**
      * Sets button with {@link android.app.DatePickerDialog}.
+     *
      * @param v Needed because method is called from layout
      */
     public void setUntil(View v) {
@@ -214,6 +222,7 @@ public class AddHomework extends FragmentActivity {
 
     /**
      * Adds the homework to the database and finishes the activity.
+     *
      * @param v Needed because method is called from layout
      */
     public void addHomework(View v) {
@@ -245,7 +254,7 @@ public class AddHomework extends FragmentActivity {
         String info = infoEdit.getText().toString();
 
         // Entry in database
-        Homework.add(this, ID, homework, subject, time, info, urgent);
+        Homework.add(this, ID, homework, subject, time, info, urgent, completed);
 
         // Auto-export
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
