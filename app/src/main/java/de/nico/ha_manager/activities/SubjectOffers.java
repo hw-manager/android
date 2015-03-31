@@ -47,6 +47,9 @@ public class SubjectOffers extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Updates list with subject offers.
+     */
     private void update() {
         String[] subOffers = getResources().getStringArray(
                 R.array.subject_offers);
@@ -80,11 +83,8 @@ public class SubjectOffers extends FragmentActivity {
                                 })
                         .setNegativeButton((getString(android.R.string.no)),
                                 null).show();
-
             }
 
         });
-
     }
-
 }

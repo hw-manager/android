@@ -39,6 +39,9 @@ public class About extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Updates the content of the about page.
+     */
     private void update() {
         // Get Build Info
         String appName = getString(R.string.app_name);
@@ -51,5 +54,4 @@ public class About extends FragmentActivity {
         contentView
                 .setText(Html.fromHtml(Constants.about_us_content));
     }
-
 }

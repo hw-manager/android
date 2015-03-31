@@ -166,8 +166,6 @@ public class Source {
             String date = Utils.convertToDate(time);
             temp.put("UNTIL", date);
         }
-
         return entriesList;
     }
-
 }

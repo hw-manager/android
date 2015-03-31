@@ -7,6 +7,7 @@ package de.nico.ha_manager.helper;
  */
 
 public final class Constants {
+
     /**
      * The HTML data shown in the about page.
      */

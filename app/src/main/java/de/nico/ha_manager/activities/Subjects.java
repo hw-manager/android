@@ -45,6 +45,9 @@ public class Subjects extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Updates list with subjects.
+     */
     private void update() {
         String[] subjects = Subject.get(this);
 
@@ -78,11 +81,8 @@ public class Subjects extends FragmentActivity {
                                 })
                         .setNegativeButton((getString(android.R.string.no)),
                                 null).show();
-
             }
 
         });
-
     }
-
 }

@@ -34,7 +34,14 @@ import de.nico.ha_manager.helper.Utils;
 
 public class Preferences extends PreferenceActivity {
 
+    /**
+     * {@link android.content.Context} of this class.
+     */
     private static Context c;
+
+    /**
+     * List with all homework databases.
+     */
     private String[] list;
 
     @SuppressWarnings("deprecation")
@@ -69,6 +76,9 @@ public class Preferences extends PreferenceActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Sets the content of the import {@link android.app.AlertDialog}.
+     */
     @SuppressWarnings("deprecation")
     private void setImportDialog() {
         ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
@@ -99,6 +109,9 @@ public class Preferences extends PreferenceActivity {
         });
     }
 
+    /**
+     * Sets the information when the application was built.
+     */
     @SuppressWarnings("deprecation")
     private void setBuildInfo() {
         // Get Build Info
@@ -110,6 +123,9 @@ public class Preferences extends PreferenceActivity {
         onContentChanged();
     }
 
+    /**
+     * Sets the list with all available languages of the app.
+     */
     @SuppressWarnings("deprecation")
     private void setLanguage() {
         Preference language = findPreference("pref_app_language");
@@ -126,6 +142,9 @@ public class Preferences extends PreferenceActivity {
             language.setSummary(appLoc.getDisplayLanguage(appLoc));
     }
 
+    /**
+     * Checks if a preference was clicked.
+     */
     @SuppressWarnings("deprecation")
     private void checkPreferences() {
         Preference language = findPreference("pref_app_language");
@@ -141,7 +160,8 @@ public class Preferences extends PreferenceActivity {
         pref_theme.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                recreate();
+                if (android.os.Build.VERSION.SDK_INT >= 11)
+                    recreate();
                 return true;
             }
         });
@@ -150,7 +170,8 @@ public class Preferences extends PreferenceActivity {
         pref_black.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                recreate();
+                if (android.os.Build.VERSION.SDK_INT >= 11)
+                    recreate();
                 return true;
             }
         });
@@ -264,7 +285,7 @@ public class Preferences extends PreferenceActivity {
      * Gets a list of the *.db files in /sdcard/HW-Manager/
      * for the import dialog.
      */
-    public ArrayList<String> getFiles(String DirectoryPath) {
+    private ArrayList<String> getFiles(String DirectoryPath) {
         ArrayList<String> myFiles = new ArrayList<>();
         File f = new File(DirectoryPath);
 
@@ -282,7 +303,6 @@ public class Preferences extends PreferenceActivity {
                 }
             }
         }
-
         // Make sure the list is in alphabetical order. It already will.
         Collections.sort(myFiles);
         // Reverse the order so newest is on top.

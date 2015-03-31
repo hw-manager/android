@@ -31,6 +31,9 @@ import de.nico.ha_manager.helper.Utils;
 
 public class Main extends FragmentActivity {
 
+    /**
+     * {@link java.util.ArrayList} containing a {@link java.util.HashMap} with the homework.
+     */
     private static ArrayList<HashMap<String, String>> hwArray = new ArrayList<>();
 
     @Override
@@ -41,21 +44,19 @@ public class Main extends FragmentActivity {
         setTitle(getString(R.string.title_homework));
         update();
 
+        // If subject list is empty
         if (!(Subject.get(this).length > 0))
             Subject.setDefault(this);
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
         update();
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -103,9 +104,11 @@ public class Main extends FragmentActivity {
             return true;
         }
         return false;
-
     }
 
+    /**
+     * Updates homework list.
+     */
     private void update() {
         // Remove old content
         hwArray.clear();
@@ -117,17 +120,25 @@ public class Main extends FragmentActivity {
             hwArray = s.get(this);
             s.close();
         } catch (Exception ex) {
-            Log.e("Update Homework List:", ex.toString());
+            Log.e("Update Homework List", ex.toString());
         }
         setOnClick();
     }
 
+    /**
+     * Sets fake onClickListener which creates a {@link android.view.ContextMenu}.
+     */
     private void setOnClick() {
         ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
         hwList.setAdapter(Utils.expandableEntryAdapter(this, hwArray));
         registerForContextMenu(hwList);
     }
 
+    /**
+     * Edits a homework.
+     * @param ArHa {@link java.util.ArrayList} containing a {@link java.util.HashMap} with the homework.
+     * @param pos Position where the homework is.
+     */
     private void editOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
         final String currentID = "ID = " + ArHa.get(pos).get(Source.allColumns[0]);
         Intent intent = new Intent(this, AddHomework.class);
@@ -140,6 +151,11 @@ public class Main extends FragmentActivity {
         startActivity(intent);
     }
 
+    /**
+     * Deletes a homework.
+     * @param ArHa {@link java.util.ArrayList} containing a {@link java.util.HashMap} with the homework.
+     * @param pos Position where the homework is.
+     */
     private void deleteOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
         ArrayList<HashMap<String, String>> tempArray = Utils.tempArray(ArHa,
                 pos);
@@ -152,19 +168,19 @@ public class Main extends FragmentActivity {
                 .setAdapter(alertAdapter, null)
                 .setPositiveButton((getString(android.R.string.yes)),
                         new DialogInterface.OnClickListener() {
-
                             @Override
                             public void onClick(DialogInterface d, int i) {
                                 Homework.deleteOne(Main.this, currentID);
                                 update();
-
                             }
-
                         })
                 .setNegativeButton((getString(android.R.string.no)), null)
                 .show();
     }
 
+    /**
+     * Deletes all homework.
+     */
     private void deleteAll() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog
@@ -172,7 +188,6 @@ public class Main extends FragmentActivity {
                 .setMessage(getString(R.string.dialog_really_delete_hw))
                 .setPositiveButton((getString(android.R.string.yes)),
                         new DialogInterface.OnClickListener() {
-
                             @Override
                             public void onClick(DialogInterface d, int i) {
                                 Homework.deleteAll(Main.this);
@@ -182,5 +197,4 @@ public class Main extends FragmentActivity {
                 .setNegativeButton((getString(android.R.string.no)), null)
                 .show();
     }
-
 }

@@ -37,18 +37,24 @@ import de.nico.ha_manager.helper.Utils;
 @SuppressLint("SimpleDateFormat")
 public class AddHomework extends FragmentActivity {
 
-    // String array containing the subjects
+    /**
+     * String array containing the subjects
+     */
     private static String[] subjects;
 
-    // Until when the homework has to be finished
-    private static String until;
-
-    // 0 is year, 1 is month and 2 is day
+    /**
+     * 0 is year, 1 is month and 2 is day
+     */
     private static int[] date;
 
-    // Time in milliseconds
+    /**
+     * Time in milliseconds
+     */
     private static long time;
 
+    /**
+     * ID of the homework entry in the database
+     */
     private static String ID = null;
 
     @Override
@@ -60,7 +66,7 @@ public class AddHomework extends FragmentActivity {
         subjects = Subject.get(this);
         date = getDate(0);
 
-        setTextViewUntil(date);
+        setUntilButton(date);
         setSpinner();
         handleIntent(getIntent());
         Utils.setupActionBar(this, false);
@@ -77,6 +83,10 @@ public class AddHomework extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * @param time If it's 0, current time will be used.
+     * @return Int array where 0 is year, 1 is month and 2 is day.
+     */
     private int[] getDate(long time) {
         final Calendar c = Calendar.getInstance();
         if (time != 0)
@@ -99,14 +109,20 @@ public class AddHomework extends FragmentActivity {
         return tmpDate;
     }
 
-    private void setTextViewUntil(int[] date) {
-        until = Utils.convertToDate(date);
+    /**
+     * Sets the button with the date until the homework has to be done.
+     * @param date If it's 0, current time will be used.
+     */
+    private void setUntilButton(int[] date) {
+        String until = Utils.convertToDate(date);
         Button untilButton = (Button) findViewById(R.id.button_until);
         untilButton.setText(until);
         time = Utils.convertToMilliseconds(date);
     }
 
-    // Set spinner with subjects
+    /**
+     * Sets spinner with subjects.
+     */
     private void setSpinner() {
         Spinner subSpin = (Spinner) findViewById(R.id.spinner_subject);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
@@ -115,6 +131,10 @@ public class AddHomework extends FragmentActivity {
         subSpin.setAdapter(adapter);
     }
 
+    /**
+     * Handles information from an intent.
+     * @param intent Intent with information
+     */
     private void handleIntent(Intent intent) {
         Bundle extras = intent.getExtras();
         if (extras != null) {
@@ -159,10 +179,9 @@ public class AddHomework extends FragmentActivity {
             }
 
             // Set Until
-            Button untilButton = (Button) findViewById(R.id.button_until);
             time = Long.valueOf(extras.getString(Source.allColumns[5])).longValue();
             date = getDate(time);
-            setTextViewUntil(date);
+            setUntilButton(date);
 
             // Change the "Add" button to "Save"
             Button mAdd = (Button) findViewById(R.id.button_add);
@@ -170,6 +189,10 @@ public class AddHomework extends FragmentActivity {
         }
     }
 
+    /**
+     * Sets button with {@link android.app.DatePickerDialog}.
+     * @param v Needed because method is called from layout
+     */
     public void setUntil(View v) {
         DatePickerDialog dpd = new DatePickerDialog(this,
                 new DatePickerDialog.OnDateSetListener() {
@@ -180,7 +203,7 @@ public class AddHomework extends FragmentActivity {
                         date[0] = year;
                         date[1] = monthOfYear;
                         date[2] = dayOfMonth;
-                        setTextViewUntil(date);
+                        setUntilButton(date);
 
                     }
 
@@ -189,6 +212,10 @@ public class AddHomework extends FragmentActivity {
         dpd.show();
     }
 
+    /**
+     * Adds the homework to the database and finishes the activity.
+     * @param v Needed because method is called from layout
+     */
     public void addHomework(View v) {
         Spinner subSpin = (Spinner) findViewById(R.id.spinner_subject);
         EditText hwEdit = (EditText) findViewById(R.id.editText_homework);
@@ -228,7 +255,6 @@ public class AddHomework extends FragmentActivity {
 
         finish();
     }
-
 }
 
 

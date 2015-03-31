@@ -126,5 +126,4 @@ public class Subject {
         editor.putInt("subjects_size", subjects.length);
         editor.commit();
     }
-
 }
