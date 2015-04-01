@@ -17,6 +17,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.SimpleAdapter;
 
@@ -86,7 +87,7 @@ public class Main extends FragmentActivity {
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        menu.add(0, v.getId(), 0, getString(R.string.dialog_completed));
+        // menu.add(0, v.getId(), 0, getString(R.string.dialog_completed));
         menu.add(0, v.getId(), 1, getString(R.string.dialog_edit));
         menu.add(0, v.getId(), 2, getString(R.string.dialog_delete));
     }
@@ -137,9 +138,13 @@ public class Main extends FragmentActivity {
      */
     private void setOnClick() {
         ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
-        hwList.setAdapter(Utils.expandableEntryAdapter(this, hwArray));
+        ExpandableListAdapter e = Utils.expandableEntryAdapter(this, hwArray);
+        hwList.setAdapter(e);
         registerForContextMenu(hwList);
-        Utils.crossOut(hwList, hwArray);
+        /*
+        Still does not work...
+        Utils.crossOut(e, hwArray);
+         */
     }
 
     /**
