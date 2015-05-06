@@ -30,6 +30,7 @@ import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.FilenameUtils;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
+import de.nico.ha_manager.helper.Theme;
 import de.nico.ha_manager.helper.Utils;
 
 public class Preferences extends PreferenceActivity {
@@ -47,7 +48,7 @@ public class Preferences extends PreferenceActivity {
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Utils.setTheme(this, false);
+        Theme.set(this, false);
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         c = this;

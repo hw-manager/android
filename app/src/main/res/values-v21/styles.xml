@@ -5,8 +5,8 @@
 <resources>
 
     <!-- TODO: Needs to be colorful. -->
-    <style name="AppBaseTheme" parent="android:Theme.Material.Light.DarkActionBar"/>
+    <style name="AppBaseTheme" parent="android:Theme.Material.Light.DarkActionBar" />
 
-    <style name="DarkAppBaseTheme" parent="android:Theme.Material"/>
+    <style name="DarkAppBaseTheme" parent="android:Theme.Material" />
 
 </resources>

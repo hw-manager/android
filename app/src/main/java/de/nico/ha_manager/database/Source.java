@@ -18,8 +18,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
+import de.nico.ha_manager.helper.Converter;
 import de.nico.ha_manager.helper.Homework;
-import de.nico.ha_manager.helper.Utils;
 
 public class Source {
 
@@ -90,6 +90,7 @@ public class Source {
 
         Cursor cursor = database.query("HOMEWORK", allColumns, insertId, null,
                 null, null, null);
+        cursor.close();
         cursor.moveToFirst();
     }
 
@@ -167,7 +168,7 @@ public class Source {
         for (int i = 0; i < entriesList.size(); i++) {
             HashMap<String, String> temp = entriesList.get(i);
             long time = Long.valueOf(temp.get(allColumns[5])).longValue();
-            String date = Utils.convertToDate(time);
+            String date = Converter.toDate(time);
             temp.put("UNTIL", date);
         }
         return entriesList;

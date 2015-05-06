@@ -21,13 +21,17 @@ import android.widget.TextView;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Subject;
+import de.nico.ha_manager.helper.Theme;
 import de.nico.ha_manager.helper.Utils;
 
+/**
+ * Shows a list with all subjects used.
+ */
 public class Subjects extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Utils.setTheme(this, false);
+        Theme.set(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         update();

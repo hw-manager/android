@@ -29,7 +29,7 @@ public class FilenameUtils {
      *
      * @since Commons IO 1.4
      */
-    public static final char EXTENSION_SEPARATOR = '.';
+    private static final char EXTENSION_SEPARATOR = '.';
 
     /**
      * The Unix separator character.
@@ -82,7 +82,7 @@ public class FilenameUtils {
      * @return the index of the last separator character, or -1 if there
      * is no such character
      */
-    public static int indexOfLastSeparator(String filename) {
+    private static int indexOfLastSeparator(String filename) {
         if (filename == null)
             return -1;
         int lastUnixPos = filename.lastIndexOf(UNIX_SEPARATOR);
@@ -103,7 +103,7 @@ public class FilenameUtils {
      * @return the index of the last separator character, or -1 if there
      * is no such character
      */
-    public static int indexOfExtension(String filename) {
+    private static int indexOfExtension(String filename) {
         if (filename == null)
             return -1;
         int extensionPos = filename.lastIndexOf(EXTENSION_SEPARATOR);

@@ -74,7 +74,7 @@ public class Subject {
         editor.commit();
 
         String sAdded = c.getString(R.string.added);
-        Utils.makeShortToast(c, subject + " " + sAdded);
+        CustomToast.showShort(c, subject + " " + sAdded);
     }
 
     /**

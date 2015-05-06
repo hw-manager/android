@@ -26,10 +26,16 @@ import java.util.HashMap;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Source;
+import de.nico.ha_manager.helper.Converter;
+import de.nico.ha_manager.helper.CustomAdapter;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
+import de.nico.ha_manager.helper.Theme;
 import de.nico.ha_manager.helper.Utils;
 
+/**
+ * The main class of HW-Manager.
+ */
 public class Main extends FragmentActivity {
 
     /**
@@ -39,7 +45,7 @@ public class Main extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Utils.setTheme(this, false);
+        Theme.set(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expandable_list);
         setTitle(getString(R.string.title_homework));
@@ -98,7 +104,7 @@ public class Main extends FragmentActivity {
                 .getMenuInfo();
         if (item.getTitle() == getString(R.string.dialog_completed)) {
             ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
-            if (Utils.crossOneOut(this, hwList, hwArray, ExpandableListView.getPackedPositionGroup(info.packedPosition)))
+            if (Utils.crossOneOut(this, hwArray, ExpandableListView.getPackedPositionGroup(info.packedPosition)))
                 update();
             return true;
         }
@@ -138,7 +144,7 @@ public class Main extends FragmentActivity {
      */
     private void setOnClick() {
         ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
-        ExpandableListAdapter e = Utils.expandableEntryAdapter(this, hwArray);
+        ExpandableListAdapter e = CustomAdapter.expandableEntry(this, hwArray);
         hwList.setAdapter(e);
         registerForContextMenu(hwList);
         /*
@@ -172,10 +178,9 @@ public class Main extends FragmentActivity {
      * @param pos  Position where the homework is.
      */
     private void deleteOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
-        ArrayList<HashMap<String, String>> tempArray = Utils.tempArray(ArHa,
-                pos);
+        ArrayList<HashMap<String, String>> tempArray = Converter.toTmpArray(ArHa, pos);
         final String currentID = "ID = " + ArHa.get(pos).get(Source.allColumns[0]);
-        SimpleAdapter alertAdapter = Utils.entryAdapter(this, tempArray);
+        SimpleAdapter alertAdapter = CustomAdapter.entry(this, tempArray);
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog

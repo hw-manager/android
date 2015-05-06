@@ -4,8 +4,8 @@
 -->
 <resources>
 
-    <style name="AddTheme" parent="android:Theme.Material.Light.DialogWhenLarge"/>
+    <style name="AddTheme" parent="android:Theme.Material.Light.DialogWhenLarge" />
 
-    <style name="DarkAddTheme" parent="android:Theme.Material.DialogWhenLarge"/>
+    <style name="DarkAddTheme" parent="android:Theme.Material.DialogWhenLarge" />
 
 </resources>

@@ -4,8 +4,8 @@
 -->
 <resources>
 
-    <style name="AddTheme" parent="android:Theme.Holo.Light.DialogWhenLarge"/>
+    <style name="AddTheme" parent="android:Theme.Holo.Light.DialogWhenLarge" />
 
-    <style name="DarkAddTheme" parent="android:Theme.Holo.DialogWhenLarge"/>
+    <style name="DarkAddTheme" parent="android:Theme.Holo.DialogWhenLarge" />
 
 </resources>

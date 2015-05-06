@@ -13,6 +13,7 @@ import android.util.Log;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Helper;
@@ -74,7 +75,7 @@ public class Homework {
         File dir = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name));
         if (!(dir.exists())) {
-            Utils.makeLongToast(
+            CustomToast.showLong(
                     c,
                     c.getString(R.string.toast_nobackup)
                             + c.getString(R.string.app_name));
@@ -89,7 +90,7 @@ public class Homework {
 
         // Check if Database exists
         if (!(srcDB.exists())) {
-            Utils.makeLongToast(
+            CustomToast.showLong(
                     c,
                     c.getString(R.string.toast_nobackup)
                             + c.getString(R.string.app_name));
@@ -97,9 +98,9 @@ public class Homework {
         }
 
         if (Utils.transfer(srcDB, dstDB))
-            Utils.makeShortToast(c, c.getString(R.string.toast_import_success));
+            CustomToast.showShort(c, c.getString(R.string.toast_import_success));
         else
-            Utils.makeShortToast(c, c.getString(R.string.toast_import_fail));
+            CustomToast.showShort(c, c.getString(R.string.toast_import_fail));
     }
 
     /**
@@ -115,7 +116,7 @@ public class Homework {
         if (!(dir.exists()))
             dir.mkdir();
 
-        String stamp = new SimpleDateFormat("yyyy-MM-dd-hh-mm").format(new Date());
+        String stamp = new SimpleDateFormat("yyyy-MM-dd-hh-mm", Locale.US).format(new Date());
 
         if (auto)
             stamp = "auto-backup";
@@ -130,8 +131,8 @@ public class Homework {
             dstDB.delete();
 
         if (Utils.transfer(srcDB, dstDB) && !auto)
-            Utils.makeShortToast(c, c.getString(R.string.toast_export_success));
+            CustomToast.showShort(c, c.getString(R.string.toast_export_success));
         else if (!auto)
-            Utils.makeShortToast(c, c.getString(R.string.toast_export_fail));
+            CustomToast.showShort(c, c.getString(R.string.toast_export_fail));
     }
 }

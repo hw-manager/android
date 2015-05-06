@@ -6,13 +6,13 @@
 	https://gitlab.com/fdroid/fdroidclient/blob/master/F-Droid/res/layout/applistitem.xml
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_gravity="center_vertical"
-              android:baselineAligned="false"
-              android:orientation="vertical"
-              android:padding="10dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -32,7 +32,7 @@
             android:singleLine="true"
             android:textSize="17sp"
             android:textStyle="bold"
-            tools:text="Subject"/>
+            tools:text="Subject" />
 
         <TextView
             android:id="@+id/textView_until"
@@ -44,7 +44,7 @@
             android:gravity="end"
             android:singleLine="true"
             android:textSize="13sp"
-            tools:text="Until"/>
+            tools:text="Until" />
     </LinearLayout>
 
     <LinearLayout
@@ -63,7 +63,7 @@
             android:gravity="start"
             android:singleLine="true"
             android:textSize="13sp"
-            tools:text="Homework"/>
+            tools:text="Homework" />
 
         <TextView
             android:id="@+id/textView_urgent"
@@ -75,7 +75,7 @@
             android:gravity="end"
             android:singleLine="true"
             android:textSize="12sp"
-            tools:text="Urgent"/>
+            tools:text="Urgent" />
     </LinearLayout>
 
 </LinearLayout>

@@ -24,17 +24,23 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.Calendar;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Source;
+import de.nico.ha_manager.helper.Converter;
 import de.nico.ha_manager.helper.Homework;
 import de.nico.ha_manager.helper.Subject;
+import de.nico.ha_manager.helper.Theme;
 import de.nico.ha_manager.helper.Utils;
 
 @SuppressLint("SimpleDateFormat")
+/**
+ * Shows a page to add a homework.
+ */
 public class AddHomework extends FragmentActivity {
 
     /**
@@ -57,21 +63,16 @@ public class AddHomework extends FragmentActivity {
      */
     private static String ID = null;
 
-    /**
-     * Does the homework is completed?
-     */
-    private static String completed = "";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Utils.setTheme(this, true);
+        Theme.set(this, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
         subjects = Subject.get(this);
         date = getDate(0);
 
-        setUntilButton(date);
+        setUntilTV(date);
         setSpinner();
         handleIntent(getIntent());
         Utils.setupActionBar(this, false);
@@ -119,11 +120,11 @@ public class AddHomework extends FragmentActivity {
      *
      * @param date If it's 0, current time will be used.
      */
-    private void setUntilButton(int[] date) {
-        String until = Utils.convertToDate(date);
-        Button untilButton = (Button) findViewById(R.id.button_until);
-        untilButton.setText(until);
-        time = Utils.convertToMilliseconds(date);
+    private void setUntilTV(int[] date) {
+        String until = Converter.toDate(date);
+        TextView untilTV = (TextView) findViewById(R.id.button_until);
+        untilTV.setText(until);
+        time = Converter.toMilliseconds(date);
     }
 
     /**
@@ -188,7 +189,7 @@ public class AddHomework extends FragmentActivity {
             // Set Until
             time = Long.valueOf(extras.getString(Source.allColumns[5])).longValue();
             date = getDate(time);
-            setUntilButton(date);
+            setUntilTV(date);
 
             // Change the "Add" button to "Save"
             Button mAdd = (Button) findViewById(R.id.button_add);
@@ -211,7 +212,7 @@ public class AddHomework extends FragmentActivity {
                         date[0] = year;
                         date[1] = monthOfYear;
                         date[2] = dayOfMonth;
-                        setUntilButton(date);
+                        setUntilTV(date);
 
                     }
 
@@ -254,7 +255,7 @@ public class AddHomework extends FragmentActivity {
         String info = infoEdit.getText().toString();
 
         // Entry in database
-        Homework.add(this, ID, homework, subject, time, info, urgent, completed);
+        Homework.add(this, ID, homework, subject, time, info, urgent, "");
 
         // Auto-export
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

@@ -73,7 +73,6 @@
     <string name="dialog_really_delete_hw">Do you really want to delete all homework assignments?</string>
     <string name="dialog_really_delete_subs">Do you really want to delete all subjects?</string>
     <string name="dialog_export_message">Do you really want to backup the homework and overwrite the old backup?</string>
-    <string name="dialog_import_message">Do you really want to import the homework and overwrite the current homework?</string>
 
     <!-- Intents -->
     <string name="intent_mail">Send a mail to the developer</string>

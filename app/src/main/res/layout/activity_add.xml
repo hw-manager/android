@@ -3,10 +3,10 @@
 	See the file "LICENSE" for the full license governing this code.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
     <ScrollView
         android:id="@+id/scrollView_add"
@@ -25,35 +25,36 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hw_title"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/editText_homework"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:inputType="textCapSentences|textAutoCorrect" />
 
             <TextView
                 android:id="@+id/textView_subject"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hw_subject"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Spinner
                 android:id="@+id/spinner_subject"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp" />
 
             <TextView
                 android:id="@+id/textView_until"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hw_until"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <Button
+            <TextView
                 android:id="@+id/button_until"
                 style="?android:attr/spinnerStyle"
                 android:layout_width="fill_parent"
@@ -62,7 +63,7 @@
                 android:onClick="setUntil"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
-                tools:text="Monday, 01/01/2015"/>
+                tools:text="Monday, 01/01/2015" />
 
             <EditText
                 android:id="@+id/editText_info"
@@ -70,17 +71,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:hint="@string/hw_info"
-                android:inputType="textMultiLine"/>
+                android:inputType="textMultiLine" />
 
             <CheckBox
                 android:id="@+id/checkBox_urgent"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="@string/hw_urgent"/>
+                android:text="@string/hw_urgent" />
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/button_bar"/>
+    <include layout="@layout/button_bar" />
 
 </LinearLayout>

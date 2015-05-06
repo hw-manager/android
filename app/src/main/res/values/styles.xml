@@ -4,17 +4,17 @@
 -->
 <resources>
 
-    <style name="AppBaseTheme" parent="android:Theme.Light"/>
+    <style name="AppBaseTheme" parent="android:Theme.Light" />
 
-    <style name="DarkAppBaseTheme" parent="android:Theme"/>
+    <style name="DarkAppBaseTheme" parent="android:Theme" />
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme"/>
+    <style name="AppTheme" parent="AppBaseTheme" />
 
-    <style name="DarkAppTheme" parent="DarkAppBaseTheme"/>
+    <style name="DarkAppTheme" parent="DarkAppBaseTheme" />
 
-    <style name="AddTheme" parent="AppBaseTheme"/>
+    <style name="AddTheme" parent="AppBaseTheme" />
 
-    <style name="DarkAddTheme" parent="DarkAppBaseTheme"/>
+    <style name="DarkAddTheme" parent="DarkAppBaseTheme" />
 
 </resources>

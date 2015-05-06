@@ -7,13 +7,13 @@
 
 ## What is this project for?
 
-With the application 'HW-Manager' you are able to save your homework for
-school.
+With HW-Manager you are able to save your homework for school. This
+repository contains its source code.
 
 ## How do I get set up?
 
-Import the project into Android Studio and compile it to get an .apk
-file, which you can install on an Android phone.
+A: Import the project in Android Studio.
+B: Type in a console: "gradle build"
 
 ## TODO
 
@@ -24,8 +24,3 @@ Take a look at
 
 See
 [LICENSE](https://github.com/hw-manager/android/blob/master/LICENSE).
-
-## Git
-
-As Git workflow I want to use the so called "GitFlow" which is shown
-[here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).

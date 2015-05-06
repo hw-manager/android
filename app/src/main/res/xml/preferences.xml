@@ -7,26 +7,26 @@
         <PreferenceScreen
             android:key="pref_importexport_export"
             android:summary="@string/pref_homework_export_summary"
-            android:title="@string/pref_homework_export"/>
+            android:title="@string/pref_homework_export" />
         <PreferenceScreen
             android:key="pref_importexport_import"
             android:summary="@string/pref_homework_import_summary"
-            android:title="@string/pref_homework_import"/>
+            android:title="@string/pref_homework_import" />
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="pref_autoexport"
             android:summary="@string/pref_autoexport_summary"
-            android:title="@string/pref_autoexport"/>
+            android:title="@string/pref_autoexport" />
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="pref_sortbytime"
             android:summary="@string/pref_sortbytime_summary"
-            android:title="@string/pref_sortbytime"/>
+            android:title="@string/pref_sortbytime" />
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="pref_sortbyimportance"
             android:summary="@string/pref_sortbyimportance_summary"
-            android:title="@string/pref_sortbyimportance"/>
+            android:title="@string/pref_sortbyimportance" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_subjects">
         <Preference
@@ -35,51 +35,51 @@
             android:title="@string/pref_subjects_overview">
             <intent
                 android:targetClass="de.nico.ha_manager.activities.Subjects"
-                android:targetPackage="de.nico.ha_manager"/>
+                android:targetPackage="de.nico.ha_manager" />
         </Preference>
         <Preference
             android:key="subjects_add"
             android:onClick="addsubject"
             android:summary="@string/pref_subjects_add_summary"
-            android:title="@string/pref_subjects_add"/>
+            android:title="@string/pref_subjects_add" />
         <Preference
             android:key="subjects_offers"
             android:summary="@string/pref_offers_overview_summary"
             android:title="@string/pref_offers_overview">
             <intent
                 android:targetClass="de.nico.ha_manager.activities.SubjectOffers"
-                android:targetPackage="de.nico.ha_manager"/>
+                android:targetPackage="de.nico.ha_manager" />
         </Preference>
         <Preference
             android:key="subjects_reset"
             android:summary="@string/pref_subjects_reset_summary"
-            android:title="@string/pref_subjects_reset"/>
+            android:title="@string/pref_subjects_reset" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_appearance">
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="theme"
             android:summary="@string/pref_theme_summary"
-            android:title="@string/pref_theme"/>
+            android:title="@string/pref_theme" />
         <CheckBoxPreference
             android:defaultValue="false"
             android:dependency="theme"
             android:key="black"
             android:summary="@string/pref_black_summary"
-            android:title="@string/pref_black"/>
+            android:title="@string/pref_black" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_feedback">
         <Preference
             android:key="feedback_share"
             android:summary="@string/pref_feedback_share_summary"
-            android:title="@string/pref_feedback_share"/>
+            android:title="@string/pref_feedback_share" />
 
         <PreferenceScreen
             android:summary="@string/pref_feedback_playstore_summary"
             android:title="@string/pref_feedback_playstore">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://play.google.com/store/apps/details?id=de.nico.ha_manager"/>
+                android:data="https://play.google.com/store/apps/details?id=de.nico.ha_manager" />
         </PreferenceScreen>
         <PreferenceScreen
             android:summary="@string/pref_feedback_mail_summary"
@@ -89,31 +89,31 @@
                 android:data="mailto:nicoalt@posteo.org">
                 <extra
                     android:name="android.intent.extra.SUBJECT"
-                    android:value="@string/app_name"/>
+                    android:value="@string/app_name" />
                 <extra
                     android:name="android.intent.extra.TITLE"
-                    android:value="@string/intent_mail"/>
+                    android:value="@string/intent_mail" />
             </intent>
         </PreferenceScreen>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/app_name">
         <PreferenceScreen
             android:key="pref_app_language"
-            android:title="@string/pref_language"/>
+            android:title="@string/pref_language" />
         <PreferenceScreen
             android:key="pref_about"
             android:summary="@string/about_us_copyright"
             android:title="@string/pref_about_credits">
             <intent
                 android:targetClass="de.nico.ha_manager.activities.About"
-                android:targetPackage="de.nico.ha_manager"/>
+                android:targetPackage="de.nico.ha_manager" />
         </PreferenceScreen>
         <PreferenceScreen
             android:key="pref_about_current_version"
             android:title="@string/pref_about_current_version">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/hw-manager/android/releases/latest"/>
+                android:data="https://github.com/hw-manager/android/releases/latest" />
         </PreferenceScreen>
     </PreferenceCategory>
 </PreferenceScreen>

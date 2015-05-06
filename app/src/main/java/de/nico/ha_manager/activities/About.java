@@ -15,14 +15,18 @@ import android.widget.TextView;
 
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.helper.Constants;
+import de.nico.ha_manager.helper.Theme;
 import de.nico.ha_manager.helper.Utils;
 
+/**
+ * Shows an About page
+ */
 public class About extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.setTheme(this, false);
+        Theme.set(this, false);
         setContentView(R.layout.activity_about);
         update();
         Utils.setupActionBar(this, false);

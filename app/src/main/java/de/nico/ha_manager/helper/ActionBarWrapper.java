@@ -24,8 +24,6 @@ import android.support.v4.app.FragmentActivity;
 @TargetApi(11)
 @SuppressWarnings("unused")
 public class ActionBarWrapper {
-    private ActionBar actionBar;
-
     /**
      * Check if android.app.ActionBar exists and throw an error if not
      */
@@ -38,6 +36,11 @@ public class ActionBarWrapper {
     }
 
     /**
+     * Indicates if ActionBar is available.
+     */
+    private ActionBar actionBar;
+
+    /**
      * This method gets an instance on the Action Bar working.
      *
      * @param context      Context from the Activity
@@ -45,7 +48,6 @@ public class ActionBarWrapper {
      *                     to change it to cast to PreferenceActivity instead
      *                     of FragmentActivity
      */
-
     public ActionBarWrapper(Context context, boolean prefActivity) {
         if (prefActivity) {
             // PreferenceActivity

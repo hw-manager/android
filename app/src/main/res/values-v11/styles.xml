@@ -4,8 +4,8 @@
 -->
 <resources>
 
-    <style name="AppBaseTheme" parent="android:Theme.Holo.Light"/>
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light" />
 
-    <style name="DarkAppBaseTheme" parent="android:Theme.Holo"/>
+    <style name="DarkAppBaseTheme" parent="android:Theme.Holo" />
 
 </resources>
