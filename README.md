@@ -1,5 +1,6 @@
 # HW-Manager
 
+[![Build Status](https://travis-ci.org/hw-manager/android.svg?branch=master)](https://travis-ci.org/hw-manager/android)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/hw-manager/localized.png)](https://crowdin.com/project/hw-manager)
 
 [![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdfilter=hw-manager&fdid=de.nico.ha_manager)
