@@ -92,7 +92,9 @@
                 android:singleLine="true"
                 android:textSize="12sp"
                 tools:text="Urgent" />
+
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
