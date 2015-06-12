@@ -16,6 +16,14 @@ repository contains its source code.
 A: Import the project in Android Studio.
 B: Type in a console: "gradle build"
 
+## Repositories
+
+Official repository:
+[GitHub](https://github.com/hw-manager/android)
+
+Official mirror (Pull Request are welcome):
+[GitLab](https://gitlab.com/hw-manager/android)
+
 ## TODO
 
 Take a look at
