@@ -22,7 +22,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import java.io.File;
@@ -206,8 +205,7 @@ public class Utils {
             String completed = "completed";
             Homework.add(c, ID, title, subject, time, info, urgent, completed);
             return true;
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             Log.e("Utils.crossOneOut", e.toString());
             return false;
         }
