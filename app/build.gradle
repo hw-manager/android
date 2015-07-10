@@ -8,8 +8,8 @@ android {
         applicationId "de.nico.ha_manager"
         minSdkVersion 4
         targetSdkVersion 22
-        versionCode 22
-        versionName "0.93"
+        versionCode 23
+        versionName "0.94"
     }
 
     buildTypes {
