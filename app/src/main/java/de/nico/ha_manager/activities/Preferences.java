@@ -33,7 +33,7 @@ import de.nico.ha_manager.helper.Subject;
 import de.nico.ha_manager.helper.Theme;
 import de.nico.ha_manager.helper.Utils;
 
-public class Preferences extends PreferenceActivity {
+public final class Preferences extends PreferenceActivity {
 
     /**
      * {@link android.content.Context} of this class.
@@ -47,7 +47,7 @@ public class Preferences extends PreferenceActivity {
 
     @SuppressWarnings("deprecation")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected final void onCreate(final Bundle savedInstanceState) {
         Theme.set(this, false);
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
@@ -61,13 +61,13 @@ public class Preferences extends PreferenceActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public final void onBackPressed() {
         startActivity(new Intent(Preferences.this, Main.class));
         finish();
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public final boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
@@ -82,26 +82,26 @@ public class Preferences extends PreferenceActivity {
      */
     @SuppressWarnings("deprecation")
     private void setImportDialog() {
-        ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
+        final ArrayList<String> mArray = getFiles(Environment.getExternalStorageDirectory() + "/"
                 + getString(R.string.app_name));
         if (mArray != null)
             list = mArray.toArray(new String[mArray.size()]);
-        Preference importexport_import = findPreference("pref_importexport_import");
+        final Preference importexport_import = findPreference("pref_importexport_import");
         importexport_import.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             @Override
-            public boolean onPreferenceClick(Preference preference) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(c);
+            public final boolean onPreferenceClick(final Preference preference) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(c);
                 alertDialog.setTitle(getString(R.string.pref_homework_import))
                         .setNegativeButton(getString(android.R.string.cancel),
                                 new DialogInterface.OnClickListener() {
                                     @Override
-                                    public void onClick(
-                                            DialogInterface d, int i) {
+                                    public final void onClick(
+                                            final DialogInterface d, final int i) {
                                         d.dismiss();
                                     }
                                 })
                         .setItems(list, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int item) {
+                            public final void onClick(final DialogInterface dialog, final int item) {
                                 Homework.importIt(c, list[item]);
                             }
                         }).show();
@@ -116,10 +116,10 @@ public class Preferences extends PreferenceActivity {
     @SuppressWarnings("deprecation")
     private void setBuildInfo() {
         // Get Build Info
-        String buildInfo = Utils.getBuildInfo(this);
+        final String buildInfo = Utils.getBuildInfo(this);
 
         // Set Build Info
-        PreferenceScreen prefscreen = ((PreferenceScreen) findPreference("pref_about_current_version"));
+        final PreferenceScreen prefscreen = ((PreferenceScreen) findPreference("pref_about_current_version"));
         prefscreen.setSummary(buildInfo);
         onContentChanged();
     }
@@ -129,13 +129,13 @@ public class Preferences extends PreferenceActivity {
      */
     @SuppressWarnings("deprecation")
     private void setLanguage() {
-        Preference language = findPreference("pref_app_language");
+        final Preference language = findPreference("pref_app_language");
 
         // Locale of HW-Manager
-        Locale appLoc = getResources().getConfiguration().locale;
+        final Locale appLoc = getResources().getConfiguration().locale;
 
         // Locale of device
-        Locale devLoc = Locale.getDefault();
+        final Locale devLoc = Locale.getDefault();
 
         if (devLoc.equals(appLoc))
             language.setSummary(getString(R.string.pref_language_default));
@@ -148,44 +148,44 @@ public class Preferences extends PreferenceActivity {
      */
     @SuppressWarnings("deprecation")
     private void checkPreferences() {
-        Preference language = findPreference("pref_app_language");
+        final Preference language = findPreference("pref_app_language");
         language.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             @Override
-            public boolean onPreferenceClick(Preference preference) {
+            public final boolean onPreferenceClick(final Preference preference) {
                 Utils.langSpinner(c);
                 return true;
             }
         });
 
-        CheckBoxPreference pref_theme = (CheckBoxPreference) findPreference("theme");
+        final CheckBoxPreference pref_theme = (CheckBoxPreference) findPreference("theme");
         pref_theme.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             @Override
-            public boolean onPreferenceClick(Preference preference) {
+            public final boolean onPreferenceClick(final Preference preference) {
                 if (android.os.Build.VERSION.SDK_INT >= 11)
                     recreate();
                 return true;
             }
         });
 
-        CheckBoxPreference pref_black = (CheckBoxPreference) findPreference("black");
+        final CheckBoxPreference pref_black = (CheckBoxPreference) findPreference("black");
         pref_black.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             @Override
-            public boolean onPreferenceClick(Preference preference) {
+            public final boolean onPreferenceClick(final Preference preference) {
                 if (android.os.Build.VERSION.SDK_INT >= 11)
                     recreate();
                 return true;
             }
         });
 
-        Preference subjects_add = findPreference("subjects_add");
+        final Preference subjects_add = findPreference("subjects_add");
         subjects_add
                 .setOnPreferenceClickListener(new OnPreferenceClickListener() {
                     @Override
-                    public boolean onPreferenceClick(Preference preference) {
+                    public final boolean onPreferenceClick(final Preference preference) {
                         final EditText input = new EditText(c);
                         input.setInputType(InputType.TYPE_CLASS_TEXT
                                 | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
-                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(
                                 c);
                         alertDialog
                                 .setTitle(getString(R.string.dialog_addSubject))
@@ -196,8 +196,8 @@ public class Preferences extends PreferenceActivity {
                                         getString(android.R.string.ok),
                                         new DialogInterface.OnClickListener() {
                                             @Override
-                                            public void onClick(
-                                                    DialogInterface d, int i) {
+                                            public final void onClick(
+                                                    final DialogInterface d, final int i) {
                                                 Subject.add(c, input.getText()
                                                         .toString());
                                             }
@@ -209,12 +209,12 @@ public class Preferences extends PreferenceActivity {
                     }
                 });
 
-        Preference subjects_reset = findPreference("subjects_reset");
+        final Preference subjects_reset = findPreference("subjects_reset");
         subjects_reset
                 .setOnPreferenceClickListener(new OnPreferenceClickListener() {
                     @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                    public final boolean onPreferenceClick(final Preference preference) {
+                        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(
                                 c);
                         alertDialog
                                 .setTitle(getString(R.string.dialog_delete))
@@ -225,8 +225,8 @@ public class Preferences extends PreferenceActivity {
                                         new DialogInterface.OnClickListener() {
 
                                             @Override
-                                            public void onClick(
-                                                    DialogInterface d, int i) {
+                                            public final void onClick(
+                                                    final DialogInterface d, final int i) {
                                                 Subject.setDefault(c);
                                             }
 
@@ -238,21 +238,21 @@ public class Preferences extends PreferenceActivity {
                     }
                 });
 
-        Preference feedback_share = findPreference("feedback_share");
+        final Preference feedback_share = findPreference("feedback_share");
         feedback_share
                 .setOnPreferenceClickListener(new OnPreferenceClickListener() {
                     @Override
-                    public boolean onPreferenceClick(Preference preference) {
+                    public final boolean onPreferenceClick(final Preference preference) {
                         return Utils.shareApp(c);
                     }
                 });
 
-        Preference importexport_export = findPreference("pref_importexport_export");
+        final Preference importexport_export = findPreference("pref_importexport_export");
         importexport_export
                 .setOnPreferenceClickListener(new OnPreferenceClickListener() {
                     @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                    public final boolean onPreferenceClick(final Preference preference) {
+                        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(
                                 c);
                         alertDialog
                                 .setTitle(
@@ -264,8 +264,8 @@ public class Preferences extends PreferenceActivity {
                                         new DialogInterface.OnClickListener() {
 
                                             @Override
-                                            public void onClick(
-                                                    DialogInterface d, int i) {
+                                            public final void onClick(
+                                                    final DialogInterface d, final int i) {
                                                 Homework.exportIt(c, false);
                                                 // Reload the Import dialog.
                                                 setImportDialog();
@@ -286,20 +286,20 @@ public class Preferences extends PreferenceActivity {
      * Gets a list of the *.db files in /sdcard/HW-Manager/
      * for the import dialog.
      */
-    private ArrayList<String> getFiles(String DirectoryPath) {
-        ArrayList<String> myFiles = new ArrayList<>();
-        File f = new File(DirectoryPath);
+    private ArrayList<String> getFiles(final String DirectoryPath) {
+        final ArrayList<String> myFiles = new ArrayList<>();
+        final File f = new File(DirectoryPath);
 
         f.mkdirs();
-        File[] files = f.listFiles();
+        final File[] files = f.listFiles();
         if (files.length == 0)
             return null;
         else {
-            for (File file : files) {
+            for (final File file : files) {
                 // We only want .db files here.
                 if (FilenameUtils.getExtension(file.getName()).equals("db")) {
                     // Since the file extensions are all the same, we can just remove them.
-                    String mTrimmedFile = FilenameUtils.removeExtension(file.getName());
+                    final String mTrimmedFile = FilenameUtils.removeExtension(file.getName());
                     myFiles.add(mTrimmedFile);
                 }
             }

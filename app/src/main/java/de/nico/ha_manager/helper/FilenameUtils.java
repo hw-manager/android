@@ -23,7 +23,7 @@ package de.nico.ha_manager.helper;
  * limitations under the License.
  */
 
-public class FilenameUtils {
+public final class FilenameUtils {
     /**
      * The extension separator character.
      *
@@ -59,10 +59,10 @@ public class FilenameUtils {
      * @return the extension of the file or an empty string if none exists or {@code null}
      * if the filename is {@code null}.
      */
-    public static String getExtension(String filename) {
+    public static String getExtension(final String filename) {
         if (filename == null)
             return null;
-        int index = indexOfExtension(filename);
+        final int index = indexOfExtension(filename);
         if (index == -1)
             return "";
         else
@@ -82,11 +82,11 @@ public class FilenameUtils {
      * @return the index of the last separator character, or -1 if there
      * is no such character
      */
-    private static int indexOfLastSeparator(String filename) {
+    private static int indexOfLastSeparator(final String filename) {
         if (filename == null)
             return -1;
-        int lastUnixPos = filename.lastIndexOf(UNIX_SEPARATOR);
-        int lastWindowsPos = filename.lastIndexOf(WINDOWS_SEPARATOR);
+        final int lastUnixPos = filename.lastIndexOf(UNIX_SEPARATOR);
+        final int lastWindowsPos = filename.lastIndexOf(WINDOWS_SEPARATOR);
         return Math.max(lastUnixPos, lastWindowsPos);
     }
 
@@ -103,11 +103,11 @@ public class FilenameUtils {
      * @return the index of the last separator character, or -1 if there
      * is no such character
      */
-    private static int indexOfExtension(String filename) {
+    private static int indexOfExtension(final String filename) {
         if (filename == null)
             return -1;
-        int extensionPos = filename.lastIndexOf(EXTENSION_SEPARATOR);
-        int lastSeparator = indexOfLastSeparator(filename);
+        final int extensionPos = filename.lastIndexOf(EXTENSION_SEPARATOR);
+        final int lastSeparator = indexOfLastSeparator(filename);
         return (lastSeparator > extensionPos ? -1 : extensionPos);
     }
     //-----------------------------------------------------------------------
@@ -129,10 +129,10 @@ public class FilenameUtils {
      * @param filename the filename to query, null returns null
      * @return the filename minus the extension
      */
-    public static String removeExtension(String filename) {
+    public static String removeExtension(final String filename) {
         if (filename == null)
             return null;
-        int index = indexOfExtension(filename);
+        final int index = indexOfExtension(filename);
         if (index == -1)
             return filename;
         else

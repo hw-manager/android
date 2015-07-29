@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class Helper extends SQLiteOpenHelper {
+public final class Helper extends SQLiteOpenHelper {
 
     /**
      * The name of the database containing the homework.
@@ -27,17 +27,17 @@ public class Helper extends SQLiteOpenHelper {
      */
     private static final String TABLE_CREATE_HOMEWORK = "create table HOMEWORK(ID integer primary key autoincrement,HOMEWORK text,SUBJECT text,TIME text,INFO text,URGENT text,COMPLETED text)";
 
-    public Helper(Context context) {
+    public Helper(final Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase database) {
+    public final void onCreate(final SQLiteDatabase database) {
         database.execSQL(TABLE_CREATE_HOMEWORK);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public final void onUpgrade(final SQLiteDatabase db, final int oldVersion, final int newVersion) {
         // Upgrade from first to third version
         if (oldVersion == 1 && newVersion == 3) {
             db.execSQL("ALTER TABLE HOMEWORK ADD COLUMN INFO TEXT");

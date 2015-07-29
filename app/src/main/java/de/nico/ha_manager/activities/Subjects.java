@@ -27,10 +27,10 @@ import de.nico.ha_manager.helper.Utils;
 /**
  * Shows a list with all subjects used.
  */
-public class Subjects extends FragmentActivity {
+public final class Subjects extends FragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected final void onCreate(final Bundle savedInstanceState) {
         Theme.set(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
@@ -39,7 +39,7 @@ public class Subjects extends FragmentActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public final boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
@@ -53,23 +53,23 @@ public class Subjects extends FragmentActivity {
      * Updates list with subjects.
      */
     private void update() {
-        String[] subjects = Subject.get(this);
+        final String[] subjects = Subject.get(this);
 
         // Make simple list containing subjects
-        ArrayAdapter<String> subAdapter = new ArrayAdapter<>(this,
+        final ArrayAdapter<String> subAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, subjects);
 
-        ListView subList = (ListView) findViewById(R.id.listView_main);
+        final ListView subList = (ListView) findViewById(R.id.listView_main);
         subList.setAdapter(subAdapter);
 
         subList.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    final int pos, long id) {
+            public final void onItemClick(final AdapterView<?> parent, final View v,
+                                          final int pos, final long id) {
 
-                String item = ((TextView) v).getText().toString();
+                final String item = ((TextView) v).getText().toString();
 
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(
                         Subjects.this);
                 alertDialog
                         .setTitle(
@@ -78,7 +78,7 @@ public class Subjects extends FragmentActivity {
                                 new DialogInterface.OnClickListener() {
 
                                     @Override
-                                    public void onClick(DialogInterface d, int i) {
+                                    public final void onClick(final DialogInterface d, final int i) {
                                         Subject.delete(Subjects.this, pos);
                                         update();
                                     }

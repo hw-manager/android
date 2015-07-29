@@ -21,10 +21,10 @@ import de.nico.ha_manager.helper.Utils;
 /**
  * Shows an About page
  */
-public class About extends FragmentActivity {
+public final class About extends FragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected final void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Theme.set(this, false);
         setContentView(R.layout.activity_about);
@@ -33,7 +33,7 @@ public class About extends FragmentActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public final boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
@@ -48,13 +48,13 @@ public class About extends FragmentActivity {
      */
     private void update() {
         // Get Build Info
-        String appName = getString(R.string.app_name);
-        String buildInfo = Utils.getBuildInfo(this);
+        final String appName = getString(R.string.app_name);
+        final String buildInfo = Utils.getBuildInfo(this);
 
-        TextView tv = (TextView) findViewById(R.id.about_title);
+        final TextView tv = (TextView) findViewById(R.id.about_title);
         tv.setText(appName + " " + buildInfo);
 
-        TextView contentView = (TextView) findViewById(R.id.about_content);
+        final TextView contentView = (TextView) findViewById(R.id.about_content);
         contentView
                 .setText(Html.fromHtml(Constants.about_us_content));
     }

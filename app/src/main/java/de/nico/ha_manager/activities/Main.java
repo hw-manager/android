@@ -36,7 +36,7 @@ import de.nico.ha_manager.helper.Utils;
 /**
  * The main class of HW-Manager.
  */
-public class Main extends FragmentActivity {
+public final class Main extends FragmentActivity {
 
     /**
      * {@link java.util.ArrayList} containing a {@link java.util.HashMap} with the homework.
@@ -44,7 +44,7 @@ public class Main extends FragmentActivity {
     private static ArrayList<HashMap<String, String>> hwArray = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected final void onCreate(final Bundle savedInstanceState) {
         Theme.set(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expandable_list);
@@ -57,19 +57,19 @@ public class Main extends FragmentActivity {
     }
 
     @Override
-    public void onResume() {
+    public final void onResume() {
         super.onResume();
         update();
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public final boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public final boolean onOptionsItemSelected(final MenuItem item) {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.action_settings:
@@ -90,8 +90,8 @@ public class Main extends FragmentActivity {
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v,
-                                    ContextMenuInfo menuInfo) {
+    public final void onCreateContextMenu(final ContextMenu menu, final View v,
+                                          final ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         // menu.add(0, v.getId(), 0, getString(R.string.dialog_completed));
         menu.add(0, v.getId(), 1, getString(R.string.dialog_edit));
@@ -99,11 +99,11 @@ public class Main extends FragmentActivity {
     }
 
     @Override
-    public boolean onContextItemSelected(MenuItem item) {
+    public final boolean onContextItemSelected(final MenuItem item) {
         final ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) item
                 .getMenuInfo();
         if (item.getTitle() == getString(R.string.dialog_completed)) {
-            ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
+            final ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
             if (Utils.crossOneOut(this, hwArray, ExpandableListView.getPackedPositionGroup(info.packedPosition)))
                 update();
             return true;
@@ -126,7 +126,7 @@ public class Main extends FragmentActivity {
     private void update() {
         // Remove old content
         hwArray.clear();
-        Source s = new Source(this);
+        final Source s = new Source(this);
 
         // Get content from SQLite Database
         try {
@@ -143,8 +143,8 @@ public class Main extends FragmentActivity {
      * Sets fake onClickListener which creates a {@link android.view.ContextMenu}.
      */
     private void setOnClick() {
-        ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
-        ExpandableListAdapter e = CustomAdapter.expandableEntry(this, hwArray);
+        final ExpandableListView hwList = (ExpandableListView) findViewById(R.id.expandableListView_main);
+        final ExpandableListAdapter e = CustomAdapter.expandableEntry(this, hwArray);
         hwList.setAdapter(e);
         registerForContextMenu(hwList);
         /*
@@ -159,10 +159,10 @@ public class Main extends FragmentActivity {
      * @param ArHa {@link java.util.ArrayList} containing a {@link java.util.HashMap} with the homework.
      * @param pos  Position where the homework is.
      */
-    private void editOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
+    private void editOne(final ArrayList<HashMap<String, String>> ArHa, final int pos) {
         final String currentID = "ID = " + ArHa.get(pos).get(Source.allColumns[0]);
-        Intent intent = new Intent(this, AddHomework.class);
-        Bundle mBundle = new Bundle();
+        final Intent intent = new Intent(this, AddHomework.class);
+        final Bundle mBundle = new Bundle();
         mBundle.putString(Source.allColumns[0], currentID);
         for (int i = 1; i < Source.allColumns.length; i++)
             mBundle.putString(Source.allColumns[i],
@@ -177,19 +177,19 @@ public class Main extends FragmentActivity {
      * @param ArHa {@link java.util.ArrayList} containing a {@link java.util.HashMap} with the homework.
      * @param pos  Position where the homework is.
      */
-    private void deleteOne(ArrayList<HashMap<String, String>> ArHa, int pos) {
-        ArrayList<HashMap<String, String>> tempArray = Converter.toTmpArray(ArHa, pos);
+    private void deleteOne(final ArrayList<HashMap<String, String>> ArHa, final int pos) {
+        final ArrayList<HashMap<String, String>> tempArray = Converter.toTmpArray(ArHa, pos);
         final String currentID = "ID = " + ArHa.get(pos).get(Source.allColumns[0]);
-        SimpleAdapter alertAdapter = CustomAdapter.entry(this, tempArray);
+        final SimpleAdapter alertAdapter = CustomAdapter.entry(this, tempArray);
 
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog
                 .setTitle(getString(R.string.dialog_delete))
                 .setAdapter(alertAdapter, null)
                 .setPositiveButton((getString(android.R.string.yes)),
                         new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface d, int i) {
+                            public final void onClick(final DialogInterface d, final int i) {
                                 Homework.deleteOne(Main.this, currentID);
                                 update();
                             }
@@ -202,14 +202,14 @@ public class Main extends FragmentActivity {
      * Deletes all homework.
      */
     private void deleteAll() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog
                 .setTitle(getString(R.string.dialog_delete))
                 .setMessage(getString(R.string.dialog_really_delete_hw))
                 .setPositiveButton((getString(android.R.string.yes)),
                         new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface d, int i) {
+                            public final void onClick(final DialogInterface d, final int i) {
                                 Homework.deleteAll(Main.this);
                                 update();
                             }

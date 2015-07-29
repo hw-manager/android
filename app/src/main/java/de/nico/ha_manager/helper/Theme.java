@@ -12,7 +12,7 @@ import android.preference.PreferenceManager;
 
 import de.nico.ha_manager.R;
 
-public class Theme {
+public final class Theme {
 
     /**
      * Sets the theme.
@@ -23,8 +23,8 @@ public class Theme {
      * @param isAddTheme Since we use the DialogWhenLarge theme on tablets in the add
      *                   activity, we need to incorporate that.
      */
-    public static void set(Activity c, boolean isAddTheme) {
-        SharedPreferences prefs = PreferenceManager
+    public static void set(final Activity c, final boolean isAddTheme) {
+        final SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(c);
         final boolean dark = prefs.getBoolean("theme", false);
         final boolean black = prefs.getBoolean("black", false);

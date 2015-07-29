@@ -41,7 +41,7 @@ import de.nico.ha_manager.HWManager;
 import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Source;
 
-public class Utils {
+public final class Utils {
 
     private static boolean isActionBarAvailable = false;
 
@@ -58,9 +58,9 @@ public class Utils {
         }
     }
 
-    public static void setupActionBar(Context context, boolean isPreferenceActivity) {
+    public static void setupActionBar(final Context context, final boolean isPreferenceActivity) {
         if (Build.VERSION.SDK_INT >= 11 && isActionBarAvailable) {
-            ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context, isPreferenceActivity);
+            final ActionBarWrapper actionBarWrapper = new ActionBarWrapper(context, isPreferenceActivity);
             actionBarWrapper.setDisplayHomeAsUpEnabled(true);
         }
     }
@@ -71,11 +71,11 @@ public class Utils {
      * @param c Needed for {@link android.content.Intent}.
      */
     @SuppressWarnings("deprecation")
-    public static boolean shareApp(Context c) {
-        String share_title = c.getString(R.string.intent_share_title);
-        String app_name = c.getString(R.string.app_name);
+    public static boolean shareApp(final Context c) {
+        final String share_title = c.getString(R.string.intent_share_title);
+        final String app_name = c.getString(R.string.app_name);
 
-        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+        final Intent intent = new Intent(android.content.Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         intent.putExtra(Intent.EXTRA_TEXT,
@@ -84,7 +84,7 @@ public class Utils {
             c.startActivity(Intent.createChooser(intent, share_title + " "
                     + app_name));
             return true;
-        } catch (ActivityNotFoundException e) {
+        } catch (final ActivityNotFoundException e) {
             Log.e("ActivityNotFoundExcept", e.toString());
             return false;
         }
@@ -96,28 +96,28 @@ public class Utils {
      * @param c Needed for {@link android.content.pm.PackageInfo} and
      *          {@link android.content.pm.ApplicationInfo}.
      */
-    public static String getBuildInfo(Context c) {
+    public static String getBuildInfo(final Context c) {
         String buildInfo = "Built with love.";
         try {
             // Get Version Name
-            PackageInfo pInfo = c.getPackageManager().getPackageInfo(
+            final PackageInfo pInfo = c.getPackageManager().getPackageInfo(
                     c.getPackageName(), 0);
-            String versionName = pInfo.versionName;
+            final String versionName = pInfo.versionName;
 
             // Get build time
-            ApplicationInfo aInfo = c.getPackageManager().getApplicationInfo(
+            final ApplicationInfo aInfo = c.getPackageManager().getApplicationInfo(
                     c.getPackageName(), 0);
-            ZipFile zf = new ZipFile(aInfo.sourceDir);
-            ZipEntry ze = zf.getEntry("classes.dex");
+            final ZipFile zf = new ZipFile(aInfo.sourceDir);
+            final ZipEntry ze = zf.getEntry("classes.dex");
             zf.close();
-            long time = ze.getTime();
-            DateFormat f = DateFormat.getDateInstance(DateFormat.SHORT,
+            final long time = ze.getTime();
+            final DateFormat f = DateFormat.getDateInstance(DateFormat.SHORT,
                     Locale.getDefault());
-            String buildDate = f.format(time);
+            final String buildDate = f.format(time);
 
             buildInfo = versionName + " (" + buildDate + ")";
 
-        } catch (Exception e) {
+        } catch (final Exception e) {
             Log.e("Get Build Info", e.toString());
         }
         return buildInfo;
@@ -130,25 +130,25 @@ public class Utils {
      *          {@link android.content.SharedPreferences}.
      */
     public static void langSpinner(final Context c) {
-        AlertDialog.Builder b = new Builder(c);
+        final AlertDialog.Builder b = new Builder(c);
         // Current translations of HW-Manager
         final String[] languages = {"cs", "de", "en", "es", "fr", "hu", "ar", "fa"};
         // Items with translation's language
-        String[] items = new String[languages.length + 1];
+        final String[] items = new String[languages.length + 1];
         items[0] = c.getString(R.string.pref_language_default);
         for (int i = 1; i < languages.length + 1; i++) {
-            Locale appLoc = new Locale(languages[i - 1]);
+            final Locale appLoc = new Locale(languages[i - 1]);
             items[i] = appLoc.getDisplayLanguage(appLoc);
         }
         b.setTitle(c.getString(R.string.pref_language));
         b.setItems(items, new OnClickListener() {
 
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public final void onClick(final DialogInterface dialog, final int which) {
                 dialog.dismiss();
-                SharedPreferences prefs = PreferenceManager
+                final SharedPreferences prefs = PreferenceManager
                         .getDefaultSharedPreferences(c);
-                SharedPreferences.Editor editor = prefs.edit();
+                final SharedPreferences.Editor editor = prefs.edit();
 
                 if (which == 0) {
                     editor.putString("locale_override", "");
@@ -171,15 +171,15 @@ public class Utils {
      * @param e       {@link android.widget.ExpandableListAdapter} which contains the homework.
      * @param hwArray {@link java.util.ArrayList} which contains the homework.
      */
-    public static void crossOut(ExpandableListAdapter e, ArrayList<HashMap<String, String>> hwArray) {
+    public static void crossOut(final ExpandableListAdapter e, final ArrayList<HashMap<String, String>> hwArray) {
         for (int i = 0; i < hwArray.size(); i++) {
             if (!hwArray.get(i).get(Source.allColumns[6]).equals("")) {
-                View v = e.getGroupView(i, false, null, null);
+                final View v = e.getGroupView(i, false, null, null);
 
-                TextView tv1 = (TextView) v.findViewById(R.id.textView_subject);
-                TextView tv2 = (TextView) v.findViewById(R.id.textView_until);
-                TextView tv3 = (TextView) v.findViewById(R.id.textView_homework);
-                TextView tv4 = (TextView) v.findViewById(R.id.textView_urgent);
+                final TextView tv1 = (TextView) v.findViewById(R.id.textView_subject);
+                final TextView tv2 = (TextView) v.findViewById(R.id.textView_until);
+                final TextView tv3 = (TextView) v.findViewById(R.id.textView_homework);
+                final TextView tv4 = (TextView) v.findViewById(R.id.textView_urgent);
                 tv1.setPaintFlags(tv1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 tv2.setPaintFlags(tv2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 tv3.setPaintFlags(tv3.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -194,18 +194,18 @@ public class Utils {
      * @param hwArray {@link java.util.ArrayList} which contains the homework.
      * @param pos     Position of solved homework.
      */
-    public static boolean crossOneOut(Context c, ArrayList<HashMap<String, String>> hwArray, int pos) {
+    public static boolean crossOneOut(final Context c, final ArrayList<HashMap<String, String>> hwArray, final int pos) {
         try {
-            String ID = "ID = " + hwArray.get(pos).get(Source.allColumns[0]);
-            String title = hwArray.get(pos).get(Source.allColumns[1]);
-            String subject = hwArray.get(pos).get(Source.allColumns[2]);
-            long time = Long.valueOf(hwArray.get(pos).get(Source.allColumns[5])).longValue();
-            String info = hwArray.get(pos).get(Source.allColumns[3]);
-            String urgent = hwArray.get(pos).get(Source.allColumns[4]);
-            String completed = "completed";
+            final String ID = "ID = " + hwArray.get(pos).get(Source.allColumns[0]);
+            final String title = hwArray.get(pos).get(Source.allColumns[1]);
+            final String subject = hwArray.get(pos).get(Source.allColumns[2]);
+            final long time = Long.valueOf(hwArray.get(pos).get(Source.allColumns[5])).longValue();
+            final String info = hwArray.get(pos).get(Source.allColumns[3]);
+            final String urgent = hwArray.get(pos).get(Source.allColumns[4]);
+            final String completed = "completed";
             Homework.add(c, ID, title, subject, time, info, urgent, completed);
             return true;
-        } catch (Exception e) {
+        } catch (final Exception e) {
             Log.e("Utils.crossOneOut", e.toString());
             return false;
         }
@@ -219,18 +219,18 @@ public class Utils {
      */
     public static boolean transfer(final File src, final File dst) {
         try {
-            FileInputStream inStream = new FileInputStream(src);
-            FileOutputStream outStream = new FileOutputStream(dst);
-            FileChannel inChannel = inStream.getChannel();
-            FileChannel outChannel = outStream.getChannel();
+            final FileInputStream inStream = new FileInputStream(src);
+            final FileOutputStream outStream = new FileOutputStream(dst);
+            final FileChannel inChannel = inStream.getChannel();
+            final FileChannel outChannel = outStream.getChannel();
             inChannel.transferTo(0, inChannel.size(), outChannel);
             inStream.close();
             outStream.close();
             return true;
-        } catch (FileNotFoundException e) {
+        } catch (final FileNotFoundException e) {
             Log.e("FileNotFoundException", e.toString());
             return false;
-        } catch (IOException e) {
+        } catch (final IOException e) {
             Log.e("IOException", e.toString());
             return false;
         }

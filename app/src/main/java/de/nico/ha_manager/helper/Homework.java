@@ -19,7 +19,7 @@ import de.nico.ha_manager.R;
 import de.nico.ha_manager.database.Helper;
 import de.nico.ha_manager.database.Source;
 
-public class Homework {
+public final class Homework {
 
     /**
      * Deletes all homework.
@@ -27,7 +27,7 @@ public class Homework {
      * @param c Needed by {@link de.nico.ha_manager.database.Source}.
      */
     public static void deleteAll(final Context c) {
-        Source s = new Source(c);
+        final Source s = new Source(c);
         s.delete_item(null);
     }
 
@@ -36,8 +36,8 @@ public class Homework {
      *
      * @param c Needed by {@link de.nico.ha_manager.database.Source}.
      */
-    public static void deleteOne(Context c, String ID) {
-        Source s = new Source(c);
+    public static void deleteOne(final Context c, final String ID) {
+        final Source s = new Source(c);
         s.delete_item(ID);
     }
 
@@ -53,13 +53,15 @@ public class Homework {
      * @param urgent    Is it urgent?
      * @param completed Is it completed?
      */
-    public static void add(Context c, String ID, String title, String subject, long time, String info, String urgent, String completed) {
+    public static void add(final Context c, final String ID, final String title,
+                           final String subject, final long time, final String info,
+                           final String urgent, final String completed) {
         try {
-            Source s = new Source(c);
+            final Source s = new Source(c);
             s.open();
             s.createEntry(c, ID, title, subject, time, info, urgent, completed);
             s.close();
-        } catch (Exception ex) {
+        } catch (final Exception ex) {
             Log.e("Database", ex.toString());
         }
     }
@@ -70,9 +72,9 @@ public class Homework {
      * @param c        Needed by {@link de.nico.ha_manager.helper.Utils}.
      * @param filename The database to import.
      */
-    public static void importIt(Context c, String filename) {
+    public static void importIt(final Context c, final String filename) {
         // Check if directory exists
-        File dir = new File(Environment.getExternalStorageDirectory() + "/"
+        final File dir = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name));
         if (!(dir.exists())) {
             CustomToast.showLong(
@@ -83,9 +85,9 @@ public class Homework {
         }
 
         // Path for Database
-        File srcDB = new File(Environment.getExternalStorageDirectory() + "/"
+        final File srcDB = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name) + "/" + filename + ".db");
-        File dstDB = new File(c.getApplicationInfo().dataDir
+        final File dstDB = new File(c.getApplicationInfo().dataDir
                 + "/databases/" + Helper.DATABASE_NAME);
 
         // Check if Database exists
@@ -109,9 +111,9 @@ public class Homework {
      * @param c    Needed by {@link de.nico.ha_manager.helper.Utils}.
      * @param auto Indicates if it's an automatic backup.
      */
-    public static void exportIt(Context c, boolean auto) {
+    public static void exportIt(final Context c, final boolean auto) {
         // Check if directory exists
-        File dir = new File(Environment.getExternalStorageDirectory() + "/"
+        final File dir = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name));
         if (!(dir.exists()))
             dir.mkdir();
@@ -122,9 +124,9 @@ public class Homework {
             stamp = "auto-backup";
 
         // Path for Database
-        File srcDB = new File(c.getApplicationInfo().dataDir
+        final File srcDB = new File(c.getApplicationInfo().dataDir
                 + "/databases/" + Helper.DATABASE_NAME);
-        File dstDB = new File(Environment.getExternalStorageDirectory() + "/"
+        final File dstDB = new File(Environment.getExternalStorageDirectory() + "/"
                 + c.getString(R.string.app_name) + "/Homework-" + stamp + ".db");
 
         if (dstDB.exists())

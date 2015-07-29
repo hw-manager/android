@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 import de.nico.ha_manager.R;
 
-public class Subject {
+public final class Subject {
 
     /**
      * Default {@link android.content.SharedPreferences} used in this class.
@@ -25,7 +25,7 @@ public class Subject {
      *
      * @param c Needed by {@link android.preference.PreferenceManager}.
      */
-    private static void initPrefs(Context c) {
+    private static void initPrefs(final Context c) {
         prefs = PreferenceManager.getDefaultSharedPreferences(c);
     }
 
@@ -34,12 +34,12 @@ public class Subject {
      *
      * @param c Needed by {@link android.preference.PreferenceManager}.
      */
-    public static String[] get(Context c) {
+    public static String[] get(final Context c) {
         initPrefs(c);
 
         // Set size of array to amount of Strings in SharedPreferences
-        int size = prefs.getInt("subjects_size", 0);
-        String[] subjects = new String[size];
+        final int size = prefs.getInt("subjects_size", 0);
+        final String[] subjects = new String[size];
 
         // Get parts of subject array from SharedPreferences Strings
         for (int i = 0; i < size; i++)
@@ -54,17 +54,17 @@ public class Subject {
      * @param c       Needed by {@link android.preference.PreferenceManager}.
      * @param subject The subject to add.
      */
-    public static void add(Context c, String subject) {
+    public static void add(final Context c, final String subject) {
         initPrefs(c);
-        int size = prefs.getInt("subjects_size", 0);
-        String[] subjects = new String[size + 1];
+        final int size = prefs.getInt("subjects_size", 0);
+        final String[] subjects = new String[size + 1];
 
         for (int i = 0; i < size; i++)
             subjects[i] = prefs.getString("subjects_" + i, null);
 
         subjects[size] = subject;
 
-        SharedPreferences.Editor editor = prefs.edit();
+        final SharedPreferences.Editor editor = prefs.edit();
         Arrays.sort(subjects);
 
         for (int i = 0; i < subjects.length; i++)
@@ -73,7 +73,7 @@ public class Subject {
         editor.putInt("subjects_size", subjects.length);
         editor.commit();
 
-        String sAdded = c.getString(R.string.added);
+        final String sAdded = c.getString(R.string.added);
         CustomToast.showShort(c, subject + " " + sAdded);
     }
 
@@ -82,16 +82,16 @@ public class Subject {
      *
      * @param c Needed by {@link android.preference.PreferenceManager}.
      */
-    public static void setDefault(Context c) {
+    public static void setDefault(final Context c) {
         // Get subjects from strings.xml
-        String[] subjects = c.getResources().getStringArray(R.array.subjects);
+        final String[] subjects = c.getResources().getStringArray(R.array.subjects);
 
         // Sort subjects array alphabetically
         Arrays.sort(subjects);
 
         // Add subjects to SharedPreferences
         initPrefs(c);
-        SharedPreferences.Editor editor = prefs.edit();
+        final SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("subjects_size", subjects.length);
         for (int i = 0; i < subjects.length; i++)
             editor.putString("subjects_" + i, subjects[i]);
@@ -105,10 +105,10 @@ public class Subject {
      * @param c   Needed by {@link android.preference.PreferenceManager}.
      * @param pos The subject to delete.
      */
-    public static void delete(Context c, int pos) {
+    public static void delete(final Context c, final int pos) {
         initPrefs(c);
-        int size = prefs.getInt("subjects_size", 0);
-        String[] subjects = new String[size - 1];
+        final int size = prefs.getInt("subjects_size", 0);
+        final String[] subjects = new String[size - 1];
 
         for (int i = 0; i < size; i++) {
             if (i < pos)
@@ -118,7 +118,7 @@ public class Subject {
                 subjects[i - 1] = prefs.getString("subjects_" + i, null);
         }
 
-        SharedPreferences.Editor editor = prefs.edit();
+        final SharedPreferences.Editor editor = prefs.edit();
 
         for (int i = 0; i < subjects.length; i++)
             editor.putString("subjects_" + i, subjects[i]);

@@ -23,14 +23,14 @@ import android.support.v4.app.FragmentActivity;
 
 @TargetApi(11)
 @SuppressWarnings("unused")
-public class ActionBarWrapper {
+public final class ActionBarWrapper {
     /**
      * Check if android.app.ActionBar exists and throw an error if not
      */
     static {
         try {
             Class.forName("android.app.ActionBar");
-        } catch (Exception e) {
+        } catch (final Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -48,7 +48,7 @@ public class ActionBarWrapper {
      *                     to change it to cast to PreferenceActivity instead
      *                     of FragmentActivity
      */
-    public ActionBarWrapper(Context context, boolean prefActivity) {
+    public ActionBarWrapper(final Context context, final boolean prefActivity) {
         if (prefActivity) {
             // PreferenceActivity
             actionBar = ((PreferenceActivity) context).getActionBar();
@@ -69,22 +69,22 @@ public class ActionBarWrapper {
      * Basic core ActionBar functions
      */
 
-    public void setBackgroundDrawable(Drawable background) {
+    public final void setBackgroundDrawable(final Drawable background) {
         if (actionBar != null)
             actionBar.setBackgroundDrawable(background);
     }
 
-    public void setDisplayShowTitleEnabled(boolean showTitle) {
+    public final void setDisplayShowTitleEnabled(final boolean showTitle) {
         if (actionBar != null)
             actionBar.setDisplayShowTitleEnabled(showTitle);
     }
 
-    public void setDisplayUseLogoEnabled(boolean useLogo) {
+    public final void setDisplayUseLogoEnabled(final boolean useLogo) {
         if (actionBar != null)
             actionBar.setDisplayUseLogoEnabled(useLogo);
     }
 
-    public void setDisplayHomeAsUpEnabled(boolean homeAsUpEnabled) {
+    public final void setDisplayHomeAsUpEnabled(final boolean homeAsUpEnabled) {
         if (actionBar != null)
             actionBar.setDisplayHomeAsUpEnabled(homeAsUpEnabled);
     }

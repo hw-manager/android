@@ -14,17 +14,17 @@ import android.text.TextUtils;
 
 import java.util.Locale;
 
-public class HWManager extends Application {
+public final class HWManager extends Application {
 
     /**
      * Update the language used in the app.
      *
      * @param c Needed by {@link android.preference.PreferenceManager}.
      */
-    public static void updateLanguage(Context c) {
-        SharedPreferences prefs = PreferenceManager
+    public static void updateLanguage(final Context c) {
+        final SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(c);
-        String lang = prefs.getString("locale_override", "");
+        final String lang = prefs.getString("locale_override", "");
         updateLanguage(c, lang);
     }
 
@@ -34,8 +34,8 @@ public class HWManager extends Application {
      * @param c    Needed to get the resources.
      * @param lang Language to be used in the app,
      */
-    private static void updateLanguage(Context c, String lang) {
-        Configuration cfg = new Configuration();
+    private static void updateLanguage(final Context c, final String lang) {
+        final Configuration cfg = new Configuration();
         if (!TextUtils.isEmpty(lang))
             cfg.locale = new Locale(lang);
         else
@@ -45,7 +45,7 @@ public class HWManager extends Application {
     }
 
     @Override
-    public void onCreate() {
+    public final void onCreate() {
         updateLanguage(this);
         super.onCreate();
     }

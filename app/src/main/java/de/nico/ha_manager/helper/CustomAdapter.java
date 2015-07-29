@@ -16,7 +16,7 @@ import java.util.Map;
 
 import de.nico.ha_manager.R;
 
-public class CustomAdapter {
+public final class CustomAdapter {
 
     /**
      * Returns a SimpleAdapter that uses the layout "listview_entry".
@@ -24,11 +24,11 @@ public class CustomAdapter {
      * @param c Needed for {@link android.widget.SimpleAdapter}.
      * @param a ArrayList with HashMaps to show with the adapter.
      */
-    public static SimpleAdapter entry(Context c, ArrayList<HashMap<String, String>> a) {
+    public static SimpleAdapter entry(final Context c, final ArrayList<HashMap<String, String>> a) {
         // All TextViews in Layout "listview_entry"
-        int[] i = {R.id.textView_urgent, R.id.textView_subject,
+        final int[] i = {R.id.textView_urgent, R.id.textView_subject,
                 R.id.textView_homework, R.id.textView_until};
-        String[] columns = {"URGENT", "SUBJECT", "HOMEWORK", "UNTIL"};
+        final String[] columns = {"URGENT", "SUBJECT", "HOMEWORK", "UNTIL"};
 
         // Make a SimpleAdapter which is like a row in the homework list
         return new SimpleAdapter(c, a, R.layout.listview_entry, columns, i);
@@ -40,16 +40,16 @@ public class CustomAdapter {
      * @param c Needed for {@link android.widget.SimpleExpandableListAdapter}.
      * @param a ArrayList with HashMaps to show with the adapter.
      */
-    public static SimpleExpandableListAdapter expandableEntry(Context c, ArrayList<HashMap<String, String>> a) {
+    public static SimpleExpandableListAdapter expandableEntry(final Context c, final ArrayList<HashMap<String, String>> a) {
         // All TextViews in Layout "listview_expanded_entry1"
-        int[] groupTexts = {R.id.textView_urgent, R.id.textView_subject,
+        final int[] groupTexts = {R.id.textView_urgent, R.id.textView_subject,
                 R.id.textView_homework, R.id.textView_until};
-        String[] groupColumns = {"URGENT", "SUBJECT", "HOMEWORK", "UNTIL"};
+        final String[] groupColumns = {"URGENT", "SUBJECT", "HOMEWORK", "UNTIL"};
 
         // All TextViews in Layout "listview_expanded_entry2"
-        int[] childTexts = {R.id.textView_info};
-        String[] childColumns = {"INFO"};
-        List<List<Map<String, String>>> childData = covertToListListMap(a, childColumns[0]);
+        final int[] childTexts = {R.id.textView_info};
+        final String[] childColumns = {"INFO"};
+        final List<List<Map<String, String>>> childData = covertToListListMap(a, childColumns[0]);
 
         // Make a SimpleAdapter which is like a row in the homework list
         return new SimpleExpandableListAdapter(c, a, R.layout.listview_expanded_entry1, groupColumns, groupTexts, childData, R.layout.listview_expanded_entry2, childColumns, childTexts);
@@ -61,13 +61,13 @@ public class CustomAdapter {
      * @param a   ArrayList with HashMaps to convert.
      * @param row Row to add to the Map.
      */
-    private static List<List<Map<String, String>>> covertToListListMap(ArrayList<HashMap<String, String>> a, String row) {
-        List<List<Map<String, String>>> ll = new ArrayList<>();
+    private static List<List<Map<String, String>>> covertToListListMap(final ArrayList<HashMap<String, String>> a, final String row) {
+        final List<List<Map<String, String>>> ll = new ArrayList<>();
         for (int i = 0; i < a.size(); i++) {
-            Map<String, String> tmpL = new HashMap<>();
+            final Map<String, String> tmpL = new HashMap<>();
             tmpL.put(row, a.get(i).get(row));
 
-            List<Map<String, String>> l = new ArrayList<>();
+            final List<Map<String, String>> l = new ArrayList<>();
             l.add(tmpL);
 
             ll.add(l);

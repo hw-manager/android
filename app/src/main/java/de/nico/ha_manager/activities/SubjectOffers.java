@@ -29,10 +29,10 @@ import de.nico.ha_manager.helper.Utils;
 /**
  * Shows a list with subject offers.
  */
-public class SubjectOffers extends FragmentActivity {
+public final class SubjectOffers extends FragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected final void onCreate(final Bundle savedInstanceState) {
         Theme.set(this, false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
@@ -41,7 +41,7 @@ public class SubjectOffers extends FragmentActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public final boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
@@ -55,25 +55,25 @@ public class SubjectOffers extends FragmentActivity {
      * Updates list with subject offers.
      */
     private void update() {
-        String[] subOffers = getResources().getStringArray(
+        final String[] subOffers = getResources().getStringArray(
                 R.array.subject_offers);
         Arrays.sort(subOffers);
 
         // Make simple list containing subjects
-        ArrayAdapter<String> subAdapter = new ArrayAdapter<>(this,
+        final ArrayAdapter<String> subAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, subOffers);
 
-        ListView subList = (ListView) findViewById(R.id.listView_main);
+        final ListView subList = (ListView) findViewById(R.id.listView_main);
         subList.setAdapter(subAdapter);
 
         subList.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View v, int pos,
-                                    long id) {
+            public final void onItemClick(final AdapterView<?> parent, final View v, final int pos,
+                                          final long id) {
                 // Selected item
                 final String item = ((TextView) v).getText().toString();
 
-                AlertDialog.Builder deleteDialog = new AlertDialog.Builder(
+                final AlertDialog.Builder deleteDialog = new AlertDialog.Builder(
                         SubjectOffers.this);
                 deleteDialog
                         .setTitle(getString(R.string.action_add) + ": " + item)
@@ -81,7 +81,7 @@ public class SubjectOffers extends FragmentActivity {
                                 new DialogInterface.OnClickListener() {
 
                                     @Override
-                                    public void onClick(DialogInterface d, int i) {
+                                    public final void onClick(final DialogInterface d, final int i) {
                                         Subject.add(SubjectOffers.this, item);
                                     }
                                 })

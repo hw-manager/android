@@ -21,7 +21,7 @@ import java.util.HashMap;
 import de.nico.ha_manager.helper.Converter;
 import de.nico.ha_manager.helper.Homework;
 
-public class Source {
+public final class Source {
 
     /**
      * All columns used in the database.
@@ -43,21 +43,21 @@ public class Source {
      *
      * @param context Needed by {@link de.nico.ha_manager.database.Helper}.
      */
-    public Source(Context context) {
+    public Source(final Context context) {
         dbHelper = new Helper(context);
     }
 
     /**
      * Opens the {@link de.nico.ha_manager.database.Helper} used in this class.
      */
-    public void open() throws SQLException {
+    public final void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
     }
 
     /**
      * Closes the {@link de.nico.ha_manager.database.Helper} used in this class.
      */
-    public void close() {
+    public final void close() {
         dbHelper.close();
     }
 
@@ -73,8 +73,10 @@ public class Source {
      * @param urgent    Is it urgent?
      * @param completed Is it completed?
      */
-    public void createEntry(Context c, String ID, String title, String subject, long time, String info, String urgent, String completed) {
-        ContentValues values = new ContentValues();
+    public final void createEntry(final Context c, final String ID, final String title,
+                                  final String subject, final long time, final String info,
+                                  final String urgent, final String completed) {
+        final ContentValues values = new ContentValues();
         values.put(allColumns[1], title);
         values.put(allColumns[2], subject);
         values.put(allColumns[3], info);
@@ -88,7 +90,7 @@ public class Source {
             insertId = ID;
         }
 
-        Cursor cursor = database.query("HOMEWORK", allColumns, insertId, null,
+        final Cursor cursor = database.query("HOMEWORK", allColumns, insertId, null,
                 null, null, null);
         cursor.close();
         cursor.moveToFirst();
@@ -99,7 +101,7 @@ public class Source {
      *
      * @param where Row to delete.
      */
-    public void delete_item(String where) {
+    public final void delete_item(final String where) {
         open();
         database.delete("HOMEWORK", where, null);
         close();
@@ -110,10 +112,10 @@ public class Source {
      *
      * @param c Needed by {@link android.preference.PreferenceManager}.
      */
-    public ArrayList<HashMap<String, String>> get(Context c) {
-        ArrayList<HashMap<String, String>> entriesList = new ArrayList<>();
+    public final ArrayList<HashMap<String, String>> get(final Context c) {
+        final ArrayList<HashMap<String, String>> entriesList = new ArrayList<>();
 
-        Cursor cursor = database.query("HOMEWORK", allColumns, null, null,
+        final Cursor cursor = database.query("HOMEWORK", allColumns, null, null,
                 null, null, null);
         cursor.moveToFirst();
 
@@ -121,7 +123,7 @@ public class Source {
             return entriesList;
 
         while (!cursor.isAfterLast()) {
-            HashMap<String, String> temp = new HashMap<>();
+            final HashMap<String, String> temp = new HashMap<>();
             temp.put(allColumns[0], String.valueOf(cursor.getLong(0)));
             for (int i = 1; i < allColumns.length; i++) {
                 // Support upgrades from older versions
@@ -140,14 +142,14 @@ public class Source {
         cursor.close();
 
         // Sort by time
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
         if (prefs.getBoolean("pref_sortbytime", false))
             Collections.sort(entriesList, new Comparator<HashMap<String, String>>() {
 
                 @Override
-                public int compare(HashMap<String, String> lhs, HashMap<String, String> rhs) {
-                    long a = Long.valueOf(lhs.get(allColumns[5])).longValue();
-                    long b = Long.valueOf(rhs.get(allColumns[5])).longValue();
+                public final int compare(final HashMap<String, String> lhs, final HashMap<String, String> rhs) {
+                    final long a = Long.valueOf(lhs.get(allColumns[5])).longValue();
+                    final long b = Long.valueOf(rhs.get(allColumns[5])).longValue();
                     return Long.valueOf(a).compareTo(Long.valueOf(b));
                 }
             });
@@ -157,18 +159,18 @@ public class Source {
             Collections.sort(entriesList, new Comparator<HashMap<String, String>>() {
 
                 @Override
-                public int compare(HashMap<String, String> lhs, HashMap<String, String> rhs) {
-                    String a = rhs.get(allColumns[4]);
-                    String b = lhs.get(allColumns[4]);
+                public final int compare(final HashMap<String, String> lhs, final HashMap<String, String> rhs) {
+                    final String a = rhs.get(allColumns[4]);
+                    final String b = lhs.get(allColumns[4]);
                     return a.compareTo(b);
                 }
             });
 
         // Add date, based on time in milliseconds
         for (int i = 0; i < entriesList.size(); i++) {
-            HashMap<String, String> temp = entriesList.get(i);
-            long time = Long.valueOf(temp.get(allColumns[5])).longValue();
-            String date = Converter.toDate(time);
+            final HashMap<String, String> temp = entriesList.get(i);
+            final long time = Long.valueOf(temp.get(allColumns[5])).longValue();
+            final String date = Converter.toDate(time);
             temp.put("UNTIL", date);
         }
         return entriesList;
