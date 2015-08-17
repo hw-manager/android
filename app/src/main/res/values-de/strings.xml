@@ -58,12 +58,12 @@
     <string name="pref_sortbyimportance_summary">Wichtige Hausaufgaben werden am Anfang der Liste angezeigt.</string>
     <string name="dialog_addSubject">Fach hinzufügen</string>
     <string name="dialog_addSubject_message">Welches Fach möchtest du hinzufügen?</string>
+    <string name="dialog_completed">Fertigstellung ändern</string>
     <string name="dialog_edit">Bearbeiten</string>
     <string name="dialog_delete">Löschen</string>
     <string name="dialog_really_delete_hw">Willst du wirklich alle Hausaufgaben löschen?</string>
     <string name="dialog_really_delete_subs">Willst du wirklich alle Fächer löschen?</string>
     <string name="dialog_export_message">Willst du wirklich ein Backup der Hausaufgaben erstellen und damit das alte Backup überschreiben?</string>
-    <string name="dialog_import_message">Willst du wirklich die Hausaufgaben importieren und damit die aktuellen Hausaufgaben überschreiben?</string>
     <string name="intent_mail">Sende eine E-Mail an den Entwickler</string>
     <string name="intent_share_title">Teilen</string>
     <string name="intent_share_text">Hey, willst du nicht mal den HA-Manager testen? Du kannst ihn hier herunterladen: http://goo.gl/GT99iV</string>

@@ -58,12 +58,12 @@
     <string name="pref_sortbyimportance_summary">سيظهر الواجبات الهامة في الجزء العلوي.</string>
     <string name="dialog_addSubject">إضافة موضوع</string>
     <string name="dialog_addSubject_message">تريد إضافة أي موضوع؟</string>
+    <string name="dialog_completed">Switch completion</string>
     <string name="dialog_edit">تعديل</string>
     <string name="dialog_delete">حذف</string>
     <string name="dialog_really_delete_hw">هل تريد حقاً حذف جميع الواجبات المنزلية؟</string>
     <string name="dialog_really_delete_subs">هل تريد حذف كافة المواضيع حقاً؟</string>
     <string name="dialog_export_message">هل تريد حقاً النسخ الاحتياطي الواجبات المنزلية والكتابة فوق النسخ الاحتياطي القديم؟</string>
-    <string name="dialog_import_message">هل تريد حقاً الاستيراد الواجبات المنزلية والواجبات المدرسية الحالية بالكتابة فوق؟</string>
     <string name="intent_mail">أرسل بريدًا إلكترونيًا إلى المطوّر</string>
     <string name="intent_share_title">إشراك</string>
     <string name="intent_share_text">مهلا، هل تريد لمحاولة من مدير الأب؟ يمكنك تحميله من هنا: http://goo.gl/GT99iV</string>

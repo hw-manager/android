@@ -58,12 +58,12 @@
     <string name="pref_sortbyimportance_summary">A fontos feladat a lista tetején jelenik meg.</string>
     <string name="dialog_addSubject">Tantárgy hozzáadása</string>
     <string name="dialog_addSubject_message">Melyik tantárgyat akarod felvenni?</string>
+    <string name="dialog_completed">Switch completion</string>
     <string name="dialog_edit">Szerkesztés</string>
     <string name="dialog_delete">Törlés</string>
     <string name="dialog_really_delete_hw">Biztos törölni akarod az összes házi feladatot?</string>
     <string name="dialog_really_delete_subs">Biztos törölni akarod az összes tantárgyat?</string>
     <string name="dialog_export_message">Biztos menteni akarod a házi feladatot és feülírni a régi mentést?</string>
-    <string name="dialog_import_message">Biztos importálni akarod a házi fealadatot és felülírni vele az aktuálisat?</string>
     <string name="intent_mail">Küldj egy emailt a fejlesztőnek</string>
     <string name="intent_share_title">Megosztás</string>
     <string name="intent_share_text">Hé, szeretnéd kipróbálnia  HW-Manager alkalmazást? Le tudod tölteni innen: http://goo.gl/GT99iV</string>

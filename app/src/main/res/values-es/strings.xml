@@ -58,12 +58,12 @@
     <string name="pref_sortbyimportance_summary">Importante tarea aparecerá en la parte superior.</string>
     <string name="dialog_addSubject">Añadir una asignatura</string>
     <string name="dialog_addSubject_message">¿Qué asignatura quieres añadir?</string>
+    <string name="dialog_completed">Cambiar la terminación</string>
     <string name="dialog_edit">Editar</string>
     <string name="dialog_delete">Eliminar</string>
     <string name="dialog_really_delete_hw">¿Quieres eliminar todas los deberes?</string>
     <string name="dialog_really_delete_subs">¿Quieres eliminar todas las asignaturas?</string>
     <string name="dialog_export_message">¿Quieres hacer un backup una copia de seguridad y sobrescribir el backup vieja?</string>
-    <string name="dialog_import_message">¿Quieres importar los deberes y sobrescribir las deberes actuales?</string>
     <string name="intent_mail">Enviar un correo electrónico al desarrollador</string>
     <string name="intent_share_title">Compartir</string>
     <string name="intent_share_text">Oye, ¿quieres probar HW-Manager? Puedes descargarlo aquí: http://goo.gl/GT99iV</string>

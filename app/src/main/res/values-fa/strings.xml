@@ -58,12 +58,12 @@
     <string name="pref_sortbyimportance_summary">تکالیف درسیِ مهم در بالا نمایش داده می‌شوند.</string>
     <string name="dialog_addSubject">افزودن عنوان</string>
     <string name="dialog_addSubject_message">کدام عنوان را می‌خواهید بیفزایید؟</string>
+    <string name="dialog_completed">Switch completion</string>
     <string name="dialog_edit">ویرایش</string>
     <string name="dialog_delete">حذف</string>
     <string name="dialog_really_delete_hw">واقعا می‌خواهید تمامی تکالیف درسی را حذف کنید؟</string>
     <string name="dialog_really_delete_subs">واقعا می‌خواهید تمامی عناوین را حذف کنید؟</string>
     <string name="dialog_export_message">واقعا می‌خواهید از تکلیف درسی پشتیبان گرفته بر پشتیبان قبلی بازنویسی کنید؟</string>
-    <string name="dialog_import_message">واقعا می‌خواهید تکلیف را فراخوان و بر تکلیف فعلی بازنویسی کنید؟</string>
     <string name="intent_mail">ارسال رایانامه به توسعه‌دهنده</string>
     <string name="intent_share_title">به‌اشتراک‌گذاری</string>
     <string name="intent_share_text">سلام، می‌خواهید ایچ‌دبلیو-منیجر را امتحان کنید؟ می توانید آن را اینجا دانلود کنید: http://goo.gl/GT99iV</string>

@@ -58,12 +58,12 @@
     <string name="pref_sortbyimportance_summary">Důležité úkoly budou zobrazeny v horní části.</string>
     <string name="dialog_addSubject">Přidat předmět</string>
     <string name="dialog_addSubject_message">Jaký předmět chcete přidat?</string>
+    <string name="dialog_completed">Switch completion</string>
     <string name="dialog_edit">Upravit</string>
     <string name="dialog_delete">Smazat</string>
     <string name="dialog_really_delete_hw">Opravdu smazat všechny zadané úkoly?</string>
     <string name="dialog_really_delete_subs">Opravdu smazat všechny předměty?</string>
     <string name="dialog_export_message">Opravdu chcete zálohovat domácí úkol a přepsat starou zálohu?</string>
-    <string name="dialog_import_message">Opravdu chcete importovat domácí úkol a přepsat stávající úkol?</string>
     <string name="intent_mail">Odeslat email vývojářovi</string>
     <string name="intent_share_title">Sdílet</string>
     <string name="intent_share_text">Hele, nechceš vyzkoušet správce domácích úkolů HW-Manager? Je ke stažení zde: http://goo.gl/GT99iV</string>

@@ -58,12 +58,12 @@
     <string name="pref_sortbyimportance_summary">Devoirs importants s\'affichera en haut.</string>
     <string name="dialog_addSubject">Ajouter une matière</string>
     <string name="dialog_addSubject_message">Quelle matière voulez-vous ajouter ?</string>
+    <string name="dialog_completed">Switch completion</string>
     <string name="dialog_edit">Éditer</string>
     <string name="dialog_delete">Supprimer</string>
     <string name="dialog_really_delete_hw">Voulez-vous vraiment supprimer tous les devoirs ?</string>
     <string name="dialog_really_delete_subs">Voulez-vous vraiment supprimer tous les metières ?</string>
     <string name="dialog_export_message">Voulez-vous vraiment de sauvegarder les devoirs et de remplacer l\'ancienne sauvegarde ?</string>
-    <string name="dialog_import_message">Voulez-vous vraiment d\'importer les devoirs et d\'écraser les devoirs actuel ?</string>
     <string name="intent_mail">Envoyer un email au développeur</string>
     <string name="intent_share_title">Partager</string>
     <string name="intent_share_text">Hé, vous voulez essayer HW-Manager ? Vous pouvez le télécharger ici : http://goo.gl/GT99iV</string>
