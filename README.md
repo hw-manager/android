@@ -37,3 +37,8 @@ Take a look at
 
 See
 [LICENSE](./LICENSE).
+
+[`FilenameUtils.java`](src/main/java/de/nico/ha_manager/helper/FilenameUtils.java)
+is a trimmed version of `FilenameUtils` from the Apache Commons IO library,
+only using required methods. It is licensed under Apache License Version
+2.0.
