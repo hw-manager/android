@@ -33,6 +33,18 @@ public final class Homework {
     }
 
     /**
+     * Deletes multiple homework.
+     *
+     * @param c  Needed by {@link de.nico.ha_manager.database.Source}.
+     * @param IDs IDs of homework to get deleted. If set to null, all homework will get deleted.
+     */
+    public static void delete(final String[] IDs, final Context c) {
+        for (String ID : IDs) {
+            delete(c, ID);
+        }
+    }
+
+    /**
      * Adds a homework.
      *
      * @param c         Needed by {@link de.nico.ha_manager.database.Source}.
