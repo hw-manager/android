@@ -86,7 +86,7 @@ public final class Source {
 
         String insertId = "ID = " + database.insert("HOMEWORK", null, values);
         if (ID != null) {
-            Homework.deleteOne(c, ID);
+            Homework.delete(c, ID);
             insertId = ID;
         }
 

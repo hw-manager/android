@@ -190,7 +190,7 @@ public final class Main extends FragmentActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public final void onClick(final DialogInterface d, final int i) {
-                                Homework.deleteOne(Main.this, currentID);
+                                Homework.delete(Main.this, currentID);
                                 update();
                             }
                         })
@@ -210,7 +210,7 @@ public final class Main extends FragmentActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public final void onClick(final DialogInterface d, final int i) {
-                                Homework.deleteAll(Main.this);
+                                Homework.delete(Main.this, null);
                                 update();
                             }
                         })

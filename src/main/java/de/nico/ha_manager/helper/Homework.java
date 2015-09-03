@@ -22,21 +22,12 @@ import de.nico.ha_manager.database.Source;
 public final class Homework {
 
     /**
-     * Deletes all homework.
-     *
-     * @param c Needed by {@link de.nico.ha_manager.database.Source}.
-     */
-    public static void deleteAll(final Context c) {
-        final Source s = new Source(c);
-        s.delete_item(null);
-    }
-
-    /**
      * Deletes one homework.
      *
-     * @param c Needed by {@link de.nico.ha_manager.database.Source}.
+     * @param c  Needed by {@link de.nico.ha_manager.database.Source}.
+     * @param ID ID of homework to get deleted. If set to null, all homework will get deleted.
      */
-    public static void deleteOne(final Context c, final String ID) {
+    public static void delete(final Context c, final String ID) {
         final Source s = new Source(c);
         s.delete_item(ID);
     }
