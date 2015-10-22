@@ -23,15 +23,18 @@ B:
 ## Repositories
 
 Official repository:
-[GitHub](https://github.com/hw-manager/android)
+[GitLab](https://gitlab.com/hw-manager/android)
 
 Official mirror (Pull Request are welcome):
-[GitLab](https://gitlab.com/hw-manager/android)
+[GitHub](https://github.com/hw-manager/android)
 
 ## TODO
 
 Take a look at
-[GitHub Issues](https://github.com/hw-manager/android/issues).
+[GitLab Issues](https://gitlab.com/hw-manager/android/issues).
+
+If you want to report an issue but not to sign up on GitLab, you can
+also send it to me by [mail](mailto:nicoalt@posteo.org).
 
 ## LICENSE
 
