@@ -113,7 +113,7 @@
             android:title="@string/pref_about_current_version">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/hw-manager/android/releases/latest" />
+                android:data="https://gitlab.com/hw-manager/android/tags" />
         </PreferenceScreen>
     </PreferenceCategory>
 </PreferenceScreen>
