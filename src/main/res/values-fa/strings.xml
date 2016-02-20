@@ -5,99 +5,99 @@
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
 <resources>
-    <string name="app_name">ایچ دبلیو-منیجر</string>
-    <string name="title_subjects">عناوین</string>
-    <string name="title_subject_offers">عناوین پیشنهادی</string>
-    <string name="title_homework">تکلیف درسی</string>
-    <string name="title_addhomework">افزودن تکلیف درسی</string>
-    <string name="title_about">درباره</string>
-    <string name="action_add">افزودن</string>
-    <string name="action_delete">حذف همه‌چیز</string>
-    <string name="action_settings">تنظیمات</string>
-    <string name="hw_title">عنوان</string>
-    <string name="hw_subject">عنوان</string>
-    <string name="hw_until">تا</string>
-    <string name="hw_urgent">مهم</string>
-    <string name="hw_info">اطلاعاتِ بیشتر</string>
-    <string name="hw_add">افزودن</string>
-    <string name="hw_save">ذخيره</string>
-    <string name="pref_language">زبان</string>
-    <string name="pref_language_default">پیش‌فرضِ سیستم</string>
-    <string name="pref_subjects">عناوین</string>
-    <string name="pref_subjects_add">افزودن عنوان</string>
-    <string name="pref_subjects_add_summary">افزودن عنوان جدید به فهرست</string>
-    <string name="pref_offers_overview">پیشنهادات</string>
-    <string name="pref_offers_overview_summary">فهرستی از پیشنهادات</string>
-    <string name="pref_subjects_overview">مرور</string>
-    <string name="pref_subjects_overview_summary">فهرست دربردارنده‌ی همه‌ی عناوین</string>
-    <string name="pref_subjects_reset">ریست</string>
-    <string name="pref_subjects_reset_summary">ریست کردن فهرست عناوین به مقادیر پیش‌فرض</string>
-    <string name="pref_appearance">ظاهر</string>
-    <string name="pref_theme">استفاده از تم تیره</string>
-    <string name="pref_theme_summary">از تم تیره استفاده کنید.</string>
-    <string name="pref_black">استفاده از پس‌زمینه‌ی سیاه</string>
-    <string name="pref_black_summary">در برخی دستگاه‌ها سبب حفظ باتری می‌شود.</string>
-    <string name="pref_about_credits">پدیدآورندگان</string>
-    <string name="pref_about_current_version">نسخه‌ی جاری</string>
-    <string name="pref_feedback">ارسال بازخورد</string>
-    <string name="pref_feedback_share">به‌اشتراک‌گذاری</string>
-    <string name="pref_feedback_share_summary">به‌اشتراک‌گذاری برنامه با دوستان!</string>
-    <string name="pref_feedback_playstore">پلی استور</string>
-    <string name="pref_feedback_playstore_summary">نقد برنامه در گوگل پلی استور</string>
-    <string name="pref_feedback_mail">رایانامه</string>
-    <string name="pref_feedback_mail_summary">ارسال رایانامه به توسعه‌دهنده</string>
-    <string name="pref_homework_import">فراخوانی</string>
-    <string name="pref_homework_import_summary">فراخوانی تکلیف درسی از اس دی</string>
-    <string name="pref_homework_export">صدور</string>
-    <string name="pref_homework_export_summary">صادر کردن تکلیف درسی به اس دی</string>
-    <string name="pref_autoexport">پشتیبان‌گیریِ خودکار</string>
-    <string name="pref_autoexport_summary">وقتی تغییری ایجاد شد خودکار پشتیبان بگیر.</string>
-    <string name="pref_sortbytime">مرتب‌سازی بر مبنای زمان</string>
-    <string name="pref_sortbytime_summary">تکالیف درسی را بر مبنای زمانی مرتب کن که باید تمام شوند.</string>
-    <string name="pref_sortbyimportance">مرتب‌سازی بر مبنای اهمیت</string>
-    <string name="pref_sortbyimportance_summary">تکالیف درسیِ مهم در بالا نمایش داده می‌شوند.</string>
-    <string name="dialog_addSubject">افزودن عنوان</string>
-    <string name="dialog_addSubject_message">کدام عنوان را می‌خواهید بیفزایید؟</string>
-    <string name="dialog_completed">Switch completion</string>
-    <string name="dialog_edit">ویرایش</string>
-    <string name="dialog_delete">حذف</string>
-    <string name="dialog_really_delete_hw">واقعا می‌خواهید تمامی تکالیف درسی را حذف کنید؟</string>
-    <string name="dialog_really_delete_subs">واقعا می‌خواهید تمامی عناوین را حذف کنید؟</string>
-    <string name="dialog_export_message">واقعا می‌خواهید از تکلیف درسی پشتیبان گرفته بر پشتیبان قبلی بازنویسی کنید؟</string>
-    <string name="intent_mail">ارسال رایانامه به توسعه‌دهنده</string>
-    <string name="intent_share_title">به‌اشتراک‌گذاری</string>
-    <string name="intent_share_text">سلام، می‌خواهید ایچ‌دبلیو-منیجر را امتحان کنید؟ می توانید آن را اینجا دانلود کنید: http://goo.gl/GT99iV</string>
-    <string name="toast_have2enter">باید چیزی وارد کنید!</string>
-    <string name="added">افزوده شد</string>
-    <string name="toast_nobackup">فایلی در اس دی نیست</string>
-    <string name="toast_import_success">با موفقیت فراخوان شد</string>
-    <string name="toast_import_fail">فراخوانی ناموفق</string>
-    <string name="toast_export_success">با موفقیت صادر شد</string>
-    <string name="toast_export_fail">صدور ناموفق</string>
-    <string name="action_urgent">مهم!</string>
-    <string-array name="subjects">
-        <item>زیست‌شناسی</item>
-        <item>شیمی</item>
-        <item>انگلیسی</item>
-        <item>تاریخ</item>
-        <item>ریاضی</item>
-        <item>فیزیک</item>
-        <item>تربیت بدنی</item>
-    </string-array>
-    <string-array name="subject_offers">
-        <item>آفریقایی</item>
-        <item>هنر</item>
-        <item>نمایش</item>
-        <item>اخلاق</item>
-        <item>جغرافی</item>
-        <item>آلمانی</item>
-        <item>فرانسه</item>
-        <item>انفورماتیک</item>
-        <item>لاتین</item>
-        <item>موسیقی</item>
-        <item>عکاسی</item>
-        <item>سیاست و اقتصاد</item>
-        <item>دین</item>
-        <item>اسپانیایی</item>
-    </string-array>
+  <string name="app_name">ایچ دبلیو-منیجر</string>
+  <string name="title_subjects">عناوین</string>
+  <string name="title_subject_offers">عناوین پیشنهادی</string>
+  <string name="title_homework">تکلیف درسی</string>
+  <string name="title_addhomework">افزودن تکلیف درسی</string>
+  <string name="title_about">درباره</string>
+  <string name="action_add">افزودن</string>
+  <string name="action_delete">حذف همه‌چیز</string>
+  <string name="action_settings">تنظیمات</string>
+  <string name="hw_title">عنوان</string>
+  <string name="hw_subject">عنوان</string>
+  <string name="hw_until">تا</string>
+  <string name="hw_urgent">مهم</string>
+  <string name="hw_info">اطلاعاتِ بیشتر</string>
+  <string name="hw_add">افزودن</string>
+  <string name="hw_save">ذخيره</string>
+  <string name="pref_language">زبان</string>
+  <string name="pref_language_default">پیش‌فرضِ سیستم</string>
+  <string name="pref_subjects">عناوین</string>
+  <string name="pref_subjects_add">افزودن عنوان</string>
+  <string name="pref_subjects_add_summary">افزودن عنوان جدید به فهرست</string>
+  <string name="pref_offers_overview">پیشنهادات</string>
+  <string name="pref_offers_overview_summary">فهرستی از پیشنهادات</string>
+  <string name="pref_subjects_overview">مرور</string>
+  <string name="pref_subjects_overview_summary">فهرست دربردارنده‌ی همه‌ی عناوین</string>
+  <string name="pref_subjects_reset">ریست</string>
+  <string name="pref_subjects_reset_summary">ریست کردن فهرست عناوین به مقادیر پیش‌فرض</string>
+  <string name="pref_appearance">ظاهر</string>
+  <string name="pref_theme">استفاده از تم تیره</string>
+  <string name="pref_theme_summary">از تم تیره استفاده کنید.</string>
+  <string name="pref_black">استفاده از پس‌زمینه‌ی سیاه</string>
+  <string name="pref_black_summary">در برخی دستگاه‌ها سبب حفظ باتری می‌شود.</string>
+  <string name="pref_about_credits">پدیدآورندگان</string>
+  <string name="pref_about_current_version">نسخه‌ی جاری</string>
+  <string name="pref_feedback">ارسال بازخورد</string>
+  <string name="pref_feedback_share">به‌اشتراک‌گذاری</string>
+  <string name="pref_feedback_share_summary">به‌اشتراک‌گذاری برنامه با دوستان!</string>
+  <string name="pref_feedback_playstore">پلی استور</string>
+  <string name="pref_feedback_playstore_summary">نقد برنامه در گوگل پلی استور</string>
+  <string name="pref_feedback_mail">رایانامه</string>
+  <string name="pref_feedback_mail_summary">ارسال رایانامه به توسعه‌دهنده</string>
+  <string name="pref_homework_import">فراخوانی</string>
+  <string name="pref_homework_import_summary">فراخوانی تکلیف درسی از اس دی</string>
+  <string name="pref_homework_export">صدور</string>
+  <string name="pref_homework_export_summary">صادر کردن تکلیف درسی به اس دی</string>
+  <string name="pref_autoexport">پشتیبان‌گیریِ خودکار</string>
+  <string name="pref_autoexport_summary">وقتی تغییری ایجاد شد خودکار پشتیبان بگیر.</string>
+  <string name="pref_sortbytime">مرتب‌سازی بر مبنای زمان</string>
+  <string name="pref_sortbytime_summary">تکالیف درسی را بر مبنای زمانی مرتب کن که باید تمام شوند.</string>
+  <string name="pref_sortbyimportance">مرتب‌سازی بر مبنای اهمیت</string>
+  <string name="pref_sortbyimportance_summary">تکالیف درسیِ مهم در بالا نمایش داده می‌شوند.</string>
+  <string name="dialog_addSubject">افزودن عنوان</string>
+  <string name="dialog_addSubject_message">کدام عنوان را می‌خواهید بیفزایید؟</string>
+  <string name="dialog_completed">Switch completion</string>
+  <string name="dialog_edit">ویرایش</string>
+  <string name="dialog_delete">حذف</string>
+  <string name="dialog_really_delete_hw">واقعا می‌خواهید تمامی تکالیف درسی را حذف کنید؟</string>
+  <string name="dialog_really_delete_subs">واقعا می‌خواهید تمامی عناوین را حذف کنید؟</string>
+  <string name="dialog_export_message">واقعا می‌خواهید از تکلیف درسی پشتیبان گرفته بر پشتیبان قبلی بازنویسی کنید؟</string>
+  <string name="intent_mail">ارسال رایانامه به توسعه‌دهنده</string>
+  <string name="intent_share_title">به‌اشتراک‌گذاری</string>
+  <string name="intent_share_text">سلام، می‌خواهید ایچ‌دبلیو-منیجر را امتحان کنید؟ می توانید آن را اینجا دانلود کنید: http://goo.gl/GT99iV</string>
+  <string name="toast_have2enter">باید چیزی وارد کنید!</string>
+  <string name="added">افزوده شد</string>
+  <string name="toast_nobackup">فایلی در اس دی نیست</string>
+  <string name="toast_import_success">با موفقیت فراخوان شد</string>
+  <string name="toast_import_fail">فراخوانی ناموفق</string>
+  <string name="toast_export_success">با موفقیت صادر شد</string>
+  <string name="toast_export_fail">صدور ناموفق</string>
+  <string name="action_urgent">مهم!</string>
+  <string-array name="subjects">
+    <item>زیست‌شناسی</item>
+    <item>شیمی</item>
+    <item>انگلیسی</item>
+    <item>تاریخ</item>
+    <item>ریاضی</item>
+    <item>فیزیک</item>
+    <item>تربیت بدنی</item>
+  </string-array>
+  <string-array name="subject_offers">
+    <item>آفریقایی</item>
+    <item>هنر</item>
+    <item>نمایش</item>
+    <item>اخلاق</item>
+    <item>جغرافی</item>
+    <item>آلمانی</item>
+    <item>فرانسه</item>
+    <item>انفورماتیک</item>
+    <item>لاتین</item>
+    <item>موسیقی</item>
+    <item>عکاسی</item>
+    <item>سیاست و اقتصاد</item>
+    <item>دین</item>
+    <item>اسپانیایی</item>
+  </string-array>
 </resources>

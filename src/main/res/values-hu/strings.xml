@@ -5,99 +5,99 @@
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
 <resources>
-    <string name="app_name">HW-Manager</string>
-    <string name="title_subjects">Tantárgyak</string>
-    <string name="title_subject_offers">Tantárgy javaslatok</string>
-    <string name="title_homework">Házi feladat</string>
-    <string name="title_addhomework">Házi feladat hozzáadása</string>
-    <string name="title_about">Névjegy</string>
-    <string name="action_add">Hozzáadás</string>
-    <string name="action_delete">Minden törlése</string>
-    <string name="action_settings">Beállítások</string>
-    <string name="hw_title">Cím</string>
-    <string name="hw_subject">Tantárgy</string>
-    <string name="hw_until">-ig</string>
-    <string name="hw_urgent">Fontos</string>
-    <string name="hw_info">További információ</string>
-    <string name="hw_add">Hozzáadás</string>
-    <string name="hw_save">Mentés</string>
-    <string name="pref_language">Nyelv</string>
-    <string name="pref_language_default">Rendszer alapértelmezett</string>
-    <string name="pref_subjects">Tantárgyak</string>
-    <string name="pref_subjects_add">Tantárgy hozzáadása</string>
-    <string name="pref_subjects_add_summary">Egy új tantárgy hozzáadása a listához</string>
-    <string name="pref_offers_overview">Javaslatok</string>
-    <string name="pref_offers_overview_summary">Javaslatok listája</string>
-    <string name="pref_subjects_overview">Áttekintés</string>
-    <string name="pref_subjects_overview_summary">Az összes javaslatot tartalmazó lista</string>
-    <string name="pref_subjects_reset">Visszaállítás</string>
-    <string name="pref_subjects_reset_summary">Tantárgy lista visszaállítása alapértelmezettre</string>
-    <string name="pref_appearance">Megjelenés</string>
-    <string name="pref_theme">Sötét téma használata</string>
-    <string name="pref_theme_summary">Használj egy sötét témát.</string>
-    <string name="pref_black">Használj mindenhez fekete hátteret</string>
-    <string name="pref_black_summary">Egyes eszközökön az akkumulátor mentése.</string>
-    <string name="pref_about_credits">Készítők</string>
-    <string name="pref_about_current_version">Aktuális verzió</string>
-    <string name="pref_feedback">Visszajelzés küldése</string>
-    <string name="pref_feedback_share">Megosztás</string>
-    <string name="pref_feedback_share_summary">Az alkalmazás megosztása a barátokkal!</string>
-    <string name="pref_feedback_playstore">Play Áruház</string>
-    <string name="pref_feedback_playstore_summary">Nézd meg az alkalmazást a Google Play Áruházban</string>
-    <string name="pref_feedback_mail">Email</string>
-    <string name="pref_feedback_mail_summary">Küldj egy levelet a fejlesztőknek</string>
-    <string name="pref_homework_import">Importálás</string>
-    <string name="pref_homework_import_summary">Házi feladat importálása SD kártyáról</string>
-    <string name="pref_homework_export">Exportálás</string>
-    <string name="pref_homework_export_summary">Házi feladat exportálása SD kártyára</string>
-    <string name="pref_autoexport">Automatikus biztonsági másolat</string>
-    <string name="pref_autoexport_summary">Automatikus biztonsági másolat készül minden változásnál.</string>
-    <string name="pref_sortbytime">Rendezés idő szerint</string>
-    <string name="pref_sortbytime_summary">Rendezheted a listát az idő szerint amíg a házifeladatot be kell fejezni.</string>
-    <string name="pref_sortbyimportance">Rendezés fontosság szerint</string>
-    <string name="pref_sortbyimportance_summary">A fontos feladat a lista tetején jelenik meg.</string>
-    <string name="dialog_addSubject">Tantárgy hozzáadása</string>
-    <string name="dialog_addSubject_message">Melyik tantárgyat akarod felvenni?</string>
-    <string name="dialog_completed">Switch completion</string>
-    <string name="dialog_edit">Szerkesztés</string>
-    <string name="dialog_delete">Törlés</string>
-    <string name="dialog_really_delete_hw">Biztos törölni akarod az összes házi feladatot?</string>
-    <string name="dialog_really_delete_subs">Biztos törölni akarod az összes tantárgyat?</string>
-    <string name="dialog_export_message">Biztos menteni akarod a házi feladatot és feülírni a régi mentést?</string>
-    <string name="intent_mail">Küldj egy emailt a fejlesztőnek</string>
-    <string name="intent_share_title">Megosztás</string>
-    <string name="intent_share_text">Hé, szeretnéd kipróbálnia  HW-Manager alkalmazást? Le tudod tölteni innen: http://goo.gl/GT99iV</string>
-    <string name="toast_have2enter">Valamit kell írni!</string>
-    <string name="added">hozzáadva</string>
-    <string name="toast_nobackup">Nincs fájl az SD kártyán</string>
-    <string name="toast_import_success">Az importálás sikerült</string>
-    <string name="toast_import_fail">Az importálás nem sikerült</string>
-    <string name="toast_export_success">Az exportálás sikerült</string>
-    <string name="toast_export_fail">Az exportálás nem sikerült</string>
-    <string name="action_urgent">Fontos!</string>
-    <string-array name="subjects">
-        <item>Biológia</item>
-        <item>Kémia</item>
-        <item>Angol</item>
-        <item>Történelem</item>
-        <item>Matematika</item>
-        <item>Fizika</item>
-        <item>Testnevelés</item>
-    </string-array>
-    <string-array name="subject_offers">
-        <item>Búr</item>
-        <item>Művészet</item>
-        <item>Dráma</item>
-        <item>Etika</item>
-        <item>Földrajz</item>
-        <item>Német</item>
-        <item>Francia</item>
-        <item>Informatika</item>
-        <item>Latin</item>
-        <item>Zene</item>
-        <item>Fotózás</item>
-        <item>Politika és gazdaság</item>
-        <item>Vallás</item>
-        <item>Spanyol</item>
-    </string-array>
+  <string name="app_name">HW-Manager</string>
+  <string name="title_subjects">Tantárgyak</string>
+  <string name="title_subject_offers">Tantárgy javaslatok</string>
+  <string name="title_homework">Házi feladat</string>
+  <string name="title_addhomework">Házi feladat hozzáadása</string>
+  <string name="title_about">Névjegy</string>
+  <string name="action_add">Hozzáadás</string>
+  <string name="action_delete">Minden törlése</string>
+  <string name="action_settings">Beállítások</string>
+  <string name="hw_title">Cím</string>
+  <string name="hw_subject">Tantárgy</string>
+  <string name="hw_until">-ig</string>
+  <string name="hw_urgent">Fontos</string>
+  <string name="hw_info">További információ</string>
+  <string name="hw_add">Hozzáadás</string>
+  <string name="hw_save">Mentés</string>
+  <string name="pref_language">Nyelv</string>
+  <string name="pref_language_default">Rendszer alapértelmezett</string>
+  <string name="pref_subjects">Tantárgyak</string>
+  <string name="pref_subjects_add">Tantárgy hozzáadása</string>
+  <string name="pref_subjects_add_summary">Egy új tantárgy hozzáadása a listához</string>
+  <string name="pref_offers_overview">Javaslatok</string>
+  <string name="pref_offers_overview_summary">Javaslatok listája</string>
+  <string name="pref_subjects_overview">Áttekintés</string>
+  <string name="pref_subjects_overview_summary">Az összes javaslatot tartalmazó lista</string>
+  <string name="pref_subjects_reset">Visszaállítás</string>
+  <string name="pref_subjects_reset_summary">Tantárgy lista visszaállítása alapértelmezettre</string>
+  <string name="pref_appearance">Megjelenés</string>
+  <string name="pref_theme">Sötét téma használata</string>
+  <string name="pref_theme_summary">Használj egy sötét témát.</string>
+  <string name="pref_black">Használj mindenhez fekete hátteret</string>
+  <string name="pref_black_summary">Egyes eszközökön az akkumulátor mentése.</string>
+  <string name="pref_about_credits">Készítők</string>
+  <string name="pref_about_current_version">Aktuális verzió</string>
+  <string name="pref_feedback">Visszajelzés küldése</string>
+  <string name="pref_feedback_share">Megosztás</string>
+  <string name="pref_feedback_share_summary">Az alkalmazás megosztása a barátokkal!</string>
+  <string name="pref_feedback_playstore">Play Áruház</string>
+  <string name="pref_feedback_playstore_summary">Nézd meg az alkalmazást a Google Play Áruházban</string>
+  <string name="pref_feedback_mail">Email</string>
+  <string name="pref_feedback_mail_summary">Küldj egy levelet a fejlesztőknek</string>
+  <string name="pref_homework_import">Importálás</string>
+  <string name="pref_homework_import_summary">Házi feladat importálása SD kártyáról</string>
+  <string name="pref_homework_export">Exportálás</string>
+  <string name="pref_homework_export_summary">Házi feladat exportálása SD kártyára</string>
+  <string name="pref_autoexport">Automatikus biztonsági másolat</string>
+  <string name="pref_autoexport_summary">Automatikus biztonsági másolat készül minden változásnál.</string>
+  <string name="pref_sortbytime">Rendezés idő szerint</string>
+  <string name="pref_sortbytime_summary">Rendezheted a listát az idő szerint amíg a házifeladatot be kell fejezni.</string>
+  <string name="pref_sortbyimportance">Rendezés fontosság szerint</string>
+  <string name="pref_sortbyimportance_summary">A fontos feladat a lista tetején jelenik meg.</string>
+  <string name="dialog_addSubject">Tantárgy hozzáadása</string>
+  <string name="dialog_addSubject_message">Melyik tantárgyat akarod felvenni?</string>
+  <string name="dialog_completed">Váltás befejezése</string>
+  <string name="dialog_edit">Szerkesztés</string>
+  <string name="dialog_delete">Törlés</string>
+  <string name="dialog_really_delete_hw">Biztos törölni akarod az összes házi feladatot?</string>
+  <string name="dialog_really_delete_subs">Biztos törölni akarod az összes tantárgyat?</string>
+  <string name="dialog_export_message">Biztos menteni akarod a házi feladatot és feülírni a régi mentést?</string>
+  <string name="intent_mail">Küldj egy emailt a fejlesztőnek</string>
+  <string name="intent_share_title">Megosztás</string>
+  <string name="intent_share_text">Hé, szeretnéd kipróbálnia  HW-Manager alkalmazást? Le tudod tölteni innen: http://goo.gl/GT99iV</string>
+  <string name="toast_have2enter">Valamit kell írni!</string>
+  <string name="added">hozzáadva</string>
+  <string name="toast_nobackup">Nincs fájl az SD kártyán</string>
+  <string name="toast_import_success">Az importálás sikerült</string>
+  <string name="toast_import_fail">Az importálás nem sikerült</string>
+  <string name="toast_export_success">Az exportálás sikerült</string>
+  <string name="toast_export_fail">Az exportálás nem sikerült</string>
+  <string name="action_urgent">Fontos!</string>
+  <string-array name="subjects">
+    <item>Biológia</item>
+    <item>Kémia</item>
+    <item>Angol</item>
+    <item>Történelem</item>
+    <item>Matematika</item>
+    <item>Fizika</item>
+    <item>Testnevelés</item>
+  </string-array>
+  <string-array name="subject_offers">
+    <item>Búr</item>
+    <item>Művészet</item>
+    <item>Dráma</item>
+    <item>Etika</item>
+    <item>Földrajz</item>
+    <item>Német</item>
+    <item>Francia</item>
+    <item>Informatika</item>
+    <item>Latin</item>
+    <item>Zene</item>
+    <item>Fotózás</item>
+    <item>Politika és gazdaság</item>
+    <item>Vallás</item>
+    <item>Spanyol</item>
+  </string-array>
 </resources>

@@ -5,99 +5,99 @@
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
 <resources>
-    <string name="app_name">HW-Manager</string>
-    <string name="title_subjects">Subjects</string>
-    <string name="title_subject_offers">Subject Suggestions</string>
-    <string name="title_homework">Homework</string>
-    <string name="title_addhomework">Add Homework</string>
-    <string name="title_about">About</string>
-    <string name="action_add">Add</string>
-    <string name="action_delete">Delete everything</string>
-    <string name="action_settings">Settings</string>
-    <string name="hw_title">Title</string>
-    <string name="hw_subject">Subject</string>
-    <string name="hw_until">Until</string>
-    <string name="hw_urgent">Important</string>
-    <string name="hw_info">Additional Information</string>
-    <string name="hw_add">Add</string>
-    <string name="hw_save">Save</string>
-    <string name="pref_language">Language</string>
-    <string name="pref_language_default">System default</string>
-    <string name="pref_subjects">Subjects</string>
-    <string name="pref_subjects_add">Add a subject</string>
-    <string name="pref_subjects_add_summary">Add a new subject to the list</string>
-    <string name="pref_offers_overview">Suggestions</string>
-    <string name="pref_offers_overview_summary">A list with suggestions</string>
-    <string name="pref_subjects_overview">Overview</string>
-    <string name="pref_subjects_overview_summary">A list containing all subjects</string>
-    <string name="pref_subjects_reset">Reset</string>
-    <string name="pref_subjects_reset_summary">Reset the subjects list to the default value</string>
-    <string name="pref_appearance">Appearance</string>
-    <string name="pref_theme">Use Dark Theme</string>
-    <string name="pref_theme_summary">Use a dark theme.</string>
-    <string name="pref_black">Use All-Black Background</string>
-    <string name="pref_black_summary">Can save battery on some devices.</string>
-    <string name="pref_about_credits">Credits</string>
-    <string name="pref_about_current_version">Current Version</string>
-    <string name="pref_feedback">Send feedback</string>
-    <string name="pref_feedback_share">Share</string>
-    <string name="pref_feedback_share_summary">Share this app with a friend!</string>
-    <string name="pref_feedback_playstore">Play Store</string>
-    <string name="pref_feedback_playstore_summary">Review the app in the Google Play Store</string>
-    <string name="pref_feedback_mail">Email</string>
-    <string name="pref_feedback_mail_summary">Send an email to the developer</string>
-    <string name="pref_homework_import">Import</string>
-    <string name="pref_homework_import_summary">Import the homework from the SD</string>
-    <string name="pref_homework_export">Export</string>
-    <string name="pref_homework_export_summary">Export the homework to the SD</string>
-    <string name="pref_autoexport">Auto-Backup</string>
-    <string name="pref_autoexport_summary">Automatically backup when a change is made.</string>
-    <string name="pref_sortbytime">Sort by time</string>
-    <string name="pref_sortbytime_summary">Sort the homework list by the time until the homework has to be finished.</string>
-    <string name="pref_sortbyimportance">Sort by importance</string>
-    <string name="pref_sortbyimportance_summary">Important homework will be shown at the top.</string>
-    <string name="dialog_addSubject">Add Subject</string>
-    <string name="dialog_addSubject_message">Which subject do you want to add?</string>
-    <string name="dialog_completed">Switch completion</string>
-    <string name="dialog_edit">Edit</string>
-    <string name="dialog_delete">Delete</string>
-    <string name="dialog_really_delete_hw">Do you really want to delete all homework assignments?</string>
-    <string name="dialog_really_delete_subs">Do you really want to delete all subjects?</string>
-    <string name="dialog_export_message">Do you really want to backup the homework and overwrite the old backup?</string>
-    <string name="intent_mail">Send a mail to the developer</string>
-    <string name="intent_share_title">Share</string>
-    <string name="intent_share_text">Hey, do you want to try out HW-Manager? You can download it here: http://goo.gl/GT99iV</string>
-    <string name="toast_have2enter">You have to enter something!</string>
-    <string name="added">added</string>
-    <string name="toast_nobackup">No Files at SD/</string>
-    <string name="toast_import_success">Import successfully</string>
-    <string name="toast_import_fail">Import failed</string>
-    <string name="toast_export_success">Export successfully</string>
-    <string name="toast_export_fail">Export failed</string>
-    <string name="action_urgent">Important!</string>
-    <string-array name="subjects">
-        <item>Biology</item>
-        <item>Chemistry</item>
-        <item>English</item>
-        <item>History</item>
-        <item>Math</item>
-        <item>Physics</item>
-        <item>Sports</item>
-    </string-array>
-    <string-array name="subject_offers">
-        <item>Afrikaans</item>
-        <item>Art</item>
-        <item>Drama</item>
-        <item>Ethics</item>
-        <item>Geographics</item>
-        <item>German</item>
-        <item>French</item>
-        <item>Informatics</item>
-        <item>Latin</item>
-        <item>Music</item>
-        <item>Photography</item>
-        <item>Politics and Economics</item>
-        <item>Religion</item>
-        <item>Spanish</item>
-    </string-array>
+  <string name="app_name">HW-Manager</string>
+  <string name="title_subjects">Subjects</string>
+  <string name="title_subject_offers">Subject Suggestions</string>
+  <string name="title_homework">Homework</string>
+  <string name="title_addhomework">Add Homework</string>
+  <string name="title_about">About</string>
+  <string name="action_add">Add</string>
+  <string name="action_delete">Delete everything</string>
+  <string name="action_settings">Settings</string>
+  <string name="hw_title">Title</string>
+  <string name="hw_subject">Subject</string>
+  <string name="hw_until">Until</string>
+  <string name="hw_urgent">Important</string>
+  <string name="hw_info">Additional Information</string>
+  <string name="hw_add">Add</string>
+  <string name="hw_save">Save</string>
+  <string name="pref_language">Language</string>
+  <string name="pref_language_default">System default</string>
+  <string name="pref_subjects">Subjects</string>
+  <string name="pref_subjects_add">Add a subject</string>
+  <string name="pref_subjects_add_summary">Add a new subject to the list</string>
+  <string name="pref_offers_overview">Suggestions</string>
+  <string name="pref_offers_overview_summary">A list with suggestions</string>
+  <string name="pref_subjects_overview">Overview</string>
+  <string name="pref_subjects_overview_summary">A list containing all subjects</string>
+  <string name="pref_subjects_reset">Reset</string>
+  <string name="pref_subjects_reset_summary">Reset the subjects list to the default value</string>
+  <string name="pref_appearance">Appearance</string>
+  <string name="pref_theme">Use Dark Theme</string>
+  <string name="pref_theme_summary">Use a dark theme.</string>
+  <string name="pref_black">Use All-Black Background</string>
+  <string name="pref_black_summary">Can save battery on some devices.</string>
+  <string name="pref_about_credits">Credits</string>
+  <string name="pref_about_current_version">Current Version</string>
+  <string name="pref_feedback">Send feedback</string>
+  <string name="pref_feedback_share">Share</string>
+  <string name="pref_feedback_share_summary">Share this app with a friend!</string>
+  <string name="pref_feedback_playstore">Play Store</string>
+  <string name="pref_feedback_playstore_summary">Review the app in the Google Play Store</string>
+  <string name="pref_feedback_mail">Email</string>
+  <string name="pref_feedback_mail_summary">Send an email to the developer</string>
+  <string name="pref_homework_import">Import</string>
+  <string name="pref_homework_import_summary">Import the homework from the SD</string>
+  <string name="pref_homework_export">Export</string>
+  <string name="pref_homework_export_summary">Export the homework to the SD</string>
+  <string name="pref_autoexport">Auto-Backup</string>
+  <string name="pref_autoexport_summary">Automatically backup when a change is made.</string>
+  <string name="pref_sortbytime">Sort by time</string>
+  <string name="pref_sortbytime_summary">Sort the homework list by the time until the homework has to be finished.</string>
+  <string name="pref_sortbyimportance">Sort by importance</string>
+  <string name="pref_sortbyimportance_summary">Important homework will be shown at the top.</string>
+  <string name="dialog_addSubject">Add Subject</string>
+  <string name="dialog_addSubject_message">Which subject do you want to add?</string>
+  <string name="dialog_completed">Switch completion</string>
+  <string name="dialog_edit">Edit</string>
+  <string name="dialog_delete">Delete</string>
+  <string name="dialog_really_delete_hw">Do you really want to delete all homework assignments?</string>
+  <string name="dialog_really_delete_subs">Do you really want to delete all subjects?</string>
+  <string name="dialog_export_message">Do you really want to backup the homework and overwrite the old backup?</string>
+  <string name="intent_mail">Send a mail to the developer</string>
+  <string name="intent_share_title">Share</string>
+  <string name="intent_share_text">Hey, do you want to try out HW-Manager? You can download it here: http://goo.gl/GT99iV</string>
+  <string name="toast_have2enter">You have to enter something!</string>
+  <string name="added">added</string>
+  <string name="toast_nobackup">No Files at SD/</string>
+  <string name="toast_import_success">Import successfully</string>
+  <string name="toast_import_fail">Import failed</string>
+  <string name="toast_export_success">Export successfully</string>
+  <string name="toast_export_fail">Export failed</string>
+  <string name="action_urgent">Important!</string>
+  <string-array name="subjects">
+    <item>Biology</item>
+    <item>Chemistry</item>
+    <item>English</item>
+    <item>History</item>
+    <item>Math</item>
+    <item>Physics</item>
+    <item>Sports</item>
+  </string-array>
+  <string-array name="subject_offers">
+    <item>Afrikaans</item>
+    <item>Art</item>
+    <item>Drama</item>
+    <item>Ethics</item>
+    <item>Geographics</item>
+    <item>German</item>
+    <item>French</item>
+    <item>Informatics</item>
+    <item>Latin</item>
+    <item>Music</item>
+    <item>Photography</item>
+    <item>Politics and Economics</item>
+    <item>Religion</item>
+    <item>Spanish</item>
+  </string-array>
 </resources>

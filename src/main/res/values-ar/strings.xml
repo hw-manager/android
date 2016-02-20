@@ -5,99 +5,99 @@
 	See the file "LICENSE.txt" for the full license governing this code.
 -->
 <resources>
-    <string name="app_name">اتش دبلیو-منیجر</string>
-    <string name="title_subjects">المواضيع</string>
-    <string name="title_subject_offers">مواضیع المقترحة</string>
-    <string name="title_homework">الواجبات المنزلية</string>
-    <string name="title_addhomework">إضافة الواجبات المنزلية</string>
-    <string name="title_about">تعرف على البرنامج</string>
-    <string name="action_add">اضافة</string>
-    <string name="action_delete">حذف كل شيء</string>
-    <string name="action_settings">إعدادات</string>
-    <string name="hw_title">العنوان</string>
-    <string name="hw_subject">الموضوع</string>
-    <string name="hw_until">حتى</string>
-    <string name="hw_urgent">هام</string>
-    <string name="hw_info">معلومات إضافية</string>
-    <string name="hw_add">اضافة</string>
-    <string name="hw_save">حفظ</string>
-    <string name="pref_language">اللُّغة</string>
-    <string name="pref_language_default">الوضع الافتراضي للنظام</string>
-    <string name="pref_subjects">المواضيع</string>
-    <string name="pref_subjects_add">إضافة موضوع</string>
-    <string name="pref_subjects_add_summary">إضافة جديدة تخضع للقائمة</string>
-    <string name="pref_offers_overview">الاقتراحات</string>
-    <string name="pref_offers_overview_summary">قائمة باقتراحات</string>
-    <string name="pref_subjects_overview">نظرة عامّة</string>
-    <string name="pref_subjects_overview_summary">قائمة تحتوي على جميع المواضيع</string>
-    <string name="pref_subjects_reset">إعادة تعيين</string>
-    <string name="pref_subjects_reset_summary">إعادة تعيين قائمة المواضيع إلى القيمة الافتراضية</string>
-    <string name="pref_appearance">المظهر</string>
-    <string name="pref_theme">استخدام سمة الظلام</string>
-    <string name="pref_theme_summary">استخدم سمة الظلام.</string>
-    <string name="pref_black">استخدم خلفية سوداء كل</string>
-    <string name="pref_black_summary">يمكن حفظ البطارية في بعض الأجهزة.</string>
-    <string name="pref_about_credits">الإعتمادات</string>
-    <string name="pref_about_current_version">الإصدار الحالي</string>
-    <string name="pref_feedback">إرسال ملاحظات</string>
-    <string name="pref_feedback_share">إشراك</string>
-    <string name="pref_feedback_share_summary">إشترک هذا التطبيق مع صديق!</string>
-    <string name="pref_feedback_playstore">متجر غوغل بلاي</string>
-    <string name="pref_feedback_playstore_summary">استعراض التطبيق في غوغل بلای</string>
-    <string name="pref_feedback_mail">البريد الألكتروني</string>
-    <string name="pref_feedback_mail_summary">أرسل بريدًا إلكترونيًا إلى المطوّر</string>
-    <string name="pref_homework_import">إستيراد</string>
-    <string name="pref_homework_import_summary">استيراد الواجبات المنزلية من SD</string>
-    <string name="pref_homework_export">تصدير</string>
-    <string name="pref_homework_export_summary">تصدير الواجبات المنزلية إلى SD</string>
-    <string name="pref_autoexport">النسخ الاحتياطي التلقائي</string>
-    <string name="pref_autoexport_summary">النسخ الاحتياطي تلقائياً عندما يتم إجراء تغيير.</string>
-    <string name="pref_sortbytime">فرز حسب الوقت</string>
-    <string name="pref_sortbytime_summary">فرز قائمة الواجبات المنزلية بالوقت حتى الواجبات المنزلية أن يتم الانتهاء.</string>
-    <string name="pref_sortbyimportance">فرز حسب الأهمية</string>
-    <string name="pref_sortbyimportance_summary">سيظهر الواجبات الهامة في الجزء العلوي.</string>
-    <string name="dialog_addSubject">إضافة موضوع</string>
-    <string name="dialog_addSubject_message">تريد إضافة أي موضوع؟</string>
-    <string name="dialog_completed">Switch completion</string>
-    <string name="dialog_edit">تعديل</string>
-    <string name="dialog_delete">حذف</string>
-    <string name="dialog_really_delete_hw">هل تريد حقاً حذف جميع الواجبات المنزلية؟</string>
-    <string name="dialog_really_delete_subs">هل تريد حذف كافة المواضيع حقاً؟</string>
-    <string name="dialog_export_message">هل تريد حقاً النسخ الاحتياطي الواجبات المنزلية والكتابة فوق النسخ الاحتياطي القديم؟</string>
-    <string name="intent_mail">أرسل بريدًا إلكترونيًا إلى المطوّر</string>
-    <string name="intent_share_title">إشراك</string>
-    <string name="intent_share_text">مهلا، هل تريد لمحاولة من مدير الأب؟ يمكنك تحميله من هنا: http://goo.gl/GT99iV</string>
-    <string name="toast_have2enter">يجب عليك إدخال شيء!</string>
-    <string name="added">تمت الإضافة</string>
-    <string name="toast_nobackup">لا توجد ملفات في SD/</string>
-    <string name="toast_import_success">تم الاستيراد</string>
-    <string name="toast_import_fail">فشل الإستيراد</string>
-    <string name="toast_export_success">تمّ التّصدیر</string>
-    <string name="toast_export_fail">فشل التصدير</string>
-    <string name="action_urgent">هام!</string>
-    <string-array name="subjects">
-        <item>علم الأحياء</item>
-        <item>الكيمياء</item>
-        <item>انجليزي</item>
-        <item>التاريخ</item>
-        <item>الرياضيات</item>
-        <item>الفيزياء</item>
-        <item>الألعاب الرياضية</item>
-    </string-array>
-    <string-array name="subject_offers">
-        <item>الأفريقية</item>
-        <item>فن</item>
-        <item>دراما</item>
-        <item>أخلاقيات</item>
-        <item>جغرافیا</item>
-        <item>الألمانية</item>
-        <item>الفرنسية</item>
-        <item>المعلوماتية</item>
-        <item>اللاتينية</item>
-        <item>الموسيقى</item>
-        <item>التّصویر</item>
-        <item>السياسة والاقتصاد</item>
-        <item>الدين</item>
-        <item>الاسبانية</item>
-    </string-array>
+  <string name="app_name">اتش دبلیو-منیجر</string>
+  <string name="title_subjects">المواضيع</string>
+  <string name="title_subject_offers">مواضیع المقترحة</string>
+  <string name="title_homework">الواجبات المنزلية</string>
+  <string name="title_addhomework">إضافة الواجبات المنزلية</string>
+  <string name="title_about">تعرف على البرنامج</string>
+  <string name="action_add">اضافة</string>
+  <string name="action_delete">حذف كل شيء</string>
+  <string name="action_settings">إعدادات</string>
+  <string name="hw_title">العنوان</string>
+  <string name="hw_subject">الموضوع</string>
+  <string name="hw_until">حتى</string>
+  <string name="hw_urgent">هام</string>
+  <string name="hw_info">معلومات إضافية</string>
+  <string name="hw_add">اضافة</string>
+  <string name="hw_save">حفظ</string>
+  <string name="pref_language">اللُّغة</string>
+  <string name="pref_language_default">الوضع الافتراضي للنظام</string>
+  <string name="pref_subjects">المواضيع</string>
+  <string name="pref_subjects_add">إضافة موضوع</string>
+  <string name="pref_subjects_add_summary">إضافة جديدة تخضع للقائمة</string>
+  <string name="pref_offers_overview">الاقتراحات</string>
+  <string name="pref_offers_overview_summary">قائمة باقتراحات</string>
+  <string name="pref_subjects_overview">نظرة عامّة</string>
+  <string name="pref_subjects_overview_summary">قائمة تحتوي على جميع المواضيع</string>
+  <string name="pref_subjects_reset">إعادة تعيين</string>
+  <string name="pref_subjects_reset_summary">إعادة تعيين قائمة المواضيع إلى القيمة الافتراضية</string>
+  <string name="pref_appearance">المظهر</string>
+  <string name="pref_theme">استخدام سمة الظلام</string>
+  <string name="pref_theme_summary">استخدم سمة الظلام.</string>
+  <string name="pref_black">استخدم خلفية سوداء كل</string>
+  <string name="pref_black_summary">يمكن حفظ البطارية في بعض الأجهزة.</string>
+  <string name="pref_about_credits">الإعتمادات</string>
+  <string name="pref_about_current_version">الإصدار الحالي</string>
+  <string name="pref_feedback">إرسال ملاحظات</string>
+  <string name="pref_feedback_share">إشراك</string>
+  <string name="pref_feedback_share_summary">إشترک هذا التطبيق مع صديق!</string>
+  <string name="pref_feedback_playstore">متجر غوغل بلاي</string>
+  <string name="pref_feedback_playstore_summary">استعراض التطبيق في غوغل بلای</string>
+  <string name="pref_feedback_mail">البريد الألكتروني</string>
+  <string name="pref_feedback_mail_summary">أرسل بريدًا إلكترونيًا إلى المطوّر</string>
+  <string name="pref_homework_import">إستيراد</string>
+  <string name="pref_homework_import_summary">استيراد الواجبات المنزلية من SD</string>
+  <string name="pref_homework_export">تصدير</string>
+  <string name="pref_homework_export_summary">تصدير الواجبات المنزلية إلى SD</string>
+  <string name="pref_autoexport">النسخ الاحتياطي التلقائي</string>
+  <string name="pref_autoexport_summary">النسخ الاحتياطي تلقائياً عندما يتم إجراء تغيير.</string>
+  <string name="pref_sortbytime">فرز حسب الوقت</string>
+  <string name="pref_sortbytime_summary">فرز قائمة الواجبات المنزلية بالوقت حتى الواجبات المنزلية أن يتم الانتهاء.</string>
+  <string name="pref_sortbyimportance">فرز حسب الأهمية</string>
+  <string name="pref_sortbyimportance_summary">سيظهر الواجبات الهامة في الجزء العلوي.</string>
+  <string name="dialog_addSubject">إضافة موضوع</string>
+  <string name="dialog_addSubject_message">تريد إضافة أي موضوع؟</string>
+  <string name="dialog_completed">Switch completion</string>
+  <string name="dialog_edit">تعديل</string>
+  <string name="dialog_delete">حذف</string>
+  <string name="dialog_really_delete_hw">هل تريد حقاً حذف جميع الواجبات المنزلية؟</string>
+  <string name="dialog_really_delete_subs">هل تريد حذف كافة المواضيع حقاً؟</string>
+  <string name="dialog_export_message">هل تريد حقاً النسخ الاحتياطي الواجبات المنزلية والكتابة فوق النسخ الاحتياطي القديم؟</string>
+  <string name="intent_mail">أرسل بريدًا إلكترونيًا إلى المطوّر</string>
+  <string name="intent_share_title">إشراك</string>
+  <string name="intent_share_text">مهلا، هل تريد لمحاولة من مدير الأب؟ يمكنك تحميله من هنا: http://goo.gl/GT99iV</string>
+  <string name="toast_have2enter">يجب عليك إدخال شيء!</string>
+  <string name="added">تمت الإضافة</string>
+  <string name="toast_nobackup">لا توجد ملفات في SD/</string>
+  <string name="toast_import_success">تم الاستيراد</string>
+  <string name="toast_import_fail">فشل الإستيراد</string>
+  <string name="toast_export_success">تمّ التّصدیر</string>
+  <string name="toast_export_fail">فشل التصدير</string>
+  <string name="action_urgent">هام!</string>
+  <string-array name="subjects">
+    <item>علم الأحياء</item>
+    <item>الكيمياء</item>
+    <item>انجليزي</item>
+    <item>التاريخ</item>
+    <item>الرياضيات</item>
+    <item>الفيزياء</item>
+    <item>الألعاب الرياضية</item>
+  </string-array>
+  <string-array name="subject_offers">
+    <item>الأفريقية</item>
+    <item>فن</item>
+    <item>دراما</item>
+    <item>أخلاقيات</item>
+    <item>جغرافیا</item>
+    <item>الألمانية</item>
+    <item>الفرنسية</item>
+    <item>المعلوماتية</item>
+    <item>اللاتينية</item>
+    <item>الموسيقى</item>
+    <item>التّصویر</item>
+    <item>السياسة والاقتصاد</item>
+    <item>الدين</item>
+    <item>الاسبانية</item>
+  </string-array>
 </resources>
