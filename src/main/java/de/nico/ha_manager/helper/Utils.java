@@ -132,7 +132,7 @@ public final class Utils {
     public static void langSpinner(final Context c) {
         final AlertDialog.Builder b = new Builder(c);
         // Current translations of HW-Manager
-        final String[] languages = {"cs", "de", "en", "es", "fr", "hu", "ar", "fa"};
+        final String[] languages = {"cs", "de", "en", "es", "fr", "hu", "tr", "ja", "ar", "fa"};
         // Items with translation's language
         final String[] items = new String[languages.length + 1];
         items[0] = c.getString(R.string.pref_language_default);
