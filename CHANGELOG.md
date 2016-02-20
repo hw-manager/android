@@ -1,5 +1,11 @@
 # Changelog of HW-Manager
 
+### 0.94.1 (20.02.2016)
+
+* Translations into Turkish and Japanese
+* Make APK smaller
+* Bump dependencies
+
 ### 0.94 (03.09.2015)
 
 * Install on external SD
