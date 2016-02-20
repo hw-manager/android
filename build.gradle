@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId "de.nico.ha_manager"
         minSdkVersion 4
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 23
         versionName "0.94"
     }
