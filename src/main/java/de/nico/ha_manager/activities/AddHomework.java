@@ -236,7 +236,7 @@ public final class AddHomework extends FragmentActivity {
         imm.hideSoftInputFromWindow(hwEdit.getWindowToken(), 0);
 
         // If nothing filled in -> cancel
-        if (hwEdit.getText().toString().length() == 0) {
+        if (hwEdit.getText().toString().trim().length() == 0) {
             hwEdit.setError(getString(R.string.toast_have2enter));
             return;
         }
@@ -251,8 +251,8 @@ public final class AddHomework extends FragmentActivity {
 
         // Get filled in data
         final String subject = subSpin.getSelectedItem().toString();
-        final String homework = hwEdit.getText().toString();
-        final String info = infoEdit.getText().toString();
+        final String homework = hwEdit.getText().toString().trim();
+        final String info = infoEdit.getText().toString().trim();
 
         // Entry in database
         Homework.add(this, ID, homework, subject, time, info, urgent, "");
