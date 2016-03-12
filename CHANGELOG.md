@@ -1,5 +1,10 @@
 # Changelog of HW-Manager
 
+### 0.94.2 (13.03.2016)
+
+* Translation into Portuguese, Brazilian
+* Minor improvements
+
 ### 0.94.1 (20.02.2016)
 
 * Translations into Turkish and Japanese
