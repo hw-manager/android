@@ -6,14 +6,17 @@
 -->
 <resources>
   <string name="app_name">HW-Manager</string>
+  <!-- Titles -->
   <string name="title_subjects">Matières</string>
   <string name="title_subject_offers">Suggestions de Matières</string>
   <string name="title_homework">Devoirs</string>
   <string name="title_addhomework">Ajouter devoirs</string>
   <string name="title_about">À propros</string>
+  <!-- Menu Items -->
   <string name="action_add">Ajouter</string>
   <string name="action_delete">Tout supprimer</string>
   <string name="action_settings">Paramètres</string>
+  <!-- Homework Page -->
   <string name="hw_title">Titre</string>
   <string name="hw_subject">Matière</string>
   <string name="hw_until">Jusqu\'au</string>
@@ -21,6 +24,7 @@
   <string name="hw_info">Informations complémentaires</string>
   <string name="hw_add">Ajouter</string>
   <string name="hw_save">Enregistrer</string>
+  <!-- Preferences Page -->
   <string name="pref_language">Langue </string>
   <string name="pref_language_default">Défaut du système</string>
   <string name="pref_subjects">Matières</string>
@@ -56,17 +60,20 @@
   <string name="pref_sortbytime_summary">Trier la liste des devoirs par le temps, jusqu\'à ce que les devoirs doit être fini.</string>
   <string name="pref_sortbyimportance">Trier par ordre d\'importance</string>
   <string name="pref_sortbyimportance_summary">Devoirs importants s\'affichera en haut.</string>
+  <!-- Dialogs -->
   <string name="dialog_addSubject">Ajouter une matière</string>
   <string name="dialog_addSubject_message">Quelle matière voulez-vous ajouter ?</string>
-  <string name="dialog_completed">Switch completion</string>
+  <string name="dialog_completed">Basculer achèvement</string>
   <string name="dialog_edit">Éditer</string>
   <string name="dialog_delete">Supprimer</string>
   <string name="dialog_really_delete_hw">Voulez-vous vraiment supprimer tous les devoirs ?</string>
   <string name="dialog_really_delete_subs">Voulez-vous vraiment supprimer tous les metières ?</string>
   <string name="dialog_export_message">Voulez-vous vraiment de sauvegarder les devoirs et de remplacer l\'ancienne sauvegarde ?</string>
+  <!-- Intents -->
   <string name="intent_mail">Envoyer un email au développeur</string>
   <string name="intent_share_title">Partager</string>
   <string name="intent_share_text">Hé, vous voulez essayer HW-Manager ? Vous pouvez le télécharger ici : http://goo.gl/GT99iV</string>
+  <!-- Toasts -->
   <string name="toast_have2enter">Vous devez entrer quelque chose !</string>
   <string name="added">ajouté</string>
   <string name="toast_nobackup">Aucun fichier à SD /</string>
@@ -74,7 +81,9 @@
   <string name="toast_import_fail">Échec de l\'importation</string>
   <string name="toast_export_success">Exporté avec succès</string>
   <string name="toast_export_fail">Échec de l\'exportation</string>
+  <!-- Homework String Items -->
   <string name="action_urgent">Important!</string>
+  <!-- Default Subject Array -->
   <string-array name="subjects">
     <item>Biologie</item>
     <item>Chimie</item>
@@ -84,6 +93,7 @@
     <item>Physique</item>
     <item>Sport</item>
   </string-array>
+  <!-- Subject Offers Array -->
   <string-array name="subject_offers">
     <item>Afrikaans</item>
     <item>Art</item>

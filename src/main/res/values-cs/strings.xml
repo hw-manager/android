@@ -6,14 +6,17 @@
 -->
 <resources>
   <string name="app_name">HW-Manager</string>
+  <!-- Titles -->
   <string name="title_subjects">Předměty</string>
   <string name="title_subject_offers">Další předměty</string>
   <string name="title_homework">Domácí úkoly</string>
   <string name="title_addhomework">Přidat domácí úkol</string>
   <string name="title_about">O aplikaci</string>
+  <!-- Menu Items -->
   <string name="action_add">Přidat</string>
   <string name="action_delete">Smazat vše</string>
   <string name="action_settings">Nastavení</string>
+  <!-- Homework Page -->
   <string name="hw_title">Název</string>
   <string name="hw_subject">Předmět</string>
   <string name="hw_until">Termín</string>
@@ -21,6 +24,7 @@
   <string name="hw_info">Doplňující informace</string>
   <string name="hw_add">Přidat</string>
   <string name="hw_save">Uložit</string>
+  <!-- Preferences Page -->
   <string name="pref_language">Jazyk</string>
   <string name="pref_language_default">Výchozí</string>
   <string name="pref_subjects">Předměty</string>
@@ -56,17 +60,20 @@
   <string name="pref_sortbytime_summary">Řadit seznam úkolů podle času až do té doby než je úkol dokončen.</string>
   <string name="pref_sortbyimportance">Řadit podle důležitosti</string>
   <string name="pref_sortbyimportance_summary">Důležité úkoly budou zobrazeny v horní části.</string>
+  <!-- Dialogs -->
   <string name="dialog_addSubject">Přidat předmět</string>
   <string name="dialog_addSubject_message">Jaký předmět chcete přidat?</string>
-  <string name="dialog_completed">Switch completion</string>
+  <string name="dialog_completed">Přepnout dokončení</string>
   <string name="dialog_edit">Upravit</string>
   <string name="dialog_delete">Smazat</string>
   <string name="dialog_really_delete_hw">Opravdu smazat všechny zadané úkoly?</string>
   <string name="dialog_really_delete_subs">Opravdu smazat všechny předměty?</string>
   <string name="dialog_export_message">Opravdu chcete zálohovat domácí úkol a přepsat starou zálohu?</string>
+  <!-- Intents -->
   <string name="intent_mail">Odeslat email vývojářovi</string>
   <string name="intent_share_title">Sdílet</string>
   <string name="intent_share_text">Hele, nechceš vyzkoušet správce domácích úkolů HW-Manager? Je ke stažení zde: http://goo.gl/GT99iV</string>
+  <!-- Toasts -->
   <string name="toast_have2enter">Je třeba něco zadat!</string>
   <string name="added">přidán</string>
   <string name="toast_nobackup">Žádné soubory na SD kartě/</string>
@@ -74,7 +81,9 @@
   <string name="toast_import_fail">Import selhal</string>
   <string name="toast_export_success">Export úspěšný</string>
   <string name="toast_export_fail">Export selhal</string>
+  <!-- Homework String Items -->
   <string name="action_urgent">Naléhavý!</string>
+  <!-- Default Subject Array -->
   <string-array name="subjects">
     <item>Biologie</item>
     <item>Chemie</item>
@@ -84,6 +93,7 @@
     <item>Fyzika</item>
     <item>Tělocvik</item>
   </string-array>
+  <!-- Subject Offers Array -->
   <string-array name="subject_offers">
     <item>Afrikánština</item>
     <item>Umění</item>
