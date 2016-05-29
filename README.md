@@ -1,6 +1,6 @@
 # HW-Manager
 
-[![Build Status](https://gitlab.com/ci/projects/16687/status.png?ref=master)](https://gitlab.com/hw-manager/android/commits/master)
+[![Build Status](https://gitlab.com/hw-manager/android/badges/master/build.svg)](https://gitlab.com/hw-manager/android/commits/master)
 [![Translation status](https://d322cqt584bo4o.cloudfront.net/hw-manager/localized.png)](https://crowdin.com/project/hw-manager)
 
 ## Download
