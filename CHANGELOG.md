@@ -1,5 +1,9 @@
 # Changelog of HW-Manager
 
+### 0.94.3 (02.10.2016)
+
+* Translation into Polish
+
 ### 0.94.2 (13.03.2016)
 
 * Translation into Portuguese, Brazilian
