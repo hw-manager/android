@@ -18,6 +18,7 @@ rm -R ../src/main/res/values-fa
 rm -R ../src/main/res/values-fr
 rm -R ../src/main/res/values-hu
 rm -R ../src/main/res/values-ja
+rm -R ../src/main/res/values-pl
 rm -R ../src/main/res/values-pt-rBR
 rm -R ../src/main/res/values-tr
 
@@ -31,6 +32,7 @@ cp -R values-fa-rIR ../src/main/res/values-fa
 cp -R values-fr-rFR ../src/main/res/values-fr
 cp -R values-hu-rHU ../src/main/res/values-hu
 cp -R values-ja-rJP ../src/main/res/values-ja
+cp -R values-pl-rPL ../src/main/res/values-pl
 cp -R values-pt-rBR ../src/main/res/values-pt-rBR
 cp -R values-tr-rTR ../src/main/res/values-tr
 
