@@ -1,4 +1,6 @@
-# HW-Manager
+# HW-Manager - UNMAINTAINED
+
+*This project is no longer maintained. Feel free to fork it!*
 
 [![Build Status](https://gitlab.com/hw-manager/android/badges/master/build.svg)](https://gitlab.com/hw-manager/android/commits/master)
 [![Translation status](https://d322cqt584bo4o.cloudfront.net/hw-manager/localized.png)](https://crowdin.com/project/hw-manager)
